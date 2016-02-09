@@ -127,7 +127,7 @@ function getCatalogInfo(){
             {
               '@': {
                 id: 'UAH',
-                rate: 'NBU',
+                rate: 1,
                 plus:  5
               }
             }
