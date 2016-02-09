@@ -3,12 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "gulp": "^3.9.0",
-    "jasmine": "^2.3.2",
-    "karma": "^0.13.15",
-    "karma-jasmine": "^0.3.6",
-    "karma-cli": "^0.0.4",
-    "karma-phantomjs-launcher": "^0.2.1",
-    "karma-chrome-launcher": "~0.2.1",
+    "cheerio": "^0.20.0",
+    "js2xmlparser": "^1.0.0",
+    "request": "^2.69.0"
   }
 }
