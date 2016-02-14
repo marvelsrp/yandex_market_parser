@@ -5,6 +5,9 @@ var fs = require('fs');
 
 var offers_links = [];
 var categories_links = [];
+String.prototype.ucFirst = function() {
+  return this.charAt(0).toUpperCase() + this.slice(1);
+};
 
 function getOffers() {
   console.log('getOffers');
@@ -32,38 +35,42 @@ function getOffers() {
         offer.url = url;
         offer.pickup = true;
         offer.delivery = true;
-        //offer['delivery-options'] = [];
-        //
-        //var delivery_cost;
-        //switch (categoryId){
-        //  case 108382://наборы
-        //  case 119292://подарки хендмайд
-        //    delivery_cost = 100;
-        //    break;
-        //  case 108368://бокалы
-        //    delivery_cost = 80;
-        //    break;
-        //  case 108371://казна
-        //  case 108370://букеты
-        //  case 119291://иконы
-        //    delivery_cost = 60;
-        //    break;
-        //  default:
-        //    delivery_cost = 40;
-        //}
-        //offer['delivery-options'].push(
-        //  {
-        //    '@': {
-        //      cost: delivery_cost,
-        //      days: ''
-        //    }
-        //  }
-        //);
-        offer.cpa = true;
+        offer['delivery-options'] = [];
+
+        var delivery_cost;
+        switch (categoryId){
+          case 108382://наборы
+          case 119292://подарки хендмайд
+            delivery_cost = 100;
+            break;
+          case 108368://бокалы
+            delivery_cost = 80;
+            break;
+          case 108371://казна
+          case 108370://букеты
+          case 119291://иконы
+            delivery_cost = 60;
+            break;
+          default:
+            delivery_cost = 40;
+        }
+        offer['delivery-options'].push(
+          {
+            '@': {
+              cost: delivery_cost,
+              days: ''
+            }
+          }
+        );
+        offer.cpa = 1;
         offer.country_of_origin = 'Украина';
         //offer.typePrefix = $('.breadcrumbs a:nth-of-type(2)').text();
-        offer.price = parseInt($('.prod-price').text().replace('\r\n', '').trim());
-        offer.oldprice = parseInt(offer.price * 1.2);
+        var price = parseFloat($('.prod-price').text().replace('\r\n', '').trim());
+        offer.price = (price < 1) ? price: parseInt(price);
+        if(price  > 100) {
+          offer.oldprice = parseInt(offer.price * 1.2);
+        }
+
         offer.currencyId = 'UAH';
         offer.name = $('.prod-title').text();
         switch (categoryId){
@@ -102,11 +109,12 @@ function getOffers() {
         offer.categoryId = categoryId;
         offer.param = [];
         $('#tabs-2 .prod-options tr').each(function() {
+          var name = $(this).find('.value-row').text();
           var param = {
             '@': {
               name: $(this).find('.option-row').text()
             },
-            '#': $(this).find('.value-row').text()
+            '#': name.ucFirst()
           };
           offer.param.push(param);
         });
@@ -147,11 +155,12 @@ function getCategories() {
         uri: url
       }, function(error, response, body) {
         var $ = cheerio.load(body);
+        var name = $('.sb-caption-name').text();
         var category = {
           '@': {
             id: url.split('/')[5]
           },
-          '#': $('.sb-caption-name').text()
+          '#': name.substr(7, name.length -1)
         };
         categories.push(category);
         if (nextIndex === links.length) {
@@ -170,6 +179,7 @@ function getCatalogInfo() {
   console.log('getCatalogInfo');
   var date = new Date();
   function pad(n) {return n < 10 ? '0' + n : n;}
+
   var data = {
     '@': {
         'date': date.getUTCFullYear() + '-' +
@@ -184,6 +194,14 @@ function getCatalogInfo() {
         company: 'Свадебный декор',
         url: 'http://decorsvadba.com',
         email: 'decornasvadby@yandex.com',
+        'delivery-options' : [
+          {
+            '@': {
+              cost: 50,
+              days: ''
+            }
+          }
+        ],
         currencies: [
             {
               '@': {
