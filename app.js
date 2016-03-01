@@ -33,7 +33,6 @@ function getOffers() {
           bid: 1
         };
         offer.url = url;
-        offer.pickup = true;
         offer.delivery = true;
         offer['delivery-options'] = [];
 
@@ -52,7 +51,7 @@ function getOffers() {
             delivery_cost = 60;
             break;
           default:
-            delivery_cost = 40;
+            delivery_cost = 75;
         }
         offer['delivery-options'].push(
           {

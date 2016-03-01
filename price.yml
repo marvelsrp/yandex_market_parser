@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<yml_catalog date="2016-03-01 10:58">
+<yml_catalog date="2016-03-01 11:15">
 	<shop>
 		<name>Decorsvadba</name>
 		<company>Свадебный декор</company>
@@ -36,10 +36,9 @@
 		<offers>
 			<offer id="1912994" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1912994</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -61,10 +60,9 @@
 			</offer>
 			<offer id="1912993" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1912993</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -85,10 +83,9 @@
 			</offer>
 			<offer id="1912992" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1912992</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -111,10 +108,9 @@
 			</offer>
 			<offer id="1912990" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1912990</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -138,10 +134,9 @@
 			</offer>
 			<offer id="1912983" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1912983</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -162,10 +157,9 @@
 			</offer>
 			<offer id="1912981" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1912981</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -186,7 +180,6 @@
 			</offer>
 			<offer id="1912699" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1912699</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="80" days=""/>
@@ -212,10 +205,9 @@
 			</offer>
 			<offer id="1888484" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1888484</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -235,10 +227,9 @@
 			</offer>
 			<offer id="1888475" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1888475</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -258,10 +249,9 @@
 			</offer>
 			<offer id="1888473" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1888473</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -281,10 +271,9 @@
 			</offer>
 			<offer id="1888471" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1888471</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -304,10 +293,9 @@
 			</offer>
 			<offer id="1888469" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1888469</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -332,10 +320,9 @@
 			</offer>
 			<offer id="1887145" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1887145</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -357,10 +344,9 @@
 			</offer>
 			<offer id="1886780" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1886780</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -381,10 +367,9 @@
 			</offer>
 			<offer id="1886055" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1886055</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -406,10 +391,9 @@
 			</offer>
 			<offer id="1883602" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1883602</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -429,10 +413,9 @@
 			</offer>
 			<offer id="1882400" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1882400</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -456,10 +439,9 @@
 			</offer>
 			<offer id="1880112" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1880112</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -482,10 +464,9 @@
 			</offer>
 			<offer id="1879403" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1879403</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -508,10 +489,9 @@
 			</offer>
 			<offer id="1879402" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1879402</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -533,10 +513,9 @@
 			</offer>
 			<offer id="1879401" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1879401</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -557,10 +536,9 @@
 			</offer>
 			<offer id="1879365" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1879365</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -582,10 +560,9 @@
 			</offer>
 			<offer id="1879343" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1879343</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -609,10 +586,9 @@
 			</offer>
 			<offer id="1879342" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1879342</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -635,10 +611,9 @@
 			</offer>
 			<offer id="1879341" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1879341</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -660,10 +635,9 @@
 			</offer>
 			<offer id="1879340" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1879340</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -685,10 +659,9 @@
 			</offer>
 			<offer id="1879324" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1879324</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -709,10 +682,9 @@
 			</offer>
 			<offer id="1879323" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1879323</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -734,10 +706,9 @@
 			</offer>
 			<offer id="1879322" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1879322</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -759,10 +730,9 @@
 			</offer>
 			<offer id="1879321" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1879321</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -783,10 +753,9 @@
 			</offer>
 			<offer id="1879320" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1879320</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -808,10 +777,9 @@
 			</offer>
 			<offer id="1879319" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1879319</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -833,10 +801,9 @@
 			</offer>
 			<offer id="1879318" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1879318</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -857,10 +824,9 @@
 			</offer>
 			<offer id="1879297" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1879297</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -883,10 +849,9 @@
 			</offer>
 			<offer id="1879296" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1879296</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -908,10 +873,9 @@
 			</offer>
 			<offer id="1879295" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1879295</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -933,10 +897,9 @@
 			</offer>
 			<offer id="1879294" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1879294</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -958,10 +921,9 @@
 			</offer>
 			<offer id="1879293" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1879293</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -982,10 +944,9 @@
 			</offer>
 			<offer id="1879292" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1879292</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -1006,10 +967,9 @@
 			</offer>
 			<offer id="1879272" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1879272</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -1032,7 +992,6 @@
 			</offer>
 			<offer id="1879167" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1879167</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -1062,7 +1021,6 @@
 			</offer>
 			<offer id="1879165" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1879165</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -1091,7 +1049,6 @@
 			</offer>
 			<offer id="1879163" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1879163</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -1120,7 +1077,6 @@
 			</offer>
 			<offer id="1879162" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1879162</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -1149,7 +1105,6 @@
 			</offer>
 			<offer id="1879161" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1879161</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -1178,7 +1133,6 @@
 			</offer>
 			<offer id="1879160" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1879160</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -1207,7 +1161,6 @@
 			</offer>
 			<offer id="1879129" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1879129</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -1240,10 +1193,9 @@
 			</offer>
 			<offer id="1878838" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1878838</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -1265,10 +1217,9 @@
 			</offer>
 			<offer id="1878836" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1878836</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -1289,10 +1240,9 @@
 			</offer>
 			<offer id="1878833" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1878833</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -1315,10 +1265,9 @@
 			</offer>
 			<offer id="1878832" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1878832</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -1340,10 +1289,9 @@
 			</offer>
 			<offer id="1878831" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1878831</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -1365,10 +1313,9 @@
 			</offer>
 			<offer id="1878830" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1878830</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -1392,10 +1339,9 @@
 			</offer>
 			<offer id="1878829" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1878829</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -1417,10 +1363,9 @@
 			</offer>
 			<offer id="1878828" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1878828</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -1442,10 +1387,9 @@
 			</offer>
 			<offer id="1878827" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1878827</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -1470,10 +1414,9 @@
 			</offer>
 			<offer id="1878825" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1878825</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -1496,10 +1439,9 @@
 			</offer>
 			<offer id="1878822" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1878822</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -1521,10 +1463,9 @@
 			</offer>
 			<offer id="1878821" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1878821</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -1546,10 +1487,9 @@
 			</offer>
 			<offer id="1878818" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1878818</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -1572,10 +1512,9 @@
 			</offer>
 			<offer id="1878816" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1878816</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -1596,10 +1535,9 @@
 			</offer>
 			<offer id="1878811" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1878811</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -1621,10 +1559,9 @@
 			</offer>
 			<offer id="1878809" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1878809</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -1644,10 +1581,9 @@
 			</offer>
 			<offer id="1878680" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1878680</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -1671,10 +1607,9 @@
 			</offer>
 			<offer id="1878651" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1878651</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -1696,10 +1631,9 @@
 			</offer>
 			<offer id="1878650" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1878650</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -1719,10 +1653,9 @@
 			</offer>
 			<offer id="1878649" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1878649</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -1743,10 +1676,9 @@
 			</offer>
 			<offer id="1878648" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1878648</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -1768,10 +1700,9 @@
 			</offer>
 			<offer id="1878647" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1878647</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -1791,10 +1722,9 @@
 			</offer>
 			<offer id="1878646" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1878646</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -1814,10 +1744,9 @@
 			</offer>
 			<offer id="1878645" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1878645</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -1836,10 +1765,9 @@
 			</offer>
 			<offer id="1878644" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1878644</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -1859,10 +1787,9 @@
 			</offer>
 			<offer id="1878643" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1878643</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -1881,10 +1808,9 @@
 			</offer>
 			<offer id="1878642" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1878642</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -1906,10 +1832,9 @@
 			</offer>
 			<offer id="1863394" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1863394</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -1930,10 +1855,9 @@
 			</offer>
 			<offer id="1863393" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1863393</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -1955,10 +1879,9 @@
 			</offer>
 			<offer id="1863392" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1863392</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -1983,10 +1906,9 @@
 			</offer>
 			<offer id="1863391" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1863391</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -2010,10 +1932,9 @@
 			</offer>
 			<offer id="1863329" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1863329</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -2035,7 +1956,6 @@
 			</offer>
 			<offer id="1862766" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1862766</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -2069,7 +1989,6 @@
 			</offer>
 			<offer id="1860313" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1860313</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -2098,7 +2017,6 @@
 			</offer>
 			<offer id="1858895" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1858895</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -2124,7 +2042,6 @@
 			</offer>
 			<offer id="1857019" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1857019</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -2151,10 +2068,9 @@
 			</offer>
 			<offer id="1855062" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1855062</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -2180,10 +2096,9 @@
 			</offer>
 			<offer id="1853762" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1853762</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -2207,10 +2122,9 @@
 			</offer>
 			<offer id="1853760" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1853760</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -2232,10 +2146,9 @@
 			</offer>
 			<offer id="1853758" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1853758</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -2260,7 +2173,6 @@
 			</offer>
 			<offer id="1842690" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1842690</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -2283,7 +2195,6 @@
 			</offer>
 			<offer id="1842689" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1842689</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -2306,7 +2217,6 @@
 			</offer>
 			<offer id="1842688" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1842688</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -2329,7 +2239,6 @@
 			</offer>
 			<offer id="1842687" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1842687</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -2352,7 +2261,6 @@
 			</offer>
 			<offer id="1842686" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1842686</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -2375,7 +2283,6 @@
 			</offer>
 			<offer id="1842685" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1842685</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -2398,7 +2305,6 @@
 			</offer>
 			<offer id="1842684" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1842684</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -2421,7 +2327,6 @@
 			</offer>
 			<offer id="1842683" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1842683</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -2444,7 +2349,6 @@
 			</offer>
 			<offer id="1842682" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1842682</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -2467,7 +2371,6 @@
 			</offer>
 			<offer id="1842681" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1842681</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -2490,7 +2393,6 @@
 			</offer>
 			<offer id="1842680" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1842680</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -2513,10 +2415,9 @@
 			</offer>
 			<offer id="1833830" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1833830</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -2543,10 +2444,9 @@
 			</offer>
 			<offer id="1833828" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1833828</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -2574,10 +2474,9 @@
 			</offer>
 			<offer id="1833735" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1833735</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -2597,10 +2496,9 @@
 			</offer>
 			<offer id="1807454" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1807454</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -2620,10 +2518,9 @@
 			</offer>
 			<offer id="1807453" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1807453</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -2644,10 +2541,9 @@
 			</offer>
 			<offer id="1807452" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1807452</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -2666,10 +2562,9 @@
 			</offer>
 			<offer id="1807451" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1807451</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -2690,10 +2585,9 @@
 			</offer>
 			<offer id="1807444" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1807444</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -2714,10 +2608,9 @@
 			</offer>
 			<offer id="1807437" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1807437</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -2740,10 +2633,9 @@
 			</offer>
 			<offer id="1801203" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1801203</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -2763,10 +2655,9 @@
 			</offer>
 			<offer id="1801202" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1801202</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -2785,10 +2676,9 @@
 			</offer>
 			<offer id="1801201" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1801201</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -2807,10 +2697,9 @@
 			</offer>
 			<offer id="1801200" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1801200</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -2828,10 +2717,9 @@
 			</offer>
 			<offer id="1801199" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1801199</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -2850,10 +2738,9 @@
 			</offer>
 			<offer id="1801198" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1801198</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -2872,10 +2759,9 @@
 			</offer>
 			<offer id="1801197" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1801197</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -2894,10 +2780,9 @@
 			</offer>
 			<offer id="1801196" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1801196</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -2916,10 +2801,9 @@
 			</offer>
 			<offer id="1801195" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1801195</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -2938,10 +2822,9 @@
 			</offer>
 			<offer id="1801194" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1801194</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -2960,10 +2843,9 @@
 			</offer>
 			<offer id="1801193" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1801193</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -2982,10 +2864,9 @@
 			</offer>
 			<offer id="1801192" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1801192</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -3004,10 +2885,9 @@
 			</offer>
 			<offer id="1801191" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1801191</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -3026,10 +2906,9 @@
 			</offer>
 			<offer id="1801190" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1801190</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -3049,10 +2928,9 @@
 			</offer>
 			<offer id="1801189" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1801189</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -3072,10 +2950,9 @@
 			</offer>
 			<offer id="1801188" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1801188</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -3095,10 +2972,9 @@
 			</offer>
 			<offer id="1801187" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1801187</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -3118,10 +2994,9 @@
 			</offer>
 			<offer id="1801186" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1801186</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -3141,7 +3016,6 @@
 			</offer>
 			<offer id="1797019" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1797019</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -3168,10 +3042,9 @@
 			</offer>
 			<offer id="1797014" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1797014</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -3195,10 +3068,9 @@
 			</offer>
 			<offer id="1797010" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1797010</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -3219,7 +3091,6 @@
 			</offer>
 			<offer id="1796905" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1796905</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -3245,7 +3116,6 @@
 			</offer>
 			<offer id="1796904" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1796904</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -3271,10 +3141,9 @@
 			</offer>
 			<offer id="1796902" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1796902</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -3297,10 +3166,9 @@
 			</offer>
 			<offer id="1796901" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1796901</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -3322,10 +3190,9 @@
 			</offer>
 			<offer id="1796890" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1796890</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -3351,10 +3218,9 @@
 			</offer>
 			<offer id="1796643" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1796643</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -3381,7 +3247,6 @@
 			</offer>
 			<offer id="1796463" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1796463</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -3409,7 +3274,6 @@
 			</offer>
 			<offer id="1796459" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1796459</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -3439,10 +3303,9 @@
 			</offer>
 			<offer id="1762818" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1762818</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -3469,7 +3332,6 @@
 			</offer>
 			<offer id="1762817" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1762817</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="80" days=""/>
@@ -3497,7 +3359,6 @@
 			</offer>
 			<offer id="1762816" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1762816</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -3528,7 +3389,6 @@
 			</offer>
 			<offer id="1762800" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1762800</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -3558,10 +3418,9 @@
 			</offer>
 			<offer id="1762694" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1762694</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -3584,10 +3443,9 @@
 			</offer>
 			<offer id="1762693" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1762693</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -3611,10 +3469,9 @@
 			</offer>
 			<offer id="1762692" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1762692</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -3637,10 +3494,9 @@
 			</offer>
 			<offer id="1762691" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1762691</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -3664,10 +3520,9 @@
 			</offer>
 			<offer id="1762690" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1762690</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -3689,10 +3544,9 @@
 			</offer>
 			<offer id="1762689" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1762689</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -3716,10 +3570,9 @@
 			</offer>
 			<offer id="1762688" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1762688</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -3743,10 +3596,9 @@
 			</offer>
 			<offer id="1762687" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1762687</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -3769,10 +3621,9 @@
 			</offer>
 			<offer id="1762686" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1762686</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -3797,10 +3648,9 @@
 			</offer>
 			<offer id="1762685" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1762685</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -3822,10 +3672,9 @@
 			</offer>
 			<offer id="1762684" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1762684</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -3848,10 +3697,9 @@
 			</offer>
 			<offer id="1762683" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1762683</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -3875,10 +3723,9 @@
 			</offer>
 			<offer id="1762682" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1762682</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -3901,10 +3748,9 @@
 			</offer>
 			<offer id="1762681" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1762681</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -3927,10 +3773,9 @@
 			</offer>
 			<offer id="1762680" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1762680</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -3951,10 +3796,9 @@
 			</offer>
 			<offer id="1762679" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1762679</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -3976,10 +3820,9 @@
 			</offer>
 			<offer id="1762678" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1762678</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -4001,10 +3844,9 @@
 			</offer>
 			<offer id="1762677" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1762677</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -4026,7 +3868,6 @@
 			</offer>
 			<offer id="1762676" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1762676</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -4051,7 +3892,6 @@
 			</offer>
 			<offer id="1762673" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1762673</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -4077,10 +3917,9 @@
 			</offer>
 			<offer id="1762085" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1762085</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -4101,10 +3940,9 @@
 			</offer>
 			<offer id="1752785" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1752785</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -4124,7 +3962,6 @@
 			</offer>
 			<offer id="1752771" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1752771</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -4147,7 +3984,6 @@
 			</offer>
 			<offer id="1752767" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1752767</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -4175,10 +4011,9 @@
 			</offer>
 			<offer id="1752756" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1752756</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -4198,7 +4033,6 @@
 			</offer>
 			<offer id="1747568" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1747568</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -4227,10 +4061,9 @@
 			</offer>
 			<offer id="1744720" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1744720</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -4257,7 +4090,6 @@
 			</offer>
 			<offer id="1743315" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1743315</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -4280,7 +4112,6 @@
 			</offer>
 			<offer id="1743309" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1743309</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -4303,7 +4134,6 @@
 			</offer>
 			<offer id="1743303" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1743303</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -4332,7 +4162,6 @@
 			</offer>
 			<offer id="1743298" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1743298</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -4356,7 +4185,6 @@
 			</offer>
 			<offer id="1743297" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1743297</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -4387,7 +4215,6 @@
 			</offer>
 			<offer id="1743279" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1743279</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="80" days=""/>
@@ -4416,10 +4243,9 @@
 			</offer>
 			<offer id="1726152" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1726152</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -4437,10 +4263,9 @@
 			</offer>
 			<offer id="1725403" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1725403</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -4462,10 +4287,9 @@
 			</offer>
 			<offer id="1725402" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1725402</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -4486,10 +4310,9 @@
 			</offer>
 			<offer id="1725401" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1725401</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -4512,10 +4335,9 @@
 			</offer>
 			<offer id="1725400" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1725400</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -4537,10 +4359,9 @@
 			</offer>
 			<offer id="1725399" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1725399</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -4562,10 +4383,9 @@
 			</offer>
 			<offer id="1725398" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1725398</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -4587,10 +4407,9 @@
 			</offer>
 			<offer id="1725397" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1725397</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -4612,10 +4431,9 @@
 			</offer>
 			<offer id="1725396" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1725396</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -4636,7 +4454,6 @@
 			</offer>
 			<offer id="1723796" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1723796</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -4659,7 +4476,6 @@
 			</offer>
 			<offer id="1723793" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1723793</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -4681,7 +4497,6 @@
 			</offer>
 			<offer id="1723791" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1723791</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -4704,7 +4519,6 @@
 			</offer>
 			<offer id="1723790" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1723790</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -4727,7 +4541,6 @@
 			</offer>
 			<offer id="1723785" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1723785</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -4750,7 +4563,6 @@
 			</offer>
 			<offer id="1723783" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1723783</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -4774,7 +4586,6 @@
 			</offer>
 			<offer id="1723778" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1723778</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -4796,7 +4607,6 @@
 			</offer>
 			<offer id="1723777" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1723777</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -4818,7 +4628,6 @@
 			</offer>
 			<offer id="1723774" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1723774</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -4840,7 +4649,6 @@
 			</offer>
 			<offer id="1723772" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1723772</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -4862,7 +4670,6 @@
 			</offer>
 			<offer id="1723771" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1723771</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -4883,7 +4690,6 @@
 			</offer>
 			<offer id="1723770" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1723770</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -4904,7 +4710,6 @@
 			</offer>
 			<offer id="1723768" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1723768</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -4926,7 +4731,6 @@
 			</offer>
 			<offer id="1723767" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1723767</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -4948,7 +4752,6 @@
 			</offer>
 			<offer id="1723765" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1723765</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -4970,7 +4773,6 @@
 			</offer>
 			<offer id="1723764" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1723764</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -4992,7 +4794,6 @@
 			</offer>
 			<offer id="1723746" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1723746</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -5014,7 +4815,6 @@
 			</offer>
 			<offer id="1723745" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1723745</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -5037,7 +4837,6 @@
 			</offer>
 			<offer id="1723744" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1723744</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -5060,7 +4859,6 @@
 			</offer>
 			<offer id="1723743" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1723743</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -5083,7 +4881,6 @@
 			</offer>
 			<offer id="1723741" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1723741</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -5106,7 +4903,6 @@
 			</offer>
 			<offer id="1723740" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1723740</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -5129,7 +4925,6 @@
 			</offer>
 			<offer id="1723739" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1723739</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -5152,7 +4947,6 @@
 			</offer>
 			<offer id="1723738" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1723738</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -5175,7 +4969,6 @@
 			</offer>
 			<offer id="1723737" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1723737</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -5198,7 +4991,6 @@
 			</offer>
 			<offer id="1723736" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1723736</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -5221,7 +5013,6 @@
 			</offer>
 			<offer id="1723735" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1723735</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -5244,7 +5035,6 @@
 			</offer>
 			<offer id="1723734" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1723734</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -5267,7 +5057,6 @@
 			</offer>
 			<offer id="1723733" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1723733</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -5290,7 +5079,6 @@
 			</offer>
 			<offer id="1722279" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1722279</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -5314,7 +5102,6 @@
 			</offer>
 			<offer id="1722276" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1722276</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -5338,7 +5125,6 @@
 			</offer>
 			<offer id="1722274" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1722274</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -5362,7 +5148,6 @@
 			</offer>
 			<offer id="1722267" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1722267</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -5386,7 +5171,6 @@
 			</offer>
 			<offer id="1722252" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1722252</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -5413,10 +5197,9 @@
 			</offer>
 			<offer id="1719177" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1719177</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -5437,10 +5220,9 @@
 			</offer>
 			<offer id="1719176" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1719176</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -5460,7 +5242,6 @@
 			</offer>
 			<offer id="1707446" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1707446</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -5483,7 +5264,6 @@
 			</offer>
 			<offer id="1707445" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1707445</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -5506,10 +5286,9 @@
 			</offer>
 			<offer id="1679327" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1679327</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -5531,10 +5310,9 @@
 			</offer>
 			<offer id="1679326" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1679326</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -5554,10 +5332,9 @@
 			</offer>
 			<offer id="1679325" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1679325</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -5577,10 +5354,9 @@
 			</offer>
 			<offer id="1679324" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1679324</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -5606,10 +5382,9 @@
 			</offer>
 			<offer id="1679323" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1679323</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -5630,10 +5405,9 @@
 			</offer>
 			<offer id="1679322" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1679322</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -5655,10 +5429,9 @@
 			</offer>
 			<offer id="1679321" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1679321</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -5680,10 +5453,9 @@
 			</offer>
 			<offer id="1679320" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1679320</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -5704,10 +5476,9 @@
 			</offer>
 			<offer id="1679319" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1679319</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -5728,10 +5499,9 @@
 			</offer>
 			<offer id="1679318" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1679318</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -5752,10 +5522,9 @@
 			</offer>
 			<offer id="1679316" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1679316</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -5775,10 +5544,9 @@
 			</offer>
 			<offer id="1659848" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1659848</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -5802,10 +5570,9 @@
 			</offer>
 			<offer id="1659847" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1659847</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -5828,10 +5595,9 @@
 			</offer>
 			<offer id="1659845" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1659845</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -5857,10 +5623,9 @@
 			</offer>
 			<offer id="1659843" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1659843</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -5885,10 +5650,9 @@
 			</offer>
 			<offer id="1659842" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1659842</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -5912,10 +5676,9 @@
 			</offer>
 			<offer id="1659805" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1659805</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -5938,10 +5701,9 @@
 			</offer>
 			<offer id="1659804" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1659804</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -5963,10 +5725,9 @@
 			</offer>
 			<offer id="1659803" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1659803</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -5988,10 +5749,9 @@
 			</offer>
 			<offer id="1659802" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1659802</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6011,10 +5771,9 @@
 			</offer>
 			<offer id="1659801" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1659801</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6035,10 +5794,9 @@
 			</offer>
 			<offer id="1659800" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1659800</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6061,10 +5819,9 @@
 			</offer>
 			<offer id="1659799" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1659799</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6087,10 +5844,9 @@
 			</offer>
 			<offer id="1659798" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1659798</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6113,10 +5869,9 @@
 			</offer>
 			<offer id="1659797" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1659797</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6139,10 +5894,9 @@
 			</offer>
 			<offer id="1659796" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1659796</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6166,10 +5920,9 @@
 			</offer>
 			<offer id="1659795" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1659795</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6192,10 +5945,9 @@
 			</offer>
 			<offer id="1658911" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1658911</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6217,7 +5969,6 @@
 			</offer>
 			<offer id="1658910" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1658910</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -6243,10 +5994,9 @@
 			</offer>
 			<offer id="1658909" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1658909</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6265,10 +6015,9 @@
 			</offer>
 			<offer id="1658908" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1658908</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6288,10 +6037,9 @@
 			</offer>
 			<offer id="1658907" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1658907</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6311,10 +6059,9 @@
 			</offer>
 			<offer id="1626658" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1626658</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6336,10 +6083,9 @@
 			</offer>
 			<offer id="1626655" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1626655</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6363,10 +6109,9 @@
 			</offer>
 			<offer id="1622184" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1622184</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6384,10 +6129,9 @@
 			</offer>
 			<offer id="1622183" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1622183</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6405,10 +6149,9 @@
 			</offer>
 			<offer id="1622182" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1622182</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6428,10 +6171,9 @@
 			</offer>
 			<offer id="1622180" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1622180</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6450,10 +6192,9 @@
 			</offer>
 			<offer id="1619598" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1619598</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6472,10 +6213,9 @@
 			</offer>
 			<offer id="1619594" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1619594</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6499,10 +6239,9 @@
 			</offer>
 			<offer id="1619589" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1619589</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6526,10 +6265,9 @@
 			</offer>
 			<offer id="1619567" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1619567</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6550,10 +6288,9 @@
 			</offer>
 			<offer id="1619545" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1619545</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6573,10 +6310,9 @@
 			</offer>
 			<offer id="1619362" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1619362</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6599,10 +6335,9 @@
 			</offer>
 			<offer id="1614155" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1614155</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6623,10 +6358,9 @@
 			</offer>
 			<offer id="1609809" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1609809</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6645,10 +6379,9 @@
 			</offer>
 			<offer id="1609808" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1609808</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6669,10 +6402,9 @@
 			</offer>
 			<offer id="1582421" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1582421</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6691,10 +6423,9 @@
 			</offer>
 			<offer id="1582420" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1582420</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6711,10 +6442,9 @@
 			</offer>
 			<offer id="1582419" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1582419</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6731,10 +6461,9 @@
 			</offer>
 			<offer id="1582418" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1582418</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6752,10 +6481,9 @@
 			</offer>
 			<offer id="1582417" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1582417</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6772,10 +6500,9 @@
 			</offer>
 			<offer id="1582416" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1582416</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6793,10 +6520,9 @@
 			</offer>
 			<offer id="1582415" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1582415</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6814,10 +6540,9 @@
 			</offer>
 			<offer id="1582414" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1582414</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6836,10 +6561,9 @@
 			</offer>
 			<offer id="1582412" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1582412</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6857,10 +6581,9 @@
 			</offer>
 			<offer id="1582411" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1582411</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6878,10 +6601,9 @@
 			</offer>
 			<offer id="1582410" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1582410</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6899,10 +6621,9 @@
 			</offer>
 			<offer id="1582409" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1582409</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6920,10 +6641,9 @@
 			</offer>
 			<offer id="1582408" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1582408</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6943,10 +6663,9 @@
 			</offer>
 			<offer id="1582407" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1582407</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -6964,7 +6683,6 @@
 			</offer>
 			<offer id="1581987" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1581987</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -6992,7 +6710,6 @@
 			</offer>
 			<offer id="1581985" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1581985</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -7017,7 +6734,6 @@
 			</offer>
 			<offer id="1569857" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1569857</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -7043,10 +6759,9 @@
 			</offer>
 			<offer id="1563247" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1563247</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -7065,10 +6780,9 @@
 			</offer>
 			<offer id="1562733" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1562733</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -7087,7 +6801,6 @@
 			</offer>
 			<offer id="1561643" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1561643</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -7110,7 +6823,6 @@
 			</offer>
 			<offer id="1548932" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1548932</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="80" days=""/>
@@ -7135,10 +6847,9 @@
 			</offer>
 			<offer id="1547330" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1547330</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -7156,10 +6867,9 @@
 			</offer>
 			<offer id="1547329" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1547329</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -7177,10 +6887,9 @@
 			</offer>
 			<offer id="1547328" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1547328</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -7198,10 +6907,9 @@
 			</offer>
 			<offer id="1547327" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1547327</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -7218,10 +6926,9 @@
 			</offer>
 			<offer id="1547326" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1547326</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -7239,10 +6946,9 @@
 			</offer>
 			<offer id="1547325" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1547325</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -7263,7 +6969,6 @@
 			</offer>
 			<offer id="1547324" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1547324</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -7288,7 +6993,6 @@
 			</offer>
 			<offer id="1542495" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1542495</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="80" days=""/>
@@ -7314,10 +7018,9 @@
 			</offer>
 			<offer id="1542489" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1542489</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -7336,7 +7039,6 @@
 			</offer>
 			<offer id="1542332" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1542332</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -7361,7 +7063,6 @@
 			</offer>
 			<offer id="1542331" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1542331</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -7388,7 +7089,6 @@
 			</offer>
 			<offer id="1542330" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1542330</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -7415,7 +7115,6 @@
 			</offer>
 			<offer id="1542329" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1542329</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -7442,7 +7141,6 @@
 			</offer>
 			<offer id="1542328" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1542328</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="100" days=""/>
@@ -7469,10 +7167,9 @@
 			</offer>
 			<offer id="1541371" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1541371</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -7491,10 +7188,9 @@
 			</offer>
 			<offer id="1541370" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1541370</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -7512,10 +7208,9 @@
 			</offer>
 			<offer id="1541369" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1541369</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -7533,10 +7228,9 @@
 			</offer>
 			<offer id="1541368" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1541368</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -7558,10 +7252,9 @@
 			</offer>
 			<offer id="1541367" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1541367</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -7580,10 +7273,9 @@
 			</offer>
 			<offer id="1541366" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1541366</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -7602,10 +7294,9 @@
 			</offer>
 			<offer id="1541365" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1541365</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -7624,10 +7315,9 @@
 			</offer>
 			<offer id="1541364" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1541364</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -7646,10 +7336,9 @@
 			</offer>
 			<offer id="1541363" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1541363</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -7668,10 +7357,9 @@
 			</offer>
 			<offer id="1541361" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1541361</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -7689,10 +7377,9 @@
 			</offer>
 			<offer id="1541360" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1541360</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -7713,10 +7400,9 @@
 			</offer>
 			<offer id="1539034" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1539034</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -7736,10 +7422,9 @@
 			</offer>
 			<offer id="1539033" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1539033</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -7759,10 +7444,9 @@
 			</offer>
 			<offer id="1539032" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1539032</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -7782,10 +7466,9 @@
 			</offer>
 			<offer id="1539031" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1539031</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -7810,10 +7493,9 @@
 			</offer>
 			<offer id="1539030" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1539030</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -7833,10 +7515,9 @@
 			</offer>
 			<offer id="1539029" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1539029</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -7856,10 +7537,9 @@
 			</offer>
 			<offer id="1539028" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1539028</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -7879,10 +7559,9 @@
 			</offer>
 			<offer id="1539027" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1539027</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -7902,10 +7581,9 @@
 			</offer>
 			<offer id="1539026" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1539026</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -7925,10 +7603,9 @@
 			</offer>
 			<offer id="1539025" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1539025</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -7947,7 +7624,6 @@
 			</offer>
 			<offer id="1537905" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1537905</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="80" days=""/>
@@ -7970,7 +7646,6 @@
 			</offer>
 			<offer id="1537901" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1537901</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="80" days=""/>
@@ -7994,7 +7669,6 @@
 			</offer>
 			<offer id="1537897" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1537897</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="80" days=""/>
@@ -8018,7 +7692,6 @@
 			</offer>
 			<offer id="1537893" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1537893</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="80" days=""/>
@@ -8043,7 +7716,6 @@
 			</offer>
 			<offer id="1532452" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1532452</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="80" days=""/>
@@ -8071,7 +7743,6 @@
 			</offer>
 			<offer id="1532451" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1532451</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="80" days=""/>
@@ -8097,7 +7768,6 @@
 			</offer>
 			<offer id="1532450" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1532450</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="80" days=""/>
@@ -8124,7 +7794,6 @@
 			</offer>
 			<offer id="1532170" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1532170</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -8147,7 +7816,6 @@
 			</offer>
 			<offer id="1532169" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1532169</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -8170,7 +7838,6 @@
 			</offer>
 			<offer id="1532166" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1532166</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -8195,10 +7862,9 @@
 			</offer>
 			<offer id="1532149" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1532149</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -8221,10 +7887,9 @@
 			</offer>
 			<offer id="1532148" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1532148</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -8248,10 +7913,9 @@
 			</offer>
 			<offer id="1532146" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1532146</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -8273,10 +7937,9 @@
 			</offer>
 			<offer id="1532145" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1532145</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -8297,10 +7960,9 @@
 			</offer>
 			<offer id="1532143" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1532143</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -8323,10 +7985,9 @@
 			</offer>
 			<offer id="1532142" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1532142</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -8349,10 +8010,9 @@
 			</offer>
 			<offer id="1532141" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1532141</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -8373,10 +8033,9 @@
 			</offer>
 			<offer id="1532140" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1532140</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -8403,10 +8062,9 @@
 			</offer>
 			<offer id="1532139" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1532139</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -8427,10 +8085,9 @@
 			</offer>
 			<offer id="1532130" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1532130</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -8451,10 +8108,9 @@
 			</offer>
 			<offer id="1532129" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1532129</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -8470,10 +8126,9 @@
 			</offer>
 			<offer id="1532128" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1532128</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -8494,10 +8149,9 @@
 			</offer>
 			<offer id="1532127" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1532127</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -8522,10 +8176,9 @@
 			</offer>
 			<offer id="1532126" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1532126</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -8545,10 +8198,9 @@
 			</offer>
 			<offer id="1532125" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1532125</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -8570,10 +8222,9 @@
 			</offer>
 			<offer id="1532124" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1532124</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -8594,10 +8245,9 @@
 			</offer>
 			<offer id="1532123" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1532123</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -8617,10 +8267,9 @@
 			</offer>
 			<offer id="1532122" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1532122</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -8641,10 +8290,9 @@
 			</offer>
 			<offer id="1532121" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1532121</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -8664,10 +8312,9 @@
 			</offer>
 			<offer id="1532120" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1532120</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -8689,10 +8336,9 @@
 			</offer>
 			<offer id="1532119" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1532119</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
-					<option cost="40" days=""/>
+					<option cost="75" days=""/>
 				</delivery-options>
 				<cpa>1</cpa>
 				<country_of_origin>Украина</country_of_origin>
@@ -8712,7 +8358,6 @@
 			</offer>
 			<offer id="1532115" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1532115</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -8735,7 +8380,6 @@
 			</offer>
 			<offer id="1532114" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1532114</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -8760,7 +8404,6 @@
 			</offer>
 			<offer id="1532113" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1532113</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
@@ -8789,7 +8432,6 @@
 			</offer>
 			<offer id="1532107" available="true" bid="1">
 				<url>http://decorsvadba.com/catalog/product/1532107</url>
-				<pickup>true</pickup>
 				<delivery>true</delivery>
 				<delivery-options>
 					<option cost="60" days=""/>
