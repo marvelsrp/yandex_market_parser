@@ -40,18 +40,16 @@ function getOffers() {
         switch (categoryId){
           case 108382://наборы
           case 119292://подарки хендмайд
-            delivery_cost = 100;
-            break;
-          case 108368://бокалы
             delivery_cost = 80;
             break;
+          case 108368://бокалы
           case 108371://казна
           case 108370://букеты
           case 119291://иконы
             delivery_cost = 60;
             break;
           default:
-            delivery_cost = 75;
+            delivery_cost = 50;
         }
         offer['delivery-options'].push(
           {
@@ -66,9 +64,9 @@ function getOffers() {
         //offer.typePrefix = $('.breadcrumbs a:nth-of-type(2)').text();
         var price = parseFloat($('.prod-price').text().replace('\r\n', '').trim());
         offer.price = (price < 1) ? price: parseInt(price);
-        if(price  > 100) {
-          offer.oldprice = parseInt(offer.price * 1.2);
-        }
+        //if(price  > 100) {
+        //  offer.oldprice = parseInt(offer.price * 1.2);
+        //}
 
         offer.currencyId = 'UAH';
         offer.name = $('.prod-title').text();
@@ -103,7 +101,7 @@ function getOffers() {
         //offer.vendor = 'Свадебный декор';
         //offer.model = $('.prod-title').text();
         offer.description = $('.prod-description div').text(); //$('#tabs-1 .editor-data').text().replace("\r\n", "").trim();
-        offer.sales_notes = 'Необходима предоплата.';
+        offer.sales_notes = 'Минимальная сумма заказа 100 грн';
 
         offer.categoryId = categoryId;
         offer.param = [];
