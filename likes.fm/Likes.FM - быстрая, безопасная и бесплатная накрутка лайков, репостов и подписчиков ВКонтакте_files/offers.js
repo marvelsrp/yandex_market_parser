@@ -140,7 +140,7 @@ function initOffers() {
       c.sx = viewer_profile.sex
     }
     $.ajax({
-      url: "/get_offers",
+      url: "https://likes.fm/get_offers",
       data: d ? c : {},
       global: false,
       type: "POST",
@@ -199,6 +199,7 @@ var offers_dt = 0;
 var need_vk_token;
 
 function processOffers(a, b) {
+  console.log('processOffers', a, b);
   if (!_.isObject(a) || !a.offers_dt || a.offers_dt < offers_dt) {
     return
   }
@@ -446,11 +447,12 @@ var saveErrors = {
 var res;
 
 function buyOffer(a, d, b, f) {
+  console.log('buyOffer', a, d, b, f);
   numBuyOffers += 1;
   var e = b * cur_offer_price[d];
 
   function h() {
-    return $.post("/save_offer", _.extend({
+    return $.post("https://likes.fm/save_offer", _.extend({
       entity: a,
       type: d,
       num: b,
@@ -623,10 +625,12 @@ function buyModulesCreator(a, n, m) {
   }
 
   function o() {
+    viewer_profile.paid = 1000;
     return n != "like" && viewer_profile.sub_penalty ? viewer_profile.paid : viewer_profile.prepaid
   }
 
   function k(q) {
+    console.log('k()', q, cur_offer_price[n], n);
     q = q || cur_offer_price[n];
     return Math.floor((o() >= q ? o() : 1000) / q)
   }
@@ -665,7 +669,7 @@ function buyModulesCreator(a, n, m) {
 
   function c() {
     $.ajax({
-      url: "/get_cities_ids",
+      url: "https://likes.fm/get_cities_ids",
       data: _.extend({
         type: n
       }, offersSettings[n]),
@@ -840,7 +844,7 @@ function buyModulesCreator(a, n, m) {
       e("Подождите. Пересчёт цены с учётом таргетинга..");
       a.addClass("price_getting");
       $.ajax({
-        url: "/get_offer_price",
+        url: "https://likes.fm/get_offer_price",
         data: _.extend({
           type: n
         }, q),
@@ -1089,7 +1093,7 @@ function buyLikesModulesCreator(g, b) {
             type: a
           });
           return $.ajax({
-            url: "/penalty_link",
+            url: "https://likes.fm/penalty_link",
             global: false,
             type: "POST"
           })
@@ -1594,7 +1598,7 @@ modulesDescriptors.repostOffersOverview = _.extend(_.clone(modulesDescriptors.li
 $(document).delegate("a.open_offer", "mouseup", function(b) {
   var a = $(this).closest(".offer").attr("entity") + "." + $(this).closest(".module,.box_body").attr("type");
   $.ajax({
-    url: "/open_offer",
+    url: "https://likes.fm/open_offer",
     data: {
       entity: a
     },
@@ -1618,7 +1622,7 @@ $(document).delegate(".line_cell .x_button", "click", function() {
   updateDisplayOffers(b);
   closedOffers[b].push(a);
   $.ajax({
-    url: "/close_offer",
+    url: "https://likes.fm/close_offer",
     data: {
       entity: a + "." + b
     },
@@ -1677,7 +1681,7 @@ function checkBlacklist(a, c) {
   }, function(d) {
     if (d.error && d.error.error_code == 15) {
       $.ajax({
-        url: "/penalty_blacklist",
+        url: "https://likes.fm/penalty_blacklist",
         data: {
           entity: a + "." + b
         },
@@ -1714,7 +1718,7 @@ function blockPopupClose(a, b) {
     blockMaskClose = false;
     if (b) {
       $.ajax({
-        url: "/reset_penalty_popup",
+        url: "https://likes.fm/reset_penalty_popup",
         data: {
           type: $(".penaltyPopup", a).attr("type")
         },
@@ -1821,7 +1825,7 @@ function recheckOffersStep() {
     check_offers(viewer_profile.check_offers, function(c) {
       b = b.concat(c);
       $.ajax({
-        url: "/penalty_offers",
+        url: "https://likes.fm/penalty_offers",
         data: {
           entities: b
         },
@@ -1903,7 +1907,7 @@ function doOffers(h, c) {
   }
   f(true);
   $.ajax({
-    url: "/do_offers",
+    url: "https://likes.fm/do_offers",
     data: _.extend({
       entities: h,
       domain: viewer_profile.domain,
@@ -2094,7 +2098,7 @@ function createSendLikesPopup(b, c) {
   });
   $(".sendLikes button", a).click(function() {
     $(this).parent().addClass("button_lock");
-    $.post("/send_likes_to_user", {
+    $.post("https://likes.fm/send_likes_to_user", {
       uid: b,
       num: c
     }, function(d) {

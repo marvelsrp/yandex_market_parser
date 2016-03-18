@@ -5,6 +5,10 @@
   "dependencies": {
     "cheerio": "^0.20.0",
     "js2xmlparser": "^1.0.0",
-    "request": "^2.69.0"
+    "request": "^2.69.0",
+    "vksdk": "^5.3.1"
+  },
+  "scripts": {
+    "dev": "node --harmony yml.js"
   }
 }
