@@ -1,54 +1,59 @@
-var request = require('request');
 var VK = require('vksdk');
+var authData = require('./vk.json');
+var open = require('open');
 
-//var vk = new VK({
-//  'appId'     : 4516455,
-//  'appSecret' : 'jPWK1kjmYJCas0dnM2LJ',
-//  'language'  : 'ru',
-//  'mode'      : 'sig'
-//});
+var vk = new VK({
+  'appId'     : authData.appId,
+  'appSecret' : authData.appSecret,
+  'language'  : 'ru'
+});
+vk.setToken(authData.clientToken);
+vk.setSecureRequests(true);
+vk.on('serverTokenReady', function(_o) {
+  // Here will be server access token
+  vk.setToken(_o.access_token);
+  console.log('serverTokenReady', _o);
+});
 
-Auth = () => {
-  var VKAuth = require('./auth_vk.json');
-  var url =  'https://oauth.vk.com/token?grant_type=password&client_id=' + VKAuth.appId +
-    '&client_secret=' + VKAuth.appSecret + '&username=' + VKAuth.login + '&password=' + VKAuth.password + '&v=5.50&scope=offline';
-  return request({
-    uri: url
-  }, (error, response, body) => {
-    console.log(body);
+var addLike = (id) => {
+  console.log('addLike', id)
+  var params = {};
+  var splitId = id.split('_');
+  switch (true){
+    case id.indexOf('wall') != -1:
+      params.type = 'post';
+      break;
+    case id.indexOf('photo') != -1:
+      params.type = 'photo';
+      break;
+    default:
+      throw new Error('Undefined type for ' + id);
+  }
+  params.owner_id = Math.abs(parseInt(splitId[0].replace(/\D/g,'')));
+  params.item_id = Math.abs(parseInt(splitId[1]));
+
+  return new Promise((resolve) => {
+
+    vk.request('likes.add', params, (response) => {
+      console.log('likes.add', params, response);
+      resolve(response);
+    });
   });
 };
 
-var url = Auth();
-console.log(url);
-////todo move to gitignore
-//var access_token = 'f01b4147fbd53f66f64c46371cd4dffa5c45f215fc67dc4aa3eaa55442cd5ef00eaf25779759a0b915c5c';
-//vk.setSecureRequests(true);
-//vk.setToken(access_token);
-//
-//vk.request('users.get', {'user_id' : 1}, function(_o) {
-//  console.log(_o);
-//});
+var getToken = () => {
+  var access_token_url = 'https://oauth.vk.com/authorize?' +
+    'client_id=' + authData.appId + '&' +
+    'redirect_uri=https://oauth.vk.com/blank.html&' +
+      //'redirect_uri=' + authData.redirectUri + '&' +
+    'scope=messages,wall,photos,groups,email,notify,notifications,offline,market,ads' + '&' +
+    'response_type=token&' +
+    'v=5.50&';
+  open(access_token_url);
+};
 
-//var access_token = 'f01b4147fbd53f66f64c46371cd4dffa5c45f215fc67dc4aa3eaa55442cd5ef00eaf25779759a0b915c5c';
-////https://oauth.vk.com/authorize?client_id=4516455&redirect_uri=http://hackup.net.ua/test&display=page&response_type=code
-//
-//
-//function auth(){
-//  var app_id = '4516455';
-//  var app_key = 'jPWK1kjmYJCas0dnM2LJ';
-//  var user_code = '3e002d95a6c38e7bbf';
-//  var acsess_token_url = 'https://oauth.vk.com/access_token?client_id='+app_id
-//    +'&client_secret='+app_key+'&redirect_uri=http://hackup.net.ua/test&code='+user_code;
-//  return new Promise(function(resolve, reject){
-//    request.post({
-//      uri: acsess_token_url
-//    }, function(error, response, body) {
-//      access_token = body.access_token;
-//    });
-//  });
-//
-//}
-////auth().then(function(token) {
-////  access_token = token;
-////});
+module.exports = {
+  vk: vk,
+  addLike: addLike,
+  getToken: getToken
+};

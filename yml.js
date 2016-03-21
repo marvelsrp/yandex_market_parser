@@ -2,10 +2,16 @@ var PARSER = require('./parser');
 var parser = new PARSER();
 var js2xmlparser = require('js2xmlparser');
 var fs = require('fs');
-
+function humanList(data){
+  for(var i in data){
+    console.log(data[i]);
+  }
+}
 parser.getLinks().then(function() {
   return parser.getCatalog();
 }).then(function(data) {
+  humanList(parser.categories_names);
+  humanList(parser.offers_names);
   var xml = js2xmlparser('yml_catalog', data, {
     arrayMap: {
       currencies: 'currency',

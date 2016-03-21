@@ -10,6 +10,8 @@ class Parser {
   constructor() {
     this.offers_links = [];
     this.categories_links = [];
+    this.offers_names = [];
+    this.categories_names = [];
   }
   getLinks() {
     console.log('getLinks');
@@ -147,7 +149,7 @@ class Parser {
               offer.picture.push(src);
             }
           });
-
+          this.offers_names.push(offer.name);
           offers.push(offer);
           if (nextIndex === links.length) {
             console.log('getOffers resolve');
@@ -182,6 +184,7 @@ class Parser {
             },
             '#': name.substr(7, name.length - 1)
           };
+          this.categories_names.push(category.name);
           categories.push(category);
           if (nextIndex === links.length) {
             console.log('getCategories resolve');

@@ -1,3 +1,4 @@
 node_modules
 .idea
-auth_vk.json
+vk.json
+likesFM.json
