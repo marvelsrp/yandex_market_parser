@@ -18,7 +18,7 @@ var getOffers = () => {
 };
 
 var doOffers = (id, type) => {
-  console.log('doOffers', id);
+  console.log('doOffers', id + '.' + type);
 
   return new Promise((resolve) => {
     var url = 'https://likes.fm/do_offers?entities%5B%5D=' + id + '.' + type + '&client_id=' + authData.clientId + '&viewer_id=' + authData.viewerId;

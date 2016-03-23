@@ -34,13 +34,9 @@ var like = (id) => {
   if (params.owner_id < 0) {
     return Promise.reject('owner_id < 0');
   }
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {resolve('timeout');}, 5000);
-    vk.request('likes.add', params, (response) => {
-      resolve(response);
-    }, (e) => {
-      reject('reject',e);
-    });
+  return vk.request('likes.add', params, (response) => {
+    console.log('likes.add', response);
+    return Promise.resolve();
   });
 };
 
@@ -49,18 +45,9 @@ var repost = (id) => {
     object: id
   };
 
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {resolve('timeout');}, 5000);
-    vk.request('wall.repost', params, (response) => {
-      if (response.hasOwnProperty('success')){
-        resolve(response);
-      } else {
-        reject(response);
-      }
-
-    }, (e) => {
-      reject('reject',e);
-    });
+  return vk.request('wall.repost', params, (response) => {
+    console.log('wall.repost', response);
+    return (response.hasOwnProperty('success')) ?  Promise.resolve() : Promise.reject();
   });
 };
 
@@ -69,7 +56,21 @@ var joinGroup = (id) => {
     group_id: parseInt(id.replace(/\D/g,''))
   };
 
-  return vk.request('groups.join', params);
+  return vk.request('groups.join', params, (response) => {
+    console.log('groups.join', response);
+    return Promise.resolve();
+  });
+};
+
+var addFriend = (id) => {
+  var params = {
+    user_id: parseInt(id.replace(/\D/g,''))
+  };
+
+  return vk.request('friends.add', params, (response) => {
+    console.log('friends.add', response);
+    return Promise.resolve();
+  });
 };
 
 var getToken = () => {
@@ -77,7 +78,7 @@ var getToken = () => {
     'client_id=' + authData.appId + '&' +
     'redirect_uri=https://oauth.vk.com/blank.html&' +
       //'redirect_uri=' + authData.redirectUri + '&' +
-    'scope=messages,wall,photos,groups,email,notify,notifications,offline,market,ads' + '&' +
+    'scope=messages,wall,photos,groups,friends,email,notify,notifications,offline,market,ads' + '&' +
     'response_type=token&' +
     'v=5.50&';
   open(access_token_url);
@@ -88,5 +89,6 @@ module.exports = {
   like: like,
   repost: repost,
   joinGroup: joinGroup,
+  addFriend: addFriend,
   getToken: getToken
 };
