@@ -16,7 +16,7 @@ vk.on('serverTokenReady', function(_o) {
 });
 
 var addLike = (id) => {
-  console.log('addLike', id)
+
   var params = {};
   var splitId = id.split('_');
   switch (true){
@@ -29,14 +29,19 @@ var addLike = (id) => {
     default:
       throw new Error('Undefined type for ' + id);
   }
-  params.owner_id = Math.abs(parseInt(splitId[0].replace(/\D/g,'')));
-  params.item_id = Math.abs(parseInt(splitId[1]));
-
-  return new Promise((resolve) => {
-
+  params.owner_id = parseInt(splitId[0].replace(/\D/g,''));
+  params.item_id = parseInt(splitId[1]);
+  if (params.owner_id < 0){
+    return Promise.reject();
+  }
+  console.log('addLike', id, params.owner_id, params.item_id);
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {resolve('timeout')}, 5000);
     vk.request('likes.add', params, (response) => {
       console.log('likes.add', params, response);
       resolve(response);
+    }, (e) => {
+      resolve('reject',e);
     });
   });
 };

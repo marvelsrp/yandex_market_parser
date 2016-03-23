@@ -137,7 +137,7 @@ function initOffers() {
       c.sx = viewer_profile.sex
     }
     $.ajax({
-      url: "/get_offers", data: d ? c : {}, global: false, type: "POST", success: function (e) {
+      url: "https://likes.fm/get_offers", data: d ? c : {}, global: false, type: "POST", success: function (e) {
         processOffers(e, $("#soundSwitch").hasClass("on") && !d)
       }
     })
@@ -169,7 +169,7 @@ function createAgreementPopup(d, c, e, b) {
   }
   $(".accept button", a).click(function () {
     $(this).parent().addClass("button_lock");
-    $.get("/accept_agreement", {type: c}, function (f) {
+    $.get("https://likes.fm/accept_agreement", {type: c}, function (f) {
       viewer_profile.agreement[c] = f;
       b();
       _.defer(function () {
@@ -407,11 +407,12 @@ var saveErrors = {
 };
 var res;
 function buyOffer(a, d, b, f) {
+  console.log('buyOffer', a,d ,b,f);
   numBuyOffers += 1;
   var e = b * cur_offer_price[d];
 
   function h() {
-    return $.post("/save_offer", _.extend({
+    return $.post("https://likes.fm/save_offer", _.extend({
       entity: a,
       type: d,
       num: b,
@@ -590,7 +591,7 @@ function buyModulesCreator(a, n, m) {
 
   function c() {
     $.ajax({
-      url: "/get_cities_ids", data: _.extend({type: n}, offersSettings[n]), global: false, success: function (q) {
+      url: "https://likes.fmget_cities_ids", data: _.extend({type: n}, offersSettings[n]), global: false, success: function (q) {
         q = _.without(q.cities, viewer_profile.city);
         if (increaseCity && _.indexOf(q, increaseCity) < 0) {
           q.push(increaseCity)
@@ -737,7 +738,7 @@ function buyModulesCreator(a, n, m) {
       e("Подождите. Пересчёт цены с учётом таргетинга..");
       a.addClass("price_getting");
       $.ajax({
-        url: "/get_offer_price",
+        url: "https://likes.fm/get_offer_price",
         data: _.extend({type: n}, q),
         global: false,
         success: r,
@@ -951,7 +952,7 @@ function buyLikesModulesCreator(g, b) {
         function z() {
           m.show();
           createPopup("Вы пытаетесь прорекламировать вредоносный сайт", "#linkPenaltyTPL", {type: a});
-          return $.ajax({url: "/penalty_link", global: false, type: "POST"})
+          return $.ajax({url: "https://likes.fm/penalty_link", global: false, type: "POST"})
         }
 
         switch (u[1]) {
@@ -1384,7 +1385,7 @@ modulesDescriptors.repostOffersOverview = _.extend(_.clone(modulesDescriptors.li
 });
 $(document).delegate("a.open_offer", "mouseup", function (b) {
   var a = $(this).closest(".offer").attr("entity") + "." + $(this).closest(".module,.box_body").attr("type");
-  $.ajax({url: "/open_offer", data: {entity: a}, global: false});
+  $.ajax({url: "https://likes.fm/open_offer", data: {entity: a}, global: false});
   if (_.include(openedOffers, a)) {
     return
   }
@@ -1402,7 +1403,7 @@ $(document).delegate(".line_cell .x_button", "click", function () {
   removeOffers([a + "." + b]);
   updateDisplayOffers(b);
   closedOffers[b].push(a);
-  $.ajax({url: "/close_offer", data: {entity: a + "." + b}, global: false})
+  $.ajax({url: "https://likes.fm/close_offer", data: {entity: a + "." + b}, global: false})
 });
 $(document).delegate(".x_button:visible", "mouseenter", function () {
   $(this).stop().fadeTo("fast", 1)
@@ -1428,7 +1429,7 @@ $(document).delegate(".save_vk_token button", "click", function () {
     return $(".error", c).html(!vk_app_connected ? 'Сначала необходимо нажать кнопку "Подключить приложение"' : "Вставьте текст из адресной строки приложения в текстовое поле ниже").slideDown()
   }
   $(".error", c).slideUp();
-  $.get("/save_vk_token", {token: a}, function (d) {
+  $.get("https://likes.fm/save_vk_token", {token: a}, function (d) {
     if (d == "bad_token") {
       b.removeClass("button_lock");
       $(".error", c).html('Вы вставили неверный текст.<br>Нажмите кнопку "Подключить приложение" ещё раз и скопируйте текст из адресной строки появившегося окна в текстовое поле ниже:').slideDown()
@@ -1446,7 +1447,7 @@ function checkBlacklist(a, c) {
   vk_api("wall.get", {owner_id: offerRegexp[b].exec(a)[2].split("_")[0], count: 1}, function (d) {
     if (d.error && d.error.error_code == 15) {
       $.ajax({
-        url: "/penalty_blacklist",
+        url: "https://likes.fm/penalty_blacklist",
         data: {entity: a + "." + b},
         global: false,
         type: "POST",
@@ -1473,7 +1474,7 @@ function blockPopupClose(a, b) {
     $(".profile_menu").css({zIndex: 3000});
     blockMaskClose = false;
     if (b) {
-      $.ajax({url: "/reset_penalty_popup", data: {type: $(".penaltyPopup", a).attr("type")}, global: false})
+      $.ajax({url: "https://likes.fm/reset_penalty_popup", data: {type: $(".penaltyPopup", a).attr("type")}, global: false})
     }
   })
 }
@@ -1511,7 +1512,7 @@ function createPenaltyPopup(d, c) {
     } else {
       $(".penaltyWarnings", a).append(" и " + penaltyReason[i][1]);
       $(".penaltyUrls", a).append($("<div>и <b>" + penaltyReason[i][0] + '</b>:<div class="' + i + '_urls">' + urlize("http://vk.com/" + h.split(".")[0]) + "</div></div><br>").hide().fadeIn())
-    }
+    }с
   });
   var f = getOffersDict(d);
   if (f.group) {
@@ -1559,7 +1560,7 @@ function recheckOffersStep() {
     check_offers(viewer_profile.check_offers, function (c) {
       b = b.concat(c);
       $.ajax({
-        url: "/penalty_offers", data: {entities: b}, global: false, type: "POST", success: function (d) {
+        url: "https://likes.fm/penalty_offers", data: {entities: b}, global: false, type: "POST", success: function (d) {
           createPenaltyPopup(b, d)
         }
       })
@@ -1630,7 +1631,7 @@ function doOffers(h, c) {
 
   f(true);
   $.ajax({
-    url: "/do_offers", data: _.extend({
+    url: "https://likes.fm/do_offers", data: _.extend({
       entities: h, domain: viewer_profile.domain, onError: function () {
         return f
       }
@@ -1802,7 +1803,7 @@ function createSendLikesPopup(b, c) {
   var a = createPopup("Владелец странички ограничил возможность накрутки лайков", "#noLikeTPL", {price: c});
   $(".sendLikes button", a).click(function () {
     $(this).parent().addClass("button_lock");
-    $.post("/send_likes_to_user", {uid: b, num: c}, function (d) {
+    $.post("https://likes.fm/send_likes_to_user", {uid: b, num: c}, function (d) {
       processPrepaid(d);
       _.defer(function () {
         $("button.close", a).click()
