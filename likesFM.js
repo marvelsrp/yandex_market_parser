@@ -1,16 +1,7 @@
 var open = require('open');
 var request = require('request');
 var authData = require('./likesFM.json');
-function sleep(time) {
-  console.log('sleep', time);
-  return new Promise((resolve) => {
-    var stop = new Date().getTime();
-    while (new Date().getTime() < stop + time) {
 
-    }
-    resolve();
-  });
-}
 
 var getOffers = () => {
   console.log('getOffers');
@@ -26,16 +17,14 @@ var getOffers = () => {
 };
 
 var doOffers = (id) => {
-  sleep(1000).then(() => {
-    console.log('doOffers', id);
-    return new Promise((resolve) => {
-      request.post({
-        uri: 'https://likes.fm/do_offers?entities[]=' + id + '&client_id=' + authData.clientId + '&viewer_id=' + authData.viewerId,
-        headers: authData.headers
-      }, (error, response, body) => {
-        console.log(body);
-        resolve();
-      });
+  console.log('doOffers', id);
+  return new Promise((resolve) => {
+    request.post({
+      uri: 'https://likes.fm/do_offers?entities[]=' + id + '&client_id=' + authData.clientId + '&viewer_id=' + authData.viewerId,
+      headers: authData.headers
+    }, (error, response, body) => {
+      console.log(body);
+      resolve();
     });
   });
 
@@ -57,6 +46,12 @@ var openOffer = (id, type) => {
     //https://likes.fm/open_offer?client_id=847&viewer_id=12640542&entity=photo323047090_405666869.like&_=1458577177235
     //https://likes.fm/open_offer?client_id=847&viewer_id=12640542&entity=photo249645972_405622807.like&_=1458577433164
 
+    /**
+     * GET https://likes.fm/open_offer?client_id=480&viewer_id=12640542&entity=photo163197664_384097906.like&_=1458634535571
+     * POST https://likes.fm/do_offers?entities%5B%5D=photo163197664_384097906.like&client_id=480&viewer_id=12640542
+     * POST https://likes.fm/do_offers?entities%5B%5D=photo163197664_384097906.like&client_id=480&viewer_id=12640542
+     */
+
   });
 };
 
@@ -64,11 +59,12 @@ var getState = () => {
   console.log('getState');
   return new Promise((resolve) => {
     var timeStamp =  new Date().getTime();
+    let url = 'https://likes.fm/get_state?client_id=' + authData.clientId + '&viewer_id=' + authData.viewerId + '&_=' + timeStamp;
     request.post({
-      uri: 'https://likes.fm/get_state?client_id=' + authData.clientId + '&viewer_id=' + authData.viewerId + '&_=' + timeStamp,
+      uri: url,
       headers: authData.headers
     }, (error, response, body) => {
-      console.log(body);
+      console.log(url, body);
       resolve();
     });
   });

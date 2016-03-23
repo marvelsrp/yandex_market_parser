@@ -91,17 +91,16 @@ var offersCities = {};
 var closedOffers = {};
 var offersDict = {};
 var offersSettings = {};
-_.each(offerTypes, function(a) {
+_.each(offerTypes, function (a) {
   offersList[a] = [];
   offersCities[a] = [];
   closedOffers[a] = [];
   offersDict[a] = {};
   offersSettings[a] = {}
 });
-
 function getOffersDict(b) {
   var a = {};
-  _.each(b, function(c) {
+  _.each(b, function (c) {
     var d = c.split(".")[1];
     if (!a[d]) {
       a[d] = []
@@ -110,17 +109,15 @@ function getOffersDict(b) {
   });
   return a
 }
-
 function getOpenedOffers(b) {
   var a = [];
-  _.each(openedOffers, function(c) {
+  _.each(openedOffers, function (c) {
     if (c.split(".")[1] == b) {
       a.push(c.split(".")[0])
     }
   });
   return a
 }
-
 function initOffers() {
   function b() {
     for (var c in offer_price) {
@@ -140,53 +137,42 @@ function initOffers() {
       c.sx = viewer_profile.sex
     }
     $.ajax({
-      url: "https://likes.fm/get_offers",
-      data: d ? c : {},
-      global: false,
-      type: "POST",
-      success: function(e) {
+      url: "/get_offers", data: d ? c : {}, global: false, type: "POST", success: function (e) {
         processOffers(e, $("#soundSwitch").hasClass("on") && !d)
       }
     })
   }
+
   mouseMoveDt = 0;
-  $(document).mousemove(function() {
+  $(document).mousemove(function () {
     mouseMoveDt = +new Date
   });
   a(true);
   setInterval(a, 5000);
   recheckOffers();
   if (viewer_profile.agreement.sub) {
-    setTimeout(function() {
+    setTimeout(function () {
       updateDisplayOffers("sub")
     }, 700)
   }
-  $(document).delegate(".agreement", "click", function(c) {
+  $(document).delegate(".agreement", "click", function (c) {
     createAgreementPopup("Прочтите, перед тем как начать пользоваться разделом", $(this).attr("type"), null, a);
     c.preventDefault();
     return false
   })
 }
-
 function createAgreementPopup(d, c, e, b) {
   var a = createPopup(d, "#" + c + "AgreementTPL");
-  $(".tooltipHelper", a).tooltip({
-    effect: "slide",
-    position: ["bottom", "center"],
-    offset: [15, 0],
-    relative: true
-  });
+  $(".tooltipHelper", a).tooltip({effect: "slide", position: ["bottom", "center"], offset: [15, 0], relative: true});
   if (e) {
     e(a)
   }
-  $(".accept button", a).click(function() {
+  $(".accept button", a).click(function () {
     $(this).parent().addClass("button_lock");
-    $.get("/accept_agreement", {
-      type: c
-    }, function(f) {
+    $.get("/accept_agreement", {type: c}, function (f) {
       viewer_profile.agreement[c] = f;
       b();
-      _.defer(function() {
+      _.defer(function () {
         $(".close", a).click()
       })
     })
@@ -197,9 +183,7 @@ var rawSubs = [];
 var subRejects = [];
 var offers_dt = 0;
 var need_vk_token;
-
 function processOffers(a, b) {
-  console.log('processOffers', a, b);
   if (!_.isObject(a) || !a.offers_dt || a.offers_dt < offers_dt) {
     return
   }
@@ -208,20 +192,20 @@ function processOffers(a, b) {
     $('.module[type="poll"] .offer.private').remove()
   }
   need_vk_token = a.need_vk_token;
-  _.each(offerTypes, function(c) {
+  _.each(offerTypes, function (c) {
     if (!a[c] || !_.include(["like"], c) && !viewer_profile.agreement[c]) {
       return updateDisplayOffers(c)
     }
-    a[c] = _.filter(a[c], function(d) {
+    a[c] = _.filter(a[c], function (d) {
       return !_.include(closedOffers[c], d.id)
     });
     if (c == "sub") {
-      a[c] = _.filter(a[c], function(d) {
+      a[c] = _.filter(a[c], function (d) {
         return !_.include(subRejects, d.id)
       });
       rawSubs = _.pluck(a[c], "id");
       offersList[c] = _.intersection(offersList[c], rawSubs);
-      _.each(_.difference(rawSubs, offersList[c], subRequests), function(d) {
+      _.each(_.difference(rawSubs, offersList[c], subRequests), function (d) {
         if (_.include(viewer_profile.friends_uids, parseInt(d.substr(2)))) {
           subRejects = _.union(subRejects, d)
         } else {
@@ -229,7 +213,7 @@ function processOffers(a, b) {
           $.getJSON("https://api.vk.com/method/users.getFollowers?callback=?", {
             user_id: d.substr(2),
             count: 1000
-          }, function(g) {
+          }, function (g) {
             if (_.include(g.response.items, viewer_profile.uid)) {
               subRejects = _.union(subRejects, d);
               subRequests = _.without(subRequests, d)
@@ -243,7 +227,7 @@ function processOffers(a, b) {
                     count: 1000
                   }))
                 }
-                $.when.apply(this, f).always(function() {
+                $.when.apply(this, f).always(function () {
                   subRequests = _.without(subRequests, d);
                   if (!_.include(rawSubs, d)) {
                     return
@@ -265,7 +249,7 @@ function processOffers(a, b) {
     } else {
       offersList[c] = _.pluck(a[c], "id")
     }
-    _.each(a[c], function(d) {
+    _.each(a[c], function (d) {
       if (!offersDict[c][d.id] || d.reward > offersDict[c][d.id].reward) {
         offersDict[c][d.id] = d
       }
@@ -278,14 +262,13 @@ function processOffers(a, b) {
     }
   })
 }
-
 function replaceOffers(a) {
   a = $(a);
   var d = a.attr("type");
-  var e = _.difference(offersList[d], _.map($(".offer", a), function(f) {
+  var e = _.difference(offersList[d], _.map($(".offer", a), function (f) {
     return $(f).attr("entity")
   }));
-  var b = _.difference(_.map($(".offer:not(.closed)", a), function(f) {
+  var b = _.difference(_.map($(".offer:not(.closed)", a), function (f) {
     return $(f).attr("entity")
   }), getOpenedOffers(d).concat(offersList[d]));
   e = e.slice(0, b.length);
@@ -294,94 +277,75 @@ function replaceOffers(a) {
     $(".offer:not(.closed)[entity=" + b[c] + "]", a).after(createOfferCell(e[c], d)).remove()
   }
 }
-
 function removeOffers(a) {
   if (_.isEmpty(a)) {
     return
   }
   openedOffers = _.difference(openedOffers, a);
-  _.each(a, function(b) {
+  _.each(a, function (b) {
     var c = b.split(".")[1];
     b = b.split(".")[0];
     offersList[c] = _.without(offersList[c], b);
-    $(".module[type=" + c + "] .offer:not(.closed)[entity=" + b + "]").slideUp(function() {
+    $(".module[type=" + c + "] .offer:not(.closed)[entity=" + b + "]").slideUp(function () {
       var d = $(this).closest(".module_body");
       $(this).remove();
       if ($(".offer", d).length == 0) {
         setEmptyOffersModule(c)
       } else {
-        $("span.do_offer", d).each(function() {
+        $("span.do_offer", d).each(function () {
           $(this).after($(this).clone()).remove()
         })
       }
     }).addClass("closed");
-    $(".box_body[type=" + c + "] .offer:not(.closed)[entity=" + b + "]").animate({
-      width: 0
-    }, function() {
+    $(".box_body[type=" + c + "] .offer:not(.closed)[entity=" + b + "]").animate({width: 0}, function () {
       $(this).remove();
       if (offersList[c].length <= ($.bbq.getState("page") - 1) * 21) {
-        $.bbq.pushState({
-          page: Math.ceil(offersList[c].length / 21) || 1
-        })
+        $.bbq.pushState({page: Math.ceil(offersList[c].length / 21) || 1})
       }
       lastHash = ""
     }).addClass("closed")
   })
 }
-
 function createOfferCell(b, a) {
   var c = $(_.template($(_.include(["comment", "poll"], a) ? "#" + a + "OfferCellTPL" : "#offerCellTPL").html(), {
     offer: b,
     type: a
   }));
   if (_.include(["comment", "poll"], a)) {
-    _.defer(function() {
-      var d = $(".info_msg div", c).click(function() {
+    _.defer(function () {
+      var d = $(".info_msg div", c).click(function () {
         $(this).selectText()
       }).height();
       if (d > 102) {
-        $("span", $(".info_msg div", c).height(102).parent().css({
-          paddingBottom: 3
-        })).show().mouseenter(function() {
-          $(this).stop().animate({
-            color: "#2B587A"
-          }, "fast")
-        }).mouseleave(function() {
-          $(this).stop().animate({
-            color: "#91A4B8"
-          }, "fast")
-        }).click(function() {
-          var e = $('<div class="info_msg overlay">').text($(".info_msg div", c).text()).mouseleave(function() {
+        $("span", $(".info_msg div", c).height(102).parent().css({paddingBottom: 3})).show().mouseenter(function () {
+          $(this).stop().animate({color: "#2B587A"}, "fast")
+        }).mouseleave(function () {
+          $(this).stop().animate({color: "#91A4B8"}, "fast")
+        }).click(function () {
+          var e = $('<div class="info_msg overlay">').text($(".info_msg div", c).text()).mouseleave(function () {
             $(this).remove()
-          }).click(function() {
+          }).click(function () {
             $(this).selectText()
-          }).animate({
-            height: d
-          }, "fast");
+          }).animate({height: d}, "fast");
           $(".info_msg", c).before(e)
         })
       }
-      c.css({
-        marginTop: (c.parent().height() - c.innerHeight()) * 0.5
-      });
-      $(".x_button", c).css({
-        top: parseInt(c.css("marginTop")) + 31
-      })
+      c.css({marginTop: (c.parent().height() - c.innerHeight()) * 0.5});
+      $(".x_button", c).css({top: parseInt(c.css("marginTop")) + 31})
     })
   }
   return c
 }
-
 function updateDisplayOffers(d) {
   var c = 0;
   if (offersList[d].length > 0) {
     $(".module[type=" + d + "]").removeClass("empty")
   }
   var e = _.shuffle(offersList[d]);
-  e.sort(function(g, f) {
+  e.sort(function (g, f) {
     return offersDict[d][f].reward - offersDict[d][g].reward
   });
-  var a = _.uniq(_.map($(".offer:not(.closed)", ".box_body[type=" + d + "],.module[type=" + d + "]"), function(f) {
+  var a = _.uniq(_.map($(".offer:not(.closed)", ".box_body[type=" + d + "],.module[type=" + d + "]"), function (f) {
     return $(f).attr("entity")
   }));
   for (var b in e) {
@@ -409,7 +373,7 @@ function updateDisplayOffers(d) {
   if ($(".module[type=" + d + "] .offer").length == 0) {
     setEmptyOffersModule(d)
   }
-  if (_.any(_.map(offerTypes, function(f) {
+  if (_.any(_.map(offerTypes, function (f) {
       return $(".module[type=" + f + "] .offer").length < 5
     }))) {
     $("#soundSwitch").stop().fadeTo(400, 1)
@@ -420,13 +384,10 @@ function updateDisplayOffers(d) {
   }
   return c
 }
-
 function setEmptyOffersModule(a) {
   $(".module[type=" + a + "] .module_body").empty();
   $(".module[type=" + a + "]").addClass("empty");
-  $(".module[type=" + a + "] .module_description").html(_.template($(viewer_profile.agreement[a] || _.include(["like"], a) ? "#emptyOffersModuleTPL" : "#moduleAgreementTPL").html(), {
-    type: a
-  }))
+  $(".module[type=" + a + "] .module_description").html(_.template($(viewer_profile.agreement[a] || _.include(["like"], a) ? "#emptyOffersModuleTPL" : "#moduleAgreementTPL").html(), {type: a}))
 }
 var saveErrors = {
   badOffer: "Для этой <%= offerWords3[entityType] %> нельзя заказать <%= offerSubjects[type][3] %>. Попробуйте заказать <%= offerSubjects[type][3] %> для любой другой <%= offerWords3[entityType] %>.",
@@ -439,25 +400,23 @@ var saveErrors = {
   blockedGroup: "К заблокированной группе нельзя заказать подписчиков. Попробуйте повторить свой заказ в случае, если группа будет разблокирована.",
   groupAppRepost: "В записи, к которой вы пытаетесь заказать репосты, содержится ссылка на приложение, что может быть расценено как спам. Уберите ссылку на приложение из вашей записи на стене, чтобы заказать репосты к ней.",
   removedRepost: "Вы пытаетесь заказать репост к записи, содержащей репост другой записи, которая была удалена.<br>ВКонтакт не пользволяет делать репосты таких записей, поэтому попытайтесь заказать репосты к чему-нибудь ещё.",
-  repostsOidError: function(a) {
+  repostsOidError: function (a) {
     var b = offerRegexp.like.exec(a)[2].split("_")[0];
     return "Указанная запись оставлена не " + (b == viewer_profile.uid ? "вами" : "владельцем стены") + ".<br>ВКонтакт не позволяет делать репосты записей, которые оставил не владелец стены, поэтому прорепостите что-нибудь другое." + (b < 0 ? "<br><br>Записи в группах должны быть отправлены от имени группы, соответственно.<br>Иначе люди не смогут их репостить" : "")
   }
 };
 var res;
-
 function buyOffer(a, d, b, f) {
-  console.log('buyOffer', a, d, b, f);
   numBuyOffers += 1;
   var e = b * cur_offer_price[d];
 
   function h() {
-    return $.post("https://likes.fm/save_offer", _.extend({
+    return $.post("/save_offer", _.extend({
       entity: a,
       type: d,
       num: b,
       is_admin: f
-    }, offersSettings[$.bbq.getState("module").indexOf("Subs") > 0 ? "sub" : d]), function(i) {
+    }, offersSettings[$.bbq.getState("module").indexOf("Subs") > 0 ? "sub" : d]), function (i) {
       if (!i) {
         return
       }
@@ -496,7 +455,7 @@ function buyOffer(a, d, b, f) {
   }
 
   function c(i, j) {
-    createAgreementPopup("Не удаляйте лайки, которые вам поставят!", "likeRemove", function(k) {
+    createAgreementPopup("Не удаляйте лайки, которые вам поставят!", "likeRemove", function (k) {
       if (j) {
         $(".prefix", k).html({
           firstBlPenalty: "Мы зафиксировали, что вы заказывали лайки, но потом по какой-то причине снимали лайки некоторых людей, которые были поставлены вам через Likes.FM<br>",
@@ -504,76 +463,54 @@ function buyOffer(a, d, b, f) {
           blNotify: "Просто напоминаем вам, чтобы вы не забыли.<br>"
         }[j])
       }
-      $("a.setModule", k).click(function() {
-        _.defer(function() {
+      $("a.setModule", k).click(function () {
+        _.defer(function () {
           $(".close", k).click();
-          _.delay(function() {
+          _.delay(function () {
             if (!$(".box_body .hider").hasClass("on")) {
               $(".box_body .hider").click()
             }
           }, 100)
         })
       });
-      k.onClose = function() {
+      k.onClose = function () {
         $(".box_controls .button_blue").show();
         $(".buyAvaLikes").removeClass("button_lock")
       }
     }, i)
   }
+
   g()
 }
-
 function votesToPrice(b, a) {
   return Math.max(0, Math.ceil(Math.round(b - Math.max(a || 0, 0)) * 7 / 10) / 100).toFixed(2)
 }
 var tipOffset = {
-  like: [
-    [0, 0],
-    [0, 0]
-  ],
-  repost: [
-    [0, 0],
-    [0, 0]
-  ],
-  comment: [
-    [0, 0],
-    [0, 0]
-  ],
-  poll: [
-    [0, 0],
-    [0, 0]
-  ],
-  sub: [
-    [0, 0],
-    [13, 13]
-  ],
-  group: [
-    [0, 0],
-    [13, 13]
-  ]
+  like: [[0, 0], [0, 0]],
+  repost: [[0, 0], [0, 0]],
+  comment: [[0, 0], [0, 0]],
+  poll: [[0, 0], [0, 0]],
+  sub: [[0, 0], [13, 13]],
+  group: [[0, 0], [13, 13]]
 };
-var lastAddr = {},
-  lastNum = {};
-
+var lastAddr = {}, lastNum = {};
 function buyModulesCreator(a, n, m) {
   if (m) {
-    setTimeout(function() {
+    setTimeout(function () {
       var q = $("input[placeholder]", a).tooltip({
         effect: "slide",
         position: ["center", "right"],
         offset: [40, 10],
         relative: true,
-        events: {
-          input: "showTooltip,hideTooltip"
-        }
+        events: {input: "showTooltip,hideTooltip"}
       });
       if (!lastAddr[n] || lastAddr[n] == m) {
         q.trigger("showTooltip")
       }
     }, 0);
-    $("input[placeholder]", a).val(m).attr("placeholder", m).on("paste propertychange input", function() {
+    $("input[placeholder]", a).val(m).attr("placeholder", m).on("paste propertychange input", function () {
       var q = $(this);
-      setTimeout(function() {
+      setTimeout(function () {
         if (q.val() == m) {
           q.trigger("showTooltip")
         } else {
@@ -586,17 +523,16 @@ function buyModulesCreator(a, n, m) {
   if (lastAddr[n]) {
     $("input[placeholder]", a).eq(0).val(lastAddr[n]).trigger("paste")
   }
-  $("input.spinner", a).bind("change keydown", function(r) {
+  $("input.spinner", a).bind("change keydown", function (r) {
     var q = $(this);
-    setTimeout(function() {
+    setTimeout(function () {
       var t = parseInt(q.val() ? q.val() : 0);
       var s = votesToPrice(t * cur_offer_price[n], o());
       $(".cost", a).text("за " + s + " рублей")
     }, 1)
   }).val(lastNum[n] && k() > lastNum[n] && o() >= cur_offer_price[n] ? lastNum[n] : k());
-
   function h(q) {
-    _.defer(function() {
+    _.defer(function () {
       q = q && !$.fx.off;
       if (q) {
         $.fx.off = true
@@ -607,15 +543,9 @@ function buyModulesCreator(a, n, m) {
         $("div[type=speedup]", a).parent().stop().slideDown("fast")
       }
       if (offersSettings[n].limitMin) {
-        $("input.spinner", a).spinner({
-          min: Math.floor(1000 / speedup_offer_price[n]),
-          max: 999999
-        })
+        $("input.spinner", a).spinner({min: Math.floor(1000 / speedup_offer_price[n]), max: 999999})
       } else {
-        $("input.spinner", a).spinner({
-          min: offer_min[n],
-          max: 999999
-        })
+        $("input.spinner", a).spinner({min: offer_min[n], max: 999999})
       }
       $(".timeHelp", a)[cur_offer_price[n] > offer_price[n] * 3 ? "slideDown" : "slideUp"](200);
       if (q) {
@@ -625,12 +555,10 @@ function buyModulesCreator(a, n, m) {
   }
 
   function o() {
-    viewer_profile.paid = 1000;
     return n != "like" && viewer_profile.sub_penalty ? viewer_profile.paid : viewer_profile.prepaid
   }
 
   function k(q) {
-    console.log('k()', q, cur_offer_price[n], n);
     q = q || cur_offer_price[n];
     return Math.floor((o() >= q ? o() : 1000) / q)
   }
@@ -638,22 +566,15 @@ function buyModulesCreator(a, n, m) {
   function e(q) {
     $(".footer", a).html(q ? q : "Бесплатных " + offerSubjects[n][2] + (cur_offer_price[n] != offer_price[n] ? " с настройками" : "") + ' у вас: <a href="#" class="setLikes imgUnderline"><div class="icon ' + (n == "group" ? "sub" : n) + '"></div><b>' + k() + "</b></a>")[o() >= cur_offer_price[n] ? "show" : "hide"]()
   }
-  $(".box_controls", a).append('<div style="margin-left: 52px; margin-top: 7px; text-align: center; display: none" class="footer"></div>').find(".progress").css({
-    "float": "left"
-  }).end().find("tbody").html(_.template($("#yesNoControlsTPL").html())).find(".button_blue button").text("Купить").closest("td").css({
-    width: 79
-  });
-  a.css({
-    width: 500,
-    marginLeft: -500 / 2
-  }).delegate(".setLikes", "click", function(q) {
+
+  $(".box_controls", a).append('<div style="margin-left: 52px; margin-top: 7px; text-align: center; display: none" class="footer"></div>').find(".progress").css({"float": "left"}).end().find("tbody").html(_.template($("#yesNoControlsTPL").html())).find(".button_blue button").text("Купить").closest("td").css({width: 79});
+  a.css({width: 500, marginLeft: -500 / 2}).delegate(".setLikes", "click", function (q) {
     $("input.spinner", a).val($("b", this).text()).change();
     q.preventDefault();
     return false
-  }).onClose = function() {
+  }).onClose = function () {
     clearInterval(b)
   };
-
   function j() {
     $(".city .results_container", a).html($(".results_container", _.template($("#comboboxTPL").html(), {
       items: offersCities[n],
@@ -661,7 +582,7 @@ function buyModulesCreator(a, n, m) {
       maxHeight: 201
     })));
     if (offersCities[n] && offersSettings[n].city && $(".city input").val() == "Загрузка..") {
-      $(".city input").val(htmlDecode(_.find(offersCities[n], function(q) {
+      $(".city input").val(htmlDecode(_.find(offersCities[n], function (q) {
         return q.cid == offersSettings[n].city
       }).name))
     }
@@ -669,12 +590,7 @@ function buyModulesCreator(a, n, m) {
 
   function c() {
     $.ajax({
-      url: "https://likes.fm/get_cities_ids",
-      data: _.extend({
-        type: n
-      }, offersSettings[n]),
-      global: false,
-      success: function(q) {
+      url: "/get_cities_ids", data: _.extend({type: n}, offersSettings[n]), global: false, success: function (q) {
         q = _.without(q.cities, viewer_profile.city);
         if (increaseCity && _.indexOf(q, increaseCity) < 0) {
           q.push(increaseCity)
@@ -682,43 +598,31 @@ function buyModulesCreator(a, n, m) {
         if (viewer_profile.city) {
           q.unshift(viewer_profile.city)
         }
-        $.getJSON("https://api.vk.com/method/places.getCityById?callback=?", {
-          cids: q.join(",")
-        }, function(s) {
-          _.each(s.response, function(t) {
+        $.getJSON("https://api.vk.com/method/places.getCityById?callback=?", {cids: q.join(",")}, function (s) {
+          _.each(s.response, function (t) {
             t.index = _.indexOf(q, parseInt(t.cid))
           });
-          s = s.response.sort(function(u, t) {
+          s = s.response.sort(function (u, t) {
             return u.index - t.index
           });
-          var r = [{
-            name: "Вся Россия",
-            cid: -1
-          }, {
-            name: "Вся Украина",
-            cid: -2
-          }, {
+          var r = [{name: "Вся Россия", cid: -1}, {name: "Вся Украина", cid: -2}, {
             name: "Вся Беларусь",
             cid: -3
-          }, {
-            name: "Весь Казахстан",
-            cid: -4
-          }];
+          }, {name: "Весь Казахстан", cid: -4}];
           if (s.length && s[0].cid == viewer_profile.city) {
             s[0].name = "<b>" + s[0].name + "</b>";
             s = s.slice(0, 1).concat(r).concat(s.slice(1))
           } else {
             s = r.concat(s)
           }
-          s = [{
-            name: "Любой"
-          }].concat(s);
+          s = [{name: "Любой"}].concat(s);
           offersCities[n] = s;
           j()
         })
       }
     })
   }
+
   if (_.isEmpty(offersCities[n])) {
     c()
   } else {
@@ -729,12 +633,9 @@ function buyModulesCreator(a, n, m) {
     position: ["top", "right"],
     offset: [135 + tipOffset[n][1][0], -110 + tipOffset[n][1][1]],
     relative: true,
-    events: {
-      def: "showTooltip,hideTooltip",
-      tooltip: ""
-    }
+    events: {def: "showTooltip,hideTooltip", tooltip: ""}
   });
-  var g = $(".hider", a).click(function() {
+  var g = $(".hider", a).click(function () {
     $(this).toggleClass("on");
     $(".offersSettings.target", a).stop().slideToggle("fast");
     if ($(this).hasClass("on")) {
@@ -749,18 +650,15 @@ function buyModulesCreator(a, n, m) {
     position: ["top", "right"],
     offset: [80, -420],
     relative: true,
-    events: {
-      def: "showTooltip,hideTooltip",
-      tooltip: ""
-    }
+    events: {def: "showTooltip,hideTooltip", tooltip: ""}
   });
 
   function p() {
     $.fx.off = true;
-    $(".selector_container", a).each(function() {
+    $(".selector_container", a).each(function () {
       $("li", this).eq(0).mousedown()
     });
-    $(".checkbox", a).each(function() {
+    $(".checkbox", a).each(function () {
       $(this).removeClass("on")
     });
     if (offersSettings[n].country) {
@@ -770,10 +668,7 @@ function buyModulesCreator(a, n, m) {
       if (_.isArray(offersSettings[n][s])) {
         $(".x_button", $("div[type=" + s + "]", a).empty().parent()).show();
         for (var r = 0; r < offersSettings[n][s].length + 1; r++) {
-          var q = $(_.template($("#varInputTPL").html(), {
-            first: r == 0,
-            type: n
-          }));
+          var q = $(_.template($("#varInputTPL").html(), {first: r == 0, type: n}));
           $("input", q).val(offersSettings[n][s][r]);
           $("div[type=" + s + "]", a).append(q)
         }
@@ -789,6 +684,7 @@ function buyModulesCreator(a, n, m) {
     e();
     $(document).mousedown()
   }
+
   if (_.isEmpty(_.pick(offersSettings[n], settings_fields, "speedup"))) {
     g.trigger("showTooltip")
   } else {
@@ -800,7 +696,6 @@ function buyModulesCreator(a, n, m) {
   h(true);
   e();
   i();
-
   function i(s, t) {
     if ($.fx.off) {
       return
@@ -819,7 +714,6 @@ function buyModulesCreator(a, n, m) {
         delete q[s]
       }
     }
-
     function r(u) {
       d = new Date(new Date() - utcFix - 19798000);
       offersSettings[n] = q;
@@ -836,22 +730,19 @@ function buyModulesCreator(a, n, m) {
       e();
       $("input.spinner", a).change()
     }
+
     if (_.isEmpty(q)) {
-      r({
-        price: offer_price[n]
-      })
+      r({price: offer_price[n]})
     } else {
       e("Подождите. Пересчёт цены с учётом таргетинга..");
       a.addClass("price_getting");
       $.ajax({
-        url: "https://likes.fm/get_offer_price",
-        data: _.extend({
-          type: n
-        }, q),
+        url: "/get_offer_price",
+        data: _.extend({type: n}, q),
         global: false,
         success: r,
         onError: p,
-        complete: function() {
+        complete: function () {
           a.removeClass("price_getting")
         }
       })
@@ -862,7 +753,7 @@ function buyModulesCreator(a, n, m) {
     var q = $(this).closest("div[type]");
     var r = q.attr("type");
     offersSettings[n][r] = [];
-    $("input", q).each(function() {
+    $("input", q).each(function () {
       var s = $.trim($(this).val());
       if (s) {
         offersSettings[n][r].push(s)
@@ -872,93 +763,83 @@ function buyModulesCreator(a, n, m) {
       delete offersSettings[n][r]
     }
   }
-  $(".offersSettings", a).delegate("input", "paste propertychange input", l).delegate("input", "keydown", function() {
+
+  $(".offersSettings", a).delegate("input", "paste propertychange input", l).delegate("input", "keydown", function () {
     var q = this;
-    _.defer(function() {
+    _.defer(function () {
       l.call(q)
     })
-  }).delegate("li", "mousedown", function() {
+  }).delegate("li", "mousedown", function () {
     var q = $(this).closest(".selector_container").attr("type");
     i(q, Number($(this).attr("val")))
-  }).delegate(".radiobtn_container", "click", function() {
+  }).delegate(".radiobtn_container", "click", function () {
     offersSettings[n][$(this).closest("div[type]").attr("type")] = $(this).attr("val")
-  }).delegate(".checkbox", "click", function() {
+  }).delegate(".checkbox", "click", function () {
     var q = $(this);
-    _.defer(function() {
+    _.defer(function () {
       i(q.attr("type"), q.hasClass("on"))
     })
   });
   var d = new Date(new Date() - utcFix - 19798000);
-  var b = setInterval(function() {
+  var b = setInterval(function () {
     var q = new Date(new Date() - utcFix - 19798000);
     if (q.getDate() != d.getDate()) {
       i()
     }
   }, 2000)
 }
-offerPlaceholder = {
-  comment: ["Сюда можно ввести текст ещё одного комментария", "Введите сюда текст первого комментария"]
-};
-
+offerPlaceholder = {comment: ["Сюда можно ввести текст ещё одного комментария", "Введите сюда текст первого комментария"]};
 function buyLikesModulesCreator(g, b) {
   function i(j) {
     return /(wall)([0-9-]+_[0-9]+)/i.exec(j.replace("poll", "wall"))
   }
+
   var a = g.indexOf("Like") > 0 ? "like" : (g.indexOf("Comment") > 0 ? "comment" : (g.indexOf("Poll") > 0 ? "poll" : "repost"));
   if (a == "like") {
     offersSettings[a]["speed"] = 1
   } else {
     if (a == "comment") {
-      $(".offersSettings .x_button").click(function() {
-        $("div[type=comment_vars]", b).html(_.template($("#varInputTPL").html(), {
-          first: true,
-          type: a
-        }));
+      $(".offersSettings .x_button").click(function () {
+        $("div[type=comment_vars]", b).html(_.template($("#varInputTPL").html(), {first: true, type: a}));
         $(this).hide()
       });
-      $(".comment_type", b).delegate("li", "mousedown", function() {
+      $(".comment_type", b).delegate("li", "mousedown", function () {
         var j = $(this).closest(".selector_container").attr("type");
         $("div[type=comment_vars]", b).stop()[$(this).attr("val") == 3 ? "slideDown" : "slideUp"]("fast")
       });
-
       function d() {
-        return $("div[type=comment_vars] input", b).filter(function() {
+        return $("div[type=comment_vars] input", b).filter(function () {
           return !$(this).val().trim()
         }).length
       }
 
       function f() {
         if (!d() && $("div[type=comment_vars] input", b).length < 25) {
-          var j = $(_.template($("#varInputTPL").html(), {
-            type: a
-          })).hide();
+          var j = $(_.template($("#varInputTPL").html(), {type: a})).hide();
           $("div[type=comment_vars]", b).append(j);
-          _.defer(function() {
+          _.defer(function () {
             j.slideDown("fast")
           });
           $(".offersSettings .x_button").stop().fadeTo("fast", 0.3)
         }
       }
-      $("div[type=comment_vars]", b).delegate("input", "paste propertychange input", f).delegate("input", "keydown", function() {
+
+      $("div[type=comment_vars]", b).delegate("input", "paste propertychange input", f).delegate("input", "keydown", function () {
         _.defer(f)
-      }).delegate("input", "focusout", function(k) {
+      }).delegate("input", "focusout", function (k) {
         var j = $("div[type=comment_vars] input", b).length >= 25 && !$(this).val().trim();
         if (d() > 1 || j) {
           if (d() == 2 && $("div[type=comment_vars] input", b).length == 2) {
             $(".offersSettings .x_button").stop().fadeTo("fast", 0)
           }
-          $(this).parent().slideUp("fast", function() {
+          $(this).parent().slideUp("fast", function () {
             $(this).remove();
             if (j) {
               $("div[type=comment_vars] input").keydown()
             }
           });
           if ($("div[type=comment_vars] input", b).get(0) == this) {
-            $("div[type=comment_vars] input", b).eq(1).attr({
-              placeholder: offerPlaceholder[a][1]
-            }).animate({
-              marginTop: 0
-            }, "fast")
+            $("div[type=comment_vars] input", b).eq(1).attr({placeholder: offerPlaceholder[a][1]}).animate({marginTop: 0}, "fast")
           }
         }
       })
@@ -966,7 +847,7 @@ function buyLikesModulesCreator(g, b) {
       if (a == "poll") {
         var e = "";
         var h = true;
-        $("input[placeholder]", b).on("paste propertychange input", _.throttle(function() {
+        $("input[placeholder]", b).on("paste propertychange input", _.throttle(function () {
           var j = i($(this).val());
           if (!j || e != j[0]) {
             e = "";
@@ -976,19 +857,13 @@ function buyLikesModulesCreator(g, b) {
             proxy({
               url: "http://vk.com/wkview.php?act=show&al=1&w=" + j[0].replace("wall", "poll"),
               decode: true
-            }, function(k) {
+            }, function (k) {
               var o = k.indexOf('class="wk_poll_title">');
               if (o < 0) {
                 return
               }
               e = j[0];
-              var n = {
-                title: k.substring(o + 22, k.indexOf("</", o)),
-                vars: [{
-                  val: 0,
-                  text: "Любой вариант"
-                }]
-              };
+              var n = {title: k.substring(o + 22, k.indexOf("</", o)), vars: [{val: 0, text: "Любой вариант"}]};
               var l = 1;
               while (true) {
                 o = k.indexOf('class="wk_poll_text">');
@@ -997,10 +872,7 @@ function buyLikesModulesCreator(g, b) {
                 }
                 var m = k.substring(o + 21, k.indexOf("</", o));
                 o = k.indexOf('id="wk_poll_row_count', o);
-                n.vars.push({
-                  val: l++,
-                  text: m
-                });
+                n.vars.push({val: l++, text: m});
                 k = k.substr(o + 21)
               }
               $(".pollView", b).html(_.template($("#pollViewTPL").html(), n));
@@ -1008,9 +880,7 @@ function buyLikesModulesCreator(g, b) {
               h = false
             })
           }
-        }, 100, {
-          leading: false
-        }))
+        }, 100, {leading: false}))
       }
     }
   }
@@ -1020,11 +890,9 @@ function buyLikesModulesCreator(g, b) {
     position: ["bottom", "center"],
     offset: [19, 0],
     relative: true
-  }).next().css({
-    zIndex: 16
-  });
+  }).next().css({zIndex: 16});
   var c = this;
-  $(".button_blue button", b).click(function() {
+  $(".button_blue button", b).click(function () {
     if (b.hasClass("price_getting")) {
       return false
     }
@@ -1042,20 +910,15 @@ function buyLikesModulesCreator(g, b) {
       $(".error", b).html(s).slideDown();
       $("input[placeholder]", b).focus()
     }
+
     var q = $.trim($("input[placeholder]", b).val());
     if (!q) {
       return l("Введите адрес " + c.title.toLowerCase() + ", " + (a == "like" ? "которую вы хотите пролайкать" : "для " + (a == "poll" ? "которого" : "которой") + " вы хотите получить " + offerSubjects2[a]))
     }
-    var p = {
-      buyPoll: "wall",
-      buyWallLikes: "wall",
-      buyPhotoLikes: "photo",
-      buyVideoLikes: "video"
-    }[c.getType()];
+    var p = {buyPoll: "wall", buyWallLikes: "wall", buyPhotoLikes: "photo", buyVideoLikes: "video"}[c.getType()];
     if (/^\d+$/.exec(q)) {
       q = p + viewer_profile.uid + "_" + q
     }
-
     function r(u) {
       if (!u) {
         return l(_.template($("#" + p + "LinkIncorrectTPL").html(), {}))
@@ -1066,18 +929,16 @@ function buyLikesModulesCreator(g, b) {
       var t = u[2].split("_")[0];
 
       function s() {
-        var w = $(_.template($("#noPollErrorTPL").html(), {
-          entityType: u[1]
-        }));
-        $("a", w).click(function() {
+        var w = $(_.template($("#noPollErrorTPL").html(), {entityType: u[1]}));
+        $("a", w).click(function () {
           lastAddr.like = q
         });
         return l(w)
       }
+
       if (a == "poll" && u[1] != "wall") {
         return s()
       }
-
       function v() {
         var y = t == viewer_profile.uid;
         var x = "Обнаружена попытка подделать кнопку <u>Мне нравится ♥ 10</u> с целью введения в заблуждение пользователей ставящих лайки.<br>Уберите поддельную кнопку <u>Мне нравится ♥ 10</u>, чтобы получить лайки к этой записи.";
@@ -1089,40 +950,24 @@ function buyLikesModulesCreator(g, b) {
 
         function z() {
           m.show();
-          createPopup("Вы пытаетесь прорекламировать вредоносный сайт", "#linkPenaltyTPL", {
-            type: a
-          });
-          return $.ajax({
-            url: "https://likes.fm/penalty_link",
-            global: false,
-            type: "POST"
-          })
+          createPopup("Вы пытаетесь прорекламировать вредоносный сайт", "#linkPenaltyTPL", {type: a});
+          return $.ajax({url: "/penalty_link", global: false, type: "POST"})
         }
+
         switch (u[1]) {
-          case "wall":
-            proxy({
-              url: "http://vk.com/" + u[0],
-              decode: true,
-              loggedIn: true
-            }, function(C) {
+          case"wall":
+            proxy({url: "http://vk.com/" + u[0], decode: true, loggedIn: true}, function (C) {
               C = C.replace(/<script([\w\W]*?)\/script>/ig, "");
               if (autoban_words_re.test(C.substr(0, C.indexOf("replies_wrap"))) && !/travel-blog\.ml/.test(C.substr(0, C.indexOf("replies_wrap")))) {
                 return z()
               }
-              var B = _.template($("#wallPrivacyErrorTPL").html(), {
-                notFound: true,
-                entity: u[0],
-                offerType: a
-              });
+              var B = _.template($("#wallPrivacyErrorTPL").html(), {notFound: true, entity: u[0], offerType: a});
               if (C.indexOf("<title>Error | VK</title>") > 0 || C.indexOf("<title>Error</title>") > 0) {
                 if (C.indexOf("not found") > 0) {
                   return l(B)
                 }
                 if (C.indexOf("hide this page") > 0 || C.indexOf("not allowed to view") > 0 || C.indexOf("Access denied") > 0) {
-                  return l(_.template($("#wallPrivacyErrorTPL").html(), {
-                    isYourProfile: y,
-                    offerType: a
-                  }))
+                  return l(_.template($("#wallPrivacyErrorTPL").html(), {isYourProfile: y, offerType: a}))
                 }
               }
               if (C.indexOf("/wall" + u[2]) < 0 && C.indexOf("same page more than once") < 0) {
@@ -1136,10 +981,7 @@ function buyLikesModulesCreator(g, b) {
                 return l(saveErrors.removedRepost)
               }
               if (a == "comment" && C.indexOf(">Your comment<") < 0) {
-                return l(_.template($("#commentPrivacyErrorTPL").html(), {
-                  isYourProfile: y,
-                  entityType: u[1]
-                }))
+                return l(_.template($("#commentPrivacyErrorTPL").html(), {isYourProfile: y, entityType: u[1]}))
               }
               if (a == "poll" && C.indexOf('class="page_media_poll_wrap"') < 0) {
                 return s()
@@ -1147,12 +989,10 @@ function buyLikesModulesCreator(g, b) {
               if (w(C)) {
                 return l(x)
               }
-              _.defer(function() {
+              _.defer(function () {
                 $(".box_controls .progress", b).show()
               });
-              $.getJSON("https://api.vk.com/method/wall.getById?callback=?", {
-                posts: u[2]
-              }, function(H) {
+              $.getJSON("https://api.vk.com/method/wall.getById?callback=?", {posts: u[2]}, function (H) {
                 if (H.response && H.response.length) {
                   H = H.response[0];
                   if (a == "repost" && H.from_id != H.to_id) {
@@ -1187,18 +1027,16 @@ function buyLikesModulesCreator(g, b) {
                     }
                     var J = F.indexOf(G) + G.length;
                     I.push(unescape(F.substring(J, F.indexOf("&", J))));
-                    E.push($.getJSON("https://api.vk.com/method/utils.checkLink?callback=?", {
-                      url: unescape(F.substring(J, F.indexOf("&", J)))
-                    }));
+                    E.push($.getJSON("https://api.vk.com/method/utils.checkLink?callback=?", {url: unescape(F.substring(J, F.indexOf("&", J)))}));
                     F = F.substr(J)
                   }
-                  _.defer(function() {
+                  _.defer(function () {
                     $(".box_controls .progress", b).show()
                   });
-                  $.when.apply(this, E).always(function() {
+                  $.when.apply(this, E).always(function () {
                     $(".box_controls .progress", b).hide();
                     arguments = E.length == 1 ? [arguments] : arguments;
-                    if (_.find(arguments, function(L) {
+                    if (_.find(arguments, function (L) {
                         return L[0].response.status == "banned"
                       })) {
                       z()
@@ -1212,16 +1050,12 @@ function buyLikesModulesCreator(g, b) {
               })
             });
             break;
-          case "photo":
-            proxy({
-              url: "http://vk.com/" + u[0],
-              decode: true,
-              loggedIn: true
-            }, function(B) {
+          case"photo":
+            proxy({url: "http://vk.com/" + u[0], decode: true, loggedIn: true}, function (B) {
               if (w(B)) {
                 return l(x)
               }
-              if (autoban_words_re.test(B.substring(B.indexOf('"desc":"', B.indexOf('"id":"' + u[2] + '"')), B.indexOf('"captionlimit":')))) {
+              if (autoban_words_re.test(B.substring(B.indexOf('"id":"' + u[2] + '"'), B.indexOf('"hash":', B.indexOf('"id":"' + u[2] + '"'))))) {
                 return z()
               }
               if (_.include([81305100, 132819462], viewer_profile.uid)) {
@@ -1234,11 +1068,7 @@ function buyLikesModulesCreator(g, b) {
               B = B.replace(/<script([\w\W]*?)\/script>/ig, "");
               if (B.indexOf("<title>Error | VK</title>") > 0 || B.indexOf("<title>Error</title>") > 0 || B.indexOf("<title>404 Not Found</title>") > 0) {
                 if (B.indexOf("Unknown error") > 0 || B.indexOf("Photo not found") > 0 || B.indexOf("<title>404 Not Found</title>") > 0) {
-                  return l(_.template($("#photoPrivacyErrorTPL").html(), {
-                    notFound: true,
-                    entity: u[0],
-                    offerType: a
-                  }))
+                  return l(_.template($("#photoPrivacyErrorTPL").html(), {notFound: true, entity: u[0], offerType: a}))
                 }
                 if (B.indexOf("Access denied") > 0 || B.indexOf("Security error") > 0) {
                   return l(_.template($("#photoPrivacyErrorTPL").html(), {
@@ -1263,24 +1093,16 @@ function buyLikesModulesCreator(g, b) {
               n(u[0])
             });
             break;
-          case "video":
-            proxy({
-              url: "http://vk.com/" + u[0],
-              decode: true,
-              loggedIn: true
-            }, function(C) {
+          case"video":
+            proxy({url: "http://vk.com/" + u[0], decode: true, loggedIn: true}, function (C) {
               var A = C.indexOf('id=\\"mv_your_comment\\"') > 0;
               var B = C.indexOf('"noPublicAdd":true') > 0;
               C = C.replace(/<script([\w\W]*?)\/script>/ig, "");
               if (C.indexOf("<title>Error | VK</title>") > 0 && (C.indexOf("Access denied") > 0 || C.indexOf("You need to be a member of this group") > 0)) {
-                return l(_.template($("#videoPrivacyErrorTPL").html(), {
-                  isYourProfile: y,
-                  entity: u[0],
-                  offerType: a
-                }))
+                return l(_.template($("#videoPrivacyErrorTPL").html(), {isYourProfile: y, entity: u[0], offerType: a}))
               }
               var D = C.substring(C.indexOf('description" content="'), C.indexOf("<title>"));
-              _.each(["title", "description"], function(E) {
+              _.each(["title", "description"], function (E) {
                 E = "og:" + E + '" content="';
                 var F = C.indexOf(E);
                 if (F > 0) {
@@ -1294,11 +1116,7 @@ function buyLikesModulesCreator(g, b) {
                 return l(x)
               }
               if (a == "comment" && !A) {
-                return l(_.template($("#commentPrivacyErrorTPL").html(), {
-                  isYourProfile: y,
-                  entityType: u[1],
-                  oid: t
-                }))
+                return l(_.template($("#commentPrivacyErrorTPL").html(), {isYourProfile: y, entityType: u[1], oid: t}))
               }
               if (a == "repost" && B) {
                 return l($("#adultVideoErrorTPL").html())
@@ -1308,33 +1126,24 @@ function buyLikesModulesCreator(g, b) {
             break
         }
       }
+
       if (t.charAt(0) == "-") {
-        $.getJSON("https://api.vk.com/method/groups.getById?callback=?", {
-          gid: t.substr(1)
-        }, function(w) {
+        $.getJSON("https://api.vk.com/method/groups.getById?callback=?", {gid: t.substr(1)}, function (w) {
           if (!w.response || !w.response.length || isEmptyGroup(w.response[0])) {
             return l("Группа в которой вы хотите пролайкать " + offerWords1[u[1]] + " удалена или ещё не создана.<br>Проверьте ссылку, которую вы указали в поле адреса.<br>Возможно вы ошиблись в написании ссылки.<br>" + urlize("http://vk.com/" + u[0]))
           }
           var x = w.response[0];
           if (x.is_closed) {
-            return l(_.template($("#groupPrivacyErrorTPL").html(), {
-              group: x,
-              type: u[1],
-              offerType: a
-            }))
+            return l(_.template($("#groupPrivacyErrorTPL").html(), {group: x, type: u[1], offerType: a}))
           }
           if (u[1] == "photo") {
             $.getJSON("https://api.vk.com/method/likes.getList?callback=?", {
               type: "photo",
               owner_id: t,
               item_id: u[2].split("_")[1]
-            }, function(y) {
+            }, function (y) {
               if (y.error && y.error.error_code == 15) {
-                l(_.template($("#groupDisabledWallErrorTPL").html(), {
-                  group: x,
-                  type: u[1],
-                  offerType: a
-                }))
+                l(_.template($("#groupDisabledWallErrorTPL").html(), {group: x, type: u[1], offerType: a}))
               } else {
                 v()
               }
@@ -1347,6 +1156,7 @@ function buyLikesModulesCreator(g, b) {
         v()
       }
     }
+
     var k = q.split("#");
     if (k.length > 1 && offerRegexp.like.exec(k[1])) {
       q = k[1]
@@ -1359,7 +1169,6 @@ function buyLikesModulesCreator(g, b) {
     }
   })
 }
-
 function parseVkEntity(a) {
   var b = a.split("#");
   a = b.length > 1 && (!offerRegexp.like.exec(b[1]) && /([a-z0-9_.]+)/.exec(b[1])) ? b[1] : b[0];
@@ -1372,12 +1181,11 @@ function parseVkEntity(a) {
   }
   return a.split("?")[0]
 }
-
 function buySubsModulesCreator(d, b) {
   var a = d.indexOf("Group") > 0 ? "group" : "sub";
   buyModulesCreator(b, a, a == "sub" ? "http://vk.com/" + viewer_profile.domain : "");
   var c = this;
-  $(".button_blue button", b).click(function() {
+  $(".button_blue button", b).click(function () {
     if (b.hasClass("price_getting")) {
       return false
     }
@@ -1394,6 +1202,7 @@ function buySubsModulesCreator(d, b) {
       $(".error", b).html(i).slideDown();
       $("input[placeholder]", b).focus()
     }
+
     var h = $.trim($("input[placeholder]", b).val());
     if (!h) {
       return e("Введите адрес странички, для которой вы хотите получить " + (a == "sub" ? "друзей или " : "") + "подписчиков.")
@@ -1409,22 +1218,16 @@ function buySubsModulesCreator(d, b) {
       }), $.getJSON("https://api.vk.com/method/groups.getById?callback=?", {
         group_id: h,
         fields: "photo_medium"
-      })).always(function() {
+      })).always(function () {
         data = _.first(arguments[0][0].response);
         if (!data || a == "group" && arguments[1][0].response) {
           data = _.first(arguments[1][0].response)
         }
         if (!data || isEmptyProfile(data) || isEmptyGroup(data) || data.deactivated) {
-          e(_.template($("#pageNotExistsErrorTPL").html(), {
-            entity: h,
-            page: data,
-            offerType: a
-          }))
+          e(_.template($("#pageNotExistsErrorTPL").html(), {entity: h, page: data, offerType: a}))
         } else {
           if (data.is_closed > 1 || data.type == "event" && data.is_closed) {
-            e(_.template($("#groupClosedErrorTPL").html(), {
-              group: data
-            }))
+            e(_.template($("#groupClosedErrorTPL").html(), {group: data}))
           } else {
             g(data.gid ? "club" + data.gid : "id" + data.uid)
           }
@@ -1450,31 +1253,19 @@ _.extend(modulesDescriptors, {
     template: "#offersOverviewTPL",
     offerType: "like",
     offerWord: "лайки",
-    activatorClick: function(b, c) {
+    activatorClick: function (b, c) {
       var a = this;
       if (c == undefined) {
-        return $.bbq.pushState({
-          page: 1
-        }, 1)
+        return $.bbq.pushState({page: 1}, 1)
       }
-      a.create({
-        pageIndex: c + 1,
-        offerType: a.offerType
-      })
+      a.create({pageIndex: c + 1, offerType: a.offerType})
     },
-    creator: function(c, a) {
-      $(".box_controls", a).append('<div style="margin-left: 52px; margin-top: 7px; text-align: center"><a href="#" class="bu' + yvar + "_" + this.offerType + 's_button">Купить ' + this.offerWord + "!</a></div>").find(".progress").css({
-        "float": "left"
-      });
+    creator: function (c, a) {
+      $(".box_controls", a).append('<div style="margin-left: 52px; margin-top: 7px; text-align: center"><a href="#" class="bu' + yvar + "_" + this.offerType + 's_button">Купить ' + this.offerWord + "!</a></div>").find(".progress").css({"float": "left"});
       var b = this;
-      $(".box_body", a).attr({
-        type: this.offerType
-      });
-      a.css({
-        width: 570,
-        marginLeft: -570 / 2
-      });
-      a.delegate(".pageList a", "click", function(f) {
+      $(".box_body", a).attr({type: this.offerType});
+      a.css({width: 570, marginLeft: -570 / 2});
+      a.delegate(".pageList a", "click", function (f) {
         var e = $(f.target).text();
         if (e == "»") {
           var d = Math.ceil(offersList[b.offerType].length / 21)
@@ -1485,15 +1276,11 @@ _.extend(modulesDescriptors, {
             d = parseInt(e)
           }
         }
-        $.bbq.pushState({
-          page: d
-        })
+        $.bbq.pushState({page: d})
       });
       if (!$(".offer", a).length && $.bbq.getState("page") > 1) {
-        _.defer(function() {
-          $.bbq.pushState({
-            page: $.bbq.getState("page") - 1
-          })
+        _.defer(function () {
+          $.bbq.pushState({page: $.bbq.getState("page") - 1})
         })
       }
     }
@@ -1595,57 +1382,45 @@ modulesDescriptors.repostOffersOverview = _.extend(_.clone(modulesDescriptors.li
   offerWord: "репостов",
   activator: ".module[type=repost] .module_header"
 });
-$(document).delegate("a.open_offer", "mouseup", function(b) {
+$(document).delegate("a.open_offer", "mouseup", function (b) {
   var a = $(this).closest(".offer").attr("entity") + "." + $(this).closest(".module,.box_body").attr("type");
-  $.ajax({
-    url: "https://likes.fm/open_offer",
-    data: {
-      entity: a
-    },
-    global: false
-  });
+  $.ajax({url: "/open_offer", data: {entity: a}, global: false});
   if (_.include(openedOffers, a)) {
     return
   }
   openedOffers.unshift(a);
   openedOffers = openedOffers.slice(0, 21)
 });
-$(document).delegate("span.do_offer", "click", function(a) {
+$(document).delegate("span.do_offer", "click", function (a) {
   doOffers([$(this).closest(".offer").attr("entity") + "." + $(this).closest(".module,.box_body").attr("type")]);
   a.preventDefault();
   return false
 });
-$(document).delegate(".line_cell .x_button", "click", function() {
+$(document).delegate(".line_cell .x_button", "click", function () {
   var a = $(this).closest(".offer").attr("entity");
   var b = $(this).closest(".module,.box_body").attr("type");
   removeOffers([a + "." + b]);
   updateDisplayOffers(b);
   closedOffers[b].push(a);
-  $.ajax({
-    url: "https://likes.fm/close_offer",
-    data: {
-      entity: a + "." + b
-    },
-    global: false
-  })
+  $.ajax({url: "/close_offer", data: {entity: a + "." + b}, global: false})
 });
-$(document).delegate(".x_button:visible", "mouseenter", function() {
+$(document).delegate(".x_button:visible", "mouseenter", function () {
   $(this).stop().fadeTo("fast", 1)
 });
-$(document).delegate(".x_button:visible", "mouseleave", function() {
+$(document).delegate(".x_button:visible", "mouseleave", function () {
   $(this).stop().fadeTo("fast", 0.3)
 });
-$(document).delegate(".module_body .line_cell", "mouseenter", function() {
+$(document).delegate(".module_body .line_cell", "mouseenter", function () {
   $(".x_button", this).stop().fadeTo("fast", 0.3)
 });
-$(document).delegate(".module_body .line_cell", "mouseleave", function() {
+$(document).delegate(".module_body .line_cell", "mouseleave", function () {
   $(".x_button", this).stop().fadeTo("fast", 0)
 });
 var vk_app_connected;
-$(document).delegate(".connect_vk_app", "click", function() {
+$(document).delegate(".connect_vk_app", "click", function () {
   vk_app_connected = true
 });
-$(document).delegate(".save_vk_token button", "click", function() {
+$(document).delegate(".save_vk_token button", "click", function () {
   var b = $(this).parent();
   var c = b.parent();
   var a = $("input", c).val();
@@ -1653,9 +1428,7 @@ $(document).delegate(".save_vk_token button", "click", function() {
     return $(".error", c).html(!vk_app_connected ? 'Сначала необходимо нажать кнопку "Подключить приложение"' : "Вставьте текст из адресной строки приложения в текстовое поле ниже").slideDown()
   }
   $(".error", c).slideUp();
-  $.get("/save_vk_token", {
-    token: a
-  }, function(d) {
+  $.get("/save_vk_token", {token: a}, function (d) {
     if (d == "bad_token") {
       b.removeClass("button_lock");
       $(".error", c).html('Вы вставили неверный текст.<br>Нажмите кнопку "Подключить приложение" ещё раз и скопируйте текст из адресной строки появившегося окна в текстовое поле ниже:').slideDown()
@@ -1666,34 +1439,22 @@ $(document).delegate(".save_vk_token button", "click", function() {
   });
   b.addClass("button_lock")
 });
-var recheckOffersInterval = -1,
-  addRecheckOffersInterval = -1,
-  addRecheckOffers = [],
-  penaltyOffers = [],
-  failedOffers = 0;
-
+var recheckOffersInterval = -1, addRecheckOffersInterval = -1, addRecheckOffers = [], penaltyOffers = [], failedOffers = 0;
 function checkBlacklist(a, c) {
   var b = a.split(".")[1];
   a = a.split(".")[0];
-  vk_api("wall.get", {
-    owner_id: offerRegexp[b].exec(a)[2].split("_")[0],
-    count: 1
-  }, function(d) {
+  vk_api("wall.get", {owner_id: offerRegexp[b].exec(a)[2].split("_")[0], count: 1}, function (d) {
     if (d.error && d.error.error_code == 15) {
       $.ajax({
-        url: "https://likes.fm/penalty_blacklist",
-        data: {
-          entity: a + "." + b
-        },
+        url: "/penalty_blacklist",
+        data: {entity: a + "." + b},
         global: false,
         type: "POST",
         success: processPrepaid
       })
     } else {
       vk_running_calls++;
-      proxy({
-        url: "http://vk.com/" + a
-      }, function(e) {
+      proxy({url: "http://vk.com/" + a}, function (e) {
         if (e && e.indexOf("<title>Error | VK</title>") < 0 && e.indexOf("<title>404 Not Found</title>") < 0 && e.indexOf('src="/images/pics/spamfight.gif"') < 0 && e.indexOf('src="/images/deactivated_a.gif"') < 0) {
           c()
         }
@@ -1703,61 +1464,43 @@ function checkBlacklist(a, c) {
     }
   })
 }
-
 function blockPopupClose(a, b) {
   $(".box_x_button", a).remove();
   $(".box_controls .button_blue", a).remove();
-  $(".profile_menu").css({
-    zIndex: 100
-  });
+  $(".profile_menu").css({zIndex: 100});
   blockMaskClose = true;
-  $("button.close", a).click(function() {
-    $(".profile_menu").css({
-      zIndex: 3000
-    });
+  $("button.close", a).click(function () {
+    $(".profile_menu").css({zIndex: 3000});
     blockMaskClose = false;
     if (b) {
-      $.ajax({
-        url: "https://likes.fm/reset_penalty_popup",
-        data: {
-          type: $(".penaltyPopup", a).attr("type")
-        },
-        global: false
-      })
+      $.ajax({url: "/reset_penalty_popup", data: {type: $(".penaltyPopup", a).attr("type")}, global: false})
     }
   })
 }
-
 function resetAgreements(a) {
-  _.each(a, function(b) {
+  _.each(a, function (b) {
     delete viewer_profile.agreement[b];
     offersList[b] = [];
     offersDict[b] = {};
     setEmptyOffersModule(b)
   })
 }
-
 function createCommentPenaltyPopup(c, b) {
   resetAgreements(["comment"]);
   var a = createPopup((b && viewer_profile.penalty_popup ? "Также в" : "В") + "ы оштрафованы", "#commentPenaltyPopupTPL", c);
   blockPopupClose(a, b)
 }
-
 function createPenaltyPopup(d, c) {
-  var a = createPopup("Вы оштрафованы", "#penaltyOfferTPL", {
-    entity: d[0]
-  });
+  var a = createPopup("Вы оштрафованы", "#penaltyOfferTPL", {entity: d[0]});
   if (d.length < 3) {
-    _.defer(function() {
-      a.css({
-        top: 30
-      })
+    _.defer(function () {
+      a.css({top: 30})
     });
     $(".info_msg", a).show()
   }
   processPrepaid(c);
   resetAgreements(c.reset_agreements);
-  _.each(d.slice(1), function(h) {
+  _.each(d.slice(1), function (h) {
     var i = h.split(".")[1];
     if (i == "group") {
       i = "sub"
@@ -1776,7 +1519,7 @@ function createPenaltyPopup(d, c) {
     delete f.group
   }
   var e = _.template($("#penaltyOfferButtonTPL").html(), {
-    reasons: _.map(_.keys(f), function(g) {
+    reasons: _.map(_.keys(f), function (g) {
       return penaltyReason[g][2]
     })
   });
@@ -1784,29 +1527,20 @@ function createPenaltyPopup(d, c) {
     e += _.template($("#subPenaltyFooterTPL").html(), {})
   }
   $(".loading", a).after(e).remove();
-  $(".filterNewsHelp", a).tooltip({
-    effect: "slide",
-    position: ["bottom", "center"],
-    offset: [13, 0],
-    relative: true
-  });
-  $(".penaltyValues", a).html("на" + _.map(_.pairs(c.penalty_delta), function(g) {
-      return _.template($("#penaltyValueTPL").html(), {
-        type: g[0],
-        val: g[1]
-      })
+  $(".filterNewsHelp", a).tooltip({effect: "slide", position: ["bottom", "center"], offset: [13, 0], relative: true});
+  $(".penaltyValues", a).html("на" + _.map(_.pairs(c.penalty_delta), function (g) {
+      return _.template($("#penaltyValueTPL").html(), {type: g[0], val: g[1]})
     }).join(" и ")).fadeIn();
   var b = !("prepaid" in c);
   blockPopupClose(a, b);
   if (viewer_profile.comment_penalty_popup) {
-    $("button.close", a).click(function() {
-      setTimeout(function() {
+    $("button.close", a).click(function () {
+      setTimeout(function () {
         createCommentPenaltyPopup(viewer_profile.comment_penalty_popup, b)
       }, 50)
     })
   }
 }
-
 function recheckOffersStep() {
   var a = viewer_profile.check_offers.slice(0, 25);
   viewer_profile.check_offers = viewer_profile.check_offers.slice(25);
@@ -1814,7 +1548,7 @@ function recheckOffersStep() {
     clearInterval(recheckOffersInterval);
     recheckOffersInterval = -1
   }
-  check_offers(a, function(b) {
+  check_offers(a, function (b) {
     if (_.isEmpty(b)) {
       return
     }
@@ -1822,28 +1556,21 @@ function recheckOffersStep() {
     clearInterval(addRecheckOffersInterval);
     addRecheckOffersInterval = -1;
     addRecheckOffers = [];
-    check_offers(viewer_profile.check_offers, function(c) {
+    check_offers(viewer_profile.check_offers, function (c) {
       b = b.concat(c);
       $.ajax({
-        url: "https://likes.fm/penalty_offers",
-        data: {
-          entities: b
-        },
-        global: false,
-        type: "POST",
-        success: function(d) {
+        url: "/penalty_offers", data: {entities: b}, global: false, type: "POST", success: function (d) {
           createPenaltyPopup(b, d)
         }
       })
     })
   })
 }
-
 function recheckOffers() {
   if (recheckOffersInterval >= 0 || !viewer_profile.check_offers.length) {
     return
   }
-  recheckOffersInterval = setInterval(function() {
+  recheckOffersInterval = setInterval(function () {
     if (!isStatsModule()) {
       recheckOffersStep()
     }
@@ -1854,7 +1581,6 @@ var badComments = {
   shortComment: ["слишком короток и бессмысленен", "пишите более качественные и осмысленные комментарии"]
 };
 var resetTime = 0;
-
 function getResetTime() {
   var b = Math.floor(Math.max(0, resetTime - new Date()) / 1000);
   var c = Math.floor(b / 60);
@@ -1863,7 +1589,6 @@ function getResetTime() {
 }
 var waningEntities = [];
 var doOffersTimestamp = 0;
-
 function doOffers(h, c) {
   if (isStatsModule() || new Date - doOffersTimestamp < 200) {
     return
@@ -1874,7 +1599,7 @@ function doOffers(h, c) {
   var a = h[0].split(".")[1];
   var e = /[a-z]+/i.exec(h[0])[0];
   var g = {};
-  h = _.filter(h, function(i) {
+  h = _.filter(h, function (i) {
     var j = i.split(".")[1];
     if (_.include(["comment", "poll"], j)) {
       var k = $(".module[type=" + j + "] .offer[entity=" + i.split(".")[0] + "]").data();
@@ -1885,7 +1610,6 @@ function doOffers(h, c) {
     }
     return true
   });
-
   function d() {
     f();
     if (!c) {
@@ -1893,37 +1617,30 @@ function doOffers(h, c) {
         offerType: a,
         entityType: e,
         entity: b
-      })).find(".box_body").css({
-        textAlign: "center"
-      })
+      })).find(".box_body").css({textAlign: "center"})
     }
   }
 
   function f(i) {
-    _.each(h, function(j) {
+    _.each(h, function (j) {
       var k = j.split(".")[1];
       $(".offer[entity=" + j.split(".")[0] + "]", ".module[type=" + k + "],.box_body[type=" + k + "]")[i ? "addClass" : "removeClass"]("loading")
     })
   }
+
   f(true);
   $.ajax({
-    url: "https://likes.fm/do_offers",
-    data: _.extend({
-      entities: h,
-      domain: viewer_profile.domain,
-      onError: function() {
+    url: "/do_offers", data: _.extend({
+      entities: h, domain: viewer_profile.domain, onError: function () {
         return f
       }
-    }, g),
-    global: false,
-    type: "POST",
-    success: function(j) {
+    }, g), global: false, type: "POST", success: function (j) {
       f();
       if (!j) {
         d()
       } else {
         if (!c) {
-          setTimeout(function() {
+          setTimeout(function () {
             if (!_.isEmpty(j.not_exist)) {
               createAlertPopup("Предложение уже не актуально", "Эта " + offerWords2[e] + " уже набрала заказанное количество " + offerSubjects[a][2] + ".<br>Попробуйте " + offerActions[a][2] + " что-нибудь ещё.")
             } else {
@@ -1945,11 +1662,9 @@ function doOffers(h, c) {
             createCommentPenaltyPopup(j.comment_penalty)
           } else {
             if (i.add(1).days().isBefore(new Date()) && !firstOfferInfoShowed) {
-              setTimeout(function() {
-                var k = createPopup("Поздравляем!", "#firstOfferInfoTPL", {
-                  reward: j.reward
-                });
-                $(".setModule", k).click(function() {
+              setTimeout(function () {
+                var k = createPopup("Поздравляем!", "#firstOfferInfoTPL", {reward: j.reward});
+                $(".setModule", k).click(function () {
                   closePopup(popups.pop())
                 });
                 $("a.balanceHelper", k).tooltip({
@@ -1963,20 +1678,17 @@ function doOffers(h, c) {
               }, 700)
             }
           }
-          _.each(j.checked, function(k) {
+          _.each(j.checked, function (k) {
             if (!_.include(["comment", "poll"], k.split(".")[1])) {
-              addRecheckOffers.push({
-                entity: k,
-                dt: +new Date - Math.random() * 15000
-              })
+              addRecheckOffers.push({entity: k, dt: +new Date - Math.random() * 15000})
             }
           });
           if (addRecheckOffersInterval < 0 && addRecheckOffers.length) {
-            addRecheckOffersInterval = setInterval(function() {
+            addRecheckOffersInterval = setInterval(function () {
               var k = +new Date;
-              _.each(addRecheckOffers, function(l) {
+              _.each(addRecheckOffers, function (l) {
                 if (k - l.dt > 30000) {
-                  addRecheckOffers = _.filter(addRecheckOffers, function(m) {
+                  addRecheckOffers = _.filter(addRecheckOffers, function (m) {
                     return m.entity != l.entity
                   });
                   viewer_profile.check_offers.unshift(l.entity);
@@ -1997,7 +1709,6 @@ function doOffers(h, c) {
     }
   })
 }
-
 function check_offers(d, b) {
   var c = [];
 
@@ -2014,14 +1725,12 @@ function check_offers(d, b) {
       v: 5.21
     })
   }
-  _.each(d, function(f) {
+
+  _.each(d, function (f) {
     var g = f.split(".")[1];
     var e = offerRegexp[g].exec(f.split(".")[0]);
     if (g == "sub") {
-      c.push($.getJSON("https://api.vk.com/method/users.getFollowers?callback=?", {
-        user_id: e[2],
-        count: 1000
-      }))
+      c.push($.getJSON("https://api.vk.com/method/users.getFollowers?callback=?", {user_id: e[2], count: 1000}))
     } else {
       if (g == "group") {
         c.push($.getJSON("https://api.vk.com/method/groups.isMember?callback=?", {
@@ -2034,17 +1743,16 @@ function check_offers(d, b) {
       }
     }
   });
-  $.when.apply(this, c).always(function() {
+  $.when.apply(this, c).always(function () {
     var f = [];
     arguments = c.length == 1 ? [arguments] : arguments;
     c = [];
-
     function e(l, m) {
       var n = [];
       for (var i = 1; i < Math.ceil(m / 1000); i++) {
         n.push(a(l, i * 1000))
       }
-      c.push($.when.apply(this, n).always(function() {
+      c.push($.when.apply(this, n).always(function () {
         arguments = n.length == 1 ? [arguments] : arguments;
         for (var o = 0; o < arguments.length; o++) {
           if (!arguments[o][0].response.count || _.include(arguments[o][0].response.items, viewer_profile.uid)) {
@@ -2060,14 +1768,13 @@ function check_offers(d, b) {
       if (_.include(viewer_profile.friends_uids, k)) {
         return
       }
-      c.push($.getJSON("https://api.vk.com/method/friends.get?callback=?", {
-        user_id: viewer_profile.uid
-      }, function(l) {
+      c.push($.getJSON("https://api.vk.com/method/friends.get?callback=?", {user_id: viewer_profile.uid}, function (l) {
         if (l.response && !_.include(l.response, k)) {
           f.push(i)
         }
       }))
     }
+
     for (var g = 0; g < arguments.length; g++) {
       var h = d[g].split(".")[1];
       if (h == "group" && !arguments[g][0].response.member && !arguments[g][0].response.request) {
@@ -2086,34 +1793,26 @@ function check_offers(d, b) {
         }
       }
     }
-    $.when.apply(this, c).always(function() {
+    $.when.apply(this, c).always(function () {
       b(f)
     })
   })
 }
-
 function createSendLikesPopup(b, c) {
-  var a = createPopup("Владелец странички ограничил возможность накрутки лайков", "#noLikeTPL", {
-    price: c
-  });
-  $(".sendLikes button", a).click(function() {
+  var a = createPopup("Владелец странички ограничил возможность накрутки лайков", "#noLikeTPL", {price: c});
+  $(".sendLikes button", a).click(function () {
     $(this).parent().addClass("button_lock");
-    $.post("https://likes.fm/send_likes_to_user", {
-      uid: b,
-      num: c
-    }, function(d) {
+    $.post("/send_likes_to_user", {uid: b, num: c}, function (d) {
       processPrepaid(d);
-      _.defer(function() {
+      _.defer(function () {
         $("button.close", a).click()
       })
     })
   })
 }
-
 function isEmptyProfile(a) {
   return a.first_name == "DELETED" && !a.last_name && a.photo_medium.indexOf("/vk.com/images/") >= 0
 }
-
 function isEmptyGroup(a) {
   return a.name == "DELETED" && a.photo.indexOf("/vk.com/images/") >= 0
 };
