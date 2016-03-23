@@ -15,7 +15,7 @@ vk.on('serverTokenReady', function(_o) {
   console.log('serverTokenReady', _o);
 });
 
-var addLike = (id) => {
+var like = (id) => {
 
   var params = {};
   var splitId = id.split('_');
@@ -31,19 +31,45 @@ var addLike = (id) => {
   }
   params.owner_id = parseInt(splitId[0].replace(/\D/g,''));
   params.item_id = parseInt(splitId[1]);
-  if (params.owner_id < 0){
-    return Promise.reject();
+  if (params.owner_id < 0) {
+    return Promise.reject('owner_id < 0');
   }
-  console.log('addLike', id, params.owner_id, params.item_id);
   return new Promise((resolve, reject) => {
-    setTimeout(() => {resolve('timeout')}, 5000);
+    setTimeout(() => {resolve('timeout');}, 5000);
     vk.request('likes.add', params, (response) => {
-      console.log('likes.add', params, response);
       resolve(response);
     }, (e) => {
-      resolve('reject',e);
+      reject('reject',e);
     });
   });
+};
+
+var repost = (id) => {
+  var params = {
+    object: id
+  };
+
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {resolve('timeout');}, 5000);
+    vk.request('wall.repost', params, (response) => {
+      if (response.hasOwnProperty('success')){
+        resolve(response);
+      } else {
+        reject(response);
+      }
+
+    }, (e) => {
+      reject('reject',e);
+    });
+  });
+};
+
+var joinGroup = (id) => {
+  var params = {
+    group_id: parseInt(id.replace(/\D/g,''))
+  };
+
+  return vk.request('groups.join', params);
 };
 
 var getToken = () => {
@@ -59,6 +85,8 @@ var getToken = () => {
 
 module.exports = {
   vk: vk,
-  addLike: addLike,
+  like: like,
+  repost: repost,
+  joinGroup: joinGroup,
   getToken: getToken
 };
