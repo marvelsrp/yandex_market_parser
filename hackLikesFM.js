@@ -9,7 +9,7 @@ var getOffers = () => {
     likeHack.init(tasks);
     repostHack.init(tasks);
     groupHack.init(tasks);
-    subHack.init(tasks);
+    //subHack.init(tasks);
   });
 };
 

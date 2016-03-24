@@ -1,7 +1,10 @@
 var VK = require('vksdk');
 var authData = require('./vk.json');
 var open = require('open');
-
+var _ = require('lodash');
+var sleep = require('./../lib/sleep');
+var console = require('better-console');
+var fs = require('fs');
 var vk = new VK({
   'appId'     : authData.appId,
   'appSecret' : authData.appSecret,
@@ -25,6 +28,9 @@ var like = (id) => {
       break;
     case id.indexOf('photo') != -1:
       params.type = 'photo';
+      break;
+    case id.indexOf('video') != -1:
+      params.type = 'video';
       break;
     default:
       throw new Error('Undefined type for ' + id);
@@ -73,6 +79,93 @@ var addFriend = (id) => {
   });
 };
 
+var getMembers = (id, offset) => {
+
+  if (!offset) {
+    offset = 0;
+  }
+  console.log('     ==========');
+  console.log('     getMembers', id, offset);
+
+  var params = {
+    group_id: id,
+    sort: 'id_desc',
+    count: 1000,
+    fields: 'country, sex, city',
+    offset: offset
+  };
+  var taskPrimise = new Promise((resolve, reject) => {
+    fs.writeFile('getMembers/task.json', JSON.stringify(params, null, 2), 'utf8', function(err) {
+      if (err) {
+        return console.log(err);
+      }
+
+      console.log('     write task.json', id, offset);
+      resolve();
+    });
+  });
+
+  return taskPrimise.then(() => {
+    var resultPromise = new Promise((resolve, reject) => {
+
+      console.log('     request');
+      var vkReq = vk.request('groups.getMembers', params, (response) => {
+        console.log('     response');
+        if (!response.response) {
+          console.log(response, id);
+          console.warn(response);
+          //reject();
+          return;
+        }
+
+        var ukraineWomans = _.filter(response.response.items, function(people) {
+          return people.sex === 1 && people.country && people.country.title == 'Украина';
+        });
+        var ukraineWomansId = _.map(ukraineWomans, function(people, index) {
+          return people.id;
+        });
+        console.info('     ' + id + '+' + ukraineWomansId.length + '/' + response.response.count);
+
+        var dateStr = new Date().toLocaleDateString();
+        var dumpDir = 'getMembers/dump/' + dateStr;
+        try {
+          fs.mkdirSync(dumpDir);
+        } catch(e) {
+          if ( e.code != 'EEXIST' ) throw e;
+        }
+        fs.appendFile(dumpDir + '/' + id + '.txt', '\n' + ukraineWomansId.join('\n'));
+        var isDone = response.response.items.length !== 1000;
+        console.log('     appendFile');
+        resolve(isDone);
+      });
+      vkReq.setTimeout(2000);
+      vkReq.on('timeout', function() {
+        console.warn('     timeout');
+        vkReq.abort();
+        //reject();
+      });
+    });
+
+    return resultPromise.then((isDone) => {
+      if (!isDone) {
+        return sleep(2000).then(() => {
+          return getMembers(id, offset + 1000);
+        });
+      } else {
+        console.log('     RESOLVE');
+        return Promise.resolve();
+      }
+    }, () => {
+      console.warn('     reject');
+
+      return sleep(5000).then(() => {
+        return getMembers(id, offset);
+      });
+    });
+  })
+
+};
+
 var getToken = () => {
   var access_token_url = 'https://oauth.vk.com/authorize?' +
     'client_id=' + authData.appId + '&' +
@@ -90,5 +183,6 @@ module.exports = {
   repost: repost,
   joinGroup: joinGroup,
   addFriend: addFriend,
+  getMembers:getMembers,
   getToken: getToken
 };
