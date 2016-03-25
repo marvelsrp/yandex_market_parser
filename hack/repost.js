@@ -1,6 +1,7 @@
 var likesFM = require('../connectors/likesFM');
 var vk = require('../connectors/vk');
 var sleep = require('../lib/sleep');
+var deferred = require('deferred');
 var repostHack = {
   init: (tasks) => {
     console.log('repostHack init');
@@ -9,30 +10,39 @@ var repostHack = {
     }
   },
   process: (i, reposts) => {
+    var def = deferred();
     if (i >= reposts.length) {
       return Promise.resolve();
     }
     var id = reposts[i].id;
     console.log('repostHack process', id);
 
-    return likesFM.openOffer(id, 'repost').then(() => {
+    likesFM.openOffer(id, 'repost').then(() => {
       return sleep(100);
     }).then(() => {
-      return vk.repost(id);
-    }, (e) => {
-      console.log('vk repost reject', e);
-      repostHack.process(i + 1, reposts);
-      return Promise.reject();
-    }).then(() => {
-      return sleep(1000);
-    }).then(() => {
-      return likesFM.doOffers(id, 'repost');
-    }).then(() => {
-      return sleep(100);
-    }).then(() => {
-      console.log('+1');
-      return repostHack.process(i + 1, reposts);
+      vk.repost(id).then(() => {
+        sleep(1000).then(() => {
+          likesFM.doOffers(id, 'repost');
+        }).then(() => {
+          console.info('repost + 1');
+          likeHack.process(i + 1, reposts).then(() => {
+            def.resolve();
+          },() => {
+            def.reject();
+          });
+        });
+
+      }, (e) => {
+        console.log('vk repost reject', e);
+        return repostHack.process(i + 1, reposts).then(() => {
+          def.resolve();
+        },() => {
+          def.reject();
+        });
+      });
+
     });
+    return def.promise;
   }
 };
 

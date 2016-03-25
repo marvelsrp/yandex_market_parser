@@ -6,10 +6,13 @@ var groupHack = require('./hack/group');
 var subHack = require('./hack/sub');
 var getOffers = () => {
   return likesFM.getOffers().then((tasks) => {
-    likeHack.init(tasks);
-    repostHack.init(tasks);
-    groupHack.init(tasks);
-    //subHack.init(tasks);
+    likeHack.init(tasks).then(() => {
+      return repostHack.init(tasks);
+    }).then(() => {
+      return groupHack.init(tasks);
+    }).then(() => {
+      return subHack.init(tasks);
+    });
   });
 };
 

@@ -1,6 +1,7 @@
 var likesFM = require('../connectors/likesFM');
 var vk = require('../connectors/vk');
 var sleep = require('../lib/sleep');
+var deferred = require('deferred');
 var likeHack = {
   init: (tasks) => {
     console.log('likeHack init');
@@ -9,32 +10,45 @@ var likeHack = {
     }
   },
   process: (i, likes) => {
+    var def = deferred();
+    var reject = false;
     if (i >= likes.length) {
-      return Promise.resolve();
+      return def.resolve();
     }
     var id = likes[i].id;
     console.log('likeHack process', id);
 
-    return likesFM.openOffer(id, 'like').then(() => {
+    likesFM.openOffer(id, 'like').then(() => {
       return sleep(100);
     }).then(() => {
-      return vk.like(id);
-    }, (e) => {
-      console.log('vk like reject', e);
-      likeHack.process(i + 1, likes);
-      return Promise.reject();
-    }).then(() => {
-      return sleep(1000);
-    }).then(() => {
-      return likesFM.doOffers(id, 'like');
-    }).then(() => {
-      return sleep(100);
-    }).then(() => {
-      console.log('+1');
-      return likeHack.process(i + 1, likes);
+      console.log('before vk');
+      vk.like(id).then(() => {
+        console.log('after vk');
+        sleep(1000).then(() => {
+          likesFM.doOffers(id, 'like');
+        }).then(() => {
+          console.info('like + 1');
+          likeHack.process(i + 1, likes).then(() => {
+            def.resolve();
+          },() => {
+            def.reject();
+          });
+        });
+
+      }, (e) => {
+        console.log('vk like reject', e);
+        return likeHack.process(i + 1, likes).then(() => {
+          def.resolve();
+        },() => {
+          def.reject();
+        });
+      });
+
     });
 
+    return def.promise;
   }
+
 };
 
 module.exports = likeHack;

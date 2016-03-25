@@ -40,6 +40,7 @@ var openOffer = (id, type) => {
       uri: url,
       headers: authData.headers
     }, (error, response, body) => {
+      console.log('openOffer', body);
       resolve();
     });
 

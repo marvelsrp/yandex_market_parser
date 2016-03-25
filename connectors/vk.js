@@ -4,6 +4,7 @@ var open = require('open');
 var _ = require('lodash');
 var sleep = require('./../lib/sleep');
 var console = require('better-console');
+var deferred = require('deferred');
 var fs = require('fs');
 var vk = new VK({
   'appId'     : authData.appId,
@@ -19,7 +20,7 @@ vk.on('serverTokenReady', function(_o) {
 });
 
 var like = (id) => {
-
+  var def = deferred();
   var params = {};
   var splitId = id.split('_');
   switch (true){
@@ -29,58 +30,66 @@ var like = (id) => {
     case id.indexOf('photo') != -1:
       params.type = 'photo';
       break;
-    case id.indexOf('video') != -1:
-      params.type = 'video';
-      break;
+    //case id.indexOf('video') != -1:
+    //  params.type = 'video';
+    //  break;
     default:
-      throw new Error('Undefined type for ' + id);
+      return def.reject('Undefined type for ' + id);
   }
   params.owner_id = parseInt(splitId[0].replace(/\D/g,''));
   params.item_id = parseInt(splitId[1]);
   if (params.owner_id < 0) {
-    return Promise.reject('owner_id < 0');
+    return def.reject('owner_id < 0');
   }
-  return vk.request('likes.add', params, (response) => {
+  console.log('vk.request likes.add');
+  vk.request('likes.add', params, (response) => {
     console.log('likes.add', response);
-    return Promise.resolve();
+    return def.resolve();
   });
+
+  return def.promise;
 };
 
 var repost = (id) => {
+  var def = deferred();
   var params = {
     object: id
   };
 
-  return vk.request('wall.repost', params, (response) => {
+  vk.request('wall.repost', params, (response) => {
     console.log('wall.repost', response);
-    return (response.hasOwnProperty('success')) ?  Promise.resolve() : Promise.reject();
+    return (response.hasOwnProperty('success')) ?  def.resolve() : def.reject();
   });
+  return def.promise;
 };
 
 var joinGroup = (id) => {
+  var def = deferred();
   var params = {
     group_id: parseInt(id.replace(/\D/g,''))
   };
 
-  return vk.request('groups.join', params, (response) => {
+  vk.request('groups.join', params, (response) => {
     console.log('groups.join', response);
-    return Promise.resolve();
+    return def.resolve();
   });
+  return def.promise;
 };
 
 var addFriend = (id) => {
+  var def = deferred();
   var params = {
     user_id: parseInt(id.replace(/\D/g,''))
   };
 
-  return vk.request('friends.add', params, (response) => {
+  vk.request('friends.add', params, (response) => {
     console.log('friends.add', response);
-    return Promise.resolve();
+    return def.resolve();
   });
+  return def.promise;
 };
 
 var getMembers = (id, offset) => {
-
   if (!offset) {
     offset = 0;
   }
@@ -162,7 +171,8 @@ var getMembers = (id, offset) => {
         return getMembers(id, offset);
       });
     });
-  })
+  });
+
 
 };
 
