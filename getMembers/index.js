@@ -4,6 +4,7 @@ var sleep = require('./../lib/sleep');
 var colors = require('colors');
 var console = require('better-console');
 var fs = require('fs');
+var deferred = require('deferred');
 var taskJSON = require('./task.json');
 var groups = ['priglashalki','fotoodessa','virbox360',
   'sva.photo','prazdnikvshokolade_kh', 'biblia_nevest',

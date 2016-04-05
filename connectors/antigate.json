@@ -1,17 +1,3 @@
 {
-  "clientId": "659",
-  "viewerId": "12640542",
-  "headers": {
-    "Accept":"*/*",
-    "Accept-Encoding":"gzip, deflate",
-    "Accept-Language":"ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4",
-    "Cache-Control":"no-cache",
-    "Connection":"keep-alive",
-    "Cookie":"current_user=\"MTI2NDA1NDIsMA==|1459845099|16f1eec0cb42d3926e63ea91b50fb87d85d27fc7\"; _ga=GA1.2.838403706.1457349915; _gat=1",
-    "Host":"likes.fm",
-    "Pragma":"no-cache",
-    "Referer":"https://likes.fm/",
-    "User-Agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.97 Safari/537.36",
-    "X-Requested-With":"XMLHttpRequest"
-  }
+  "key": "4e1de03d6333dad1aa33dee6346a85c8"
 }

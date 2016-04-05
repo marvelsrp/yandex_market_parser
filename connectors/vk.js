@@ -6,6 +6,9 @@ var sleep = require('./../lib/sleep');
 var console = require('better-console');
 var deferred = require('deferred');
 var fs = require('fs');
+var readline = require('readline');
+var antigate = require('./antigate');
+
 var vk = new VK({
   'appId'     : authData.appId,
   'appSecret' : authData.appSecret,
@@ -19,7 +22,7 @@ vk.on('serverTokenReady', function(_o) {
   console.log('serverTokenReady', _o);
 });
 
-var like = (id) => {
+var like = (id, captcha_sid, captcha_key) => {
   var def = deferred();
   var params = {};
   var splitId = id.split('_');
@@ -30,9 +33,9 @@ var like = (id) => {
     case id.indexOf('photo') != -1:
       params.type = 'photo';
       break;
-    //case id.indexOf('video') != -1:
-    //  params.type = 'video';
-    //  break;
+    case id.indexOf('video') != -1:
+      params.type = 'video';
+      break;
     default:
       return def.reject('Undefined type for ' + id);
   }
@@ -41,13 +44,50 @@ var like = (id) => {
   if (params.owner_id < 0) {
     return def.reject('owner_id < 0');
   }
+  if (captcha_sid) {
+    params.captcha_sid = captcha_sid;
+  }
+  if (captcha_key) {
+    params.captcha_key = captcha_key;
+  }
   console.log('vk.request likes.add');
   vk.request('likes.add', params, (response) => {
-    console.log('likes.add', response);
-    return def.resolve();
+    //console.log('likes.add', response);
+
+    if (response.error && response.error.error_code === 14){
+      console.warn('CAPTCHA?');
+      var sid = response.error.captcha_sid;
+      var img = response.error.captcha_img;
+      antigate.load(sid, img).then((id) => {
+        antigate.response(id).then(() => {
+          like(id, sid, answer).then(() => {
+            console.info('like with captcha solver =)');
+            def.resolve();
+          });
+        });
+      });
+
+      //return captcha(sid, img).then((key) => {
+      //  like(id, sid, key).then(() => {
+      //    console.error('like with captcha solver =)');
+      //    def.resolve();
+      //  })
+      //}).catch(() => {
+      //  console.error('reject captcha =(');
+      //  def.resolve();
+      //});
+
+    } else {
+      def.resolve();
+    }
+
   });
 
   return def.promise;
+};
+
+var captcha = (sid, img) => {
+  console.log(sid, img);
 };
 
 var repost = (id) => {
@@ -90,6 +130,7 @@ var addFriend = (id) => {
 };
 
 var getMembers = (id, offset) => {
+  var def = deferred();
   if (!offset) {
     offset = 0;
   }
@@ -103,77 +144,65 @@ var getMembers = (id, offset) => {
     fields: 'country, sex, city',
     offset: offset
   };
-  var taskPrimise = new Promise((resolve, reject) => {
-    fs.writeFile('getMembers/task.json', JSON.stringify(params, null, 2), 'utf8', function(err) {
-      if (err) {
-        return console.log(err);
-      }
-
-      console.log('     write task.json', id, offset);
-      resolve();
-    });
-  });
-
-  return taskPrimise.then(() => {
-    var resultPromise = new Promise((resolve, reject) => {
-
-      console.log('     request');
-      var vkReq = vk.request('groups.getMembers', params, (response) => {
-        console.log('     response');
-        if (!response.response) {
-          console.log(response, id);
-          console.warn(response);
-          //reject();
-          return;
+  var writeTask = (params) => {
+    return new Promise((resolve, reject) => {
+      fs.writeFile('getMembers/task.json', JSON.stringify(params, null, 2), 'utf8', function(err) {
+        if (err) {
+          console.warn(err);
+          return reject();
         }
 
-        var ukraineWomans = _.filter(response.response.items, function(people) {
-          return people.sex === 1 && people.country && people.country.title == 'Украина';
-        });
-        var ukraineWomansId = _.map(ukraineWomans, function(people, index) {
-          return people.id;
-        });
-        console.info('     ' + id + '+' + ukraineWomansId.length + '/' + response.response.count);
-
-        var dateStr = new Date().toLocaleDateString();
-        var dumpDir = 'getMembers/dump/' + dateStr;
-        try {
-          fs.mkdirSync(dumpDir);
-        } catch(e) {
-          if ( e.code != 'EEXIST' ) throw e;
-        }
-        fs.appendFile(dumpDir + '/' + id + '.txt', '\n' + ukraineWomansId.join('\n'));
-        var isDone = response.response.items.length !== 1000;
-        console.log('     appendFile');
-        resolve(isDone);
-      });
-      vkReq.setTimeout(2000);
-      vkReq.on('timeout', function() {
-        console.warn('     timeout');
-        vkReq.abort();
-        //reject();
+        console.log('     write task.json', id, offset);
+        resolve();
       });
     });
+  };
 
-    return resultPromise.then((isDone) => {
-      if (!isDone) {
-        return sleep(2000).then(() => {
-          return getMembers(id, offset + 1000);
-        });
-      } else {
-        console.log('     RESOLVE');
-        return Promise.resolve();
+  writeTask(params).then(() => {
+    var vkDef = deferred();
+    vk.request('groups.getMembers', params, (response) => {
+
+      if (!response.response) {
+        console.warn('reject vkDef', id, response);
+        return vkDef.reject();
       }
-    }, () => {
-      console.warn('     reject');
 
-      return sleep(5000).then(() => {
-        return getMembers(id, offset);
+      var ukraineWomans = _.filter(response.response.items, function(people) {
+        return people.sex === 1 && people.country && people.country.title == 'Украина';
       });
+      var ukraineWomansId = _.map(ukraineWomans, function(people, index) {
+        return people.id;
+      });
+      console.info('     ' + id + '+' + ukraineWomansId.length + '/' + response.response.count);
+
+      var dateStr = new Date().toLocaleDateString();
+      var dumpDir = 'getMembers/dump/' + dateStr;
+      try {
+        fs.mkdirSync(dumpDir);
+      } catch (e) {
+        if (e.code != 'EEXIST') throw e;
+      }
+      fs.appendFile(dumpDir + '/' + id + '.txt', '\n' + ukraineWomansId.join('\n'));
+
+      console.log('     appendFile');
+      return vkDef.resolve(offset > response.response.count);
     });
+    return vkDef.promise;
+  }).then((isDone) => {
+    console.log('     vk resolve', isDone);
+    if (isDone) {
+      def.resolve();
+    } else {
+      getMembers(id, offset + 1000).then(def.resolve, def.reject);
+    }
+
+  }, () => {
+    console.warn('     retry');
+    getMembers(id, offset).then(def.resolve, def.reject);
+
   });
 
-
+  return def.promise;
 };
 
 var getToken = () => {
@@ -190,6 +219,7 @@ var getToken = () => {
 module.exports = {
   vk: vk,
   like: like,
+  captcha: captcha,
   repost: repost,
   joinGroup: joinGroup,
   addFriend: addFriend,

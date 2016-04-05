@@ -2,6 +2,7 @@ node_modules
 .idea
 connectors/vk.json
 connectors/likesFM.json
+connectors/antigate.json
 getMembers/task.json
 getMembers/dump/*
 price.yml
