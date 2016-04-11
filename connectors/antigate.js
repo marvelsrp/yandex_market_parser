@@ -42,8 +42,8 @@ var loadFn = (sid, link) => {
 
   return def.promise;
 };
-var responseFn = (id) => {
-  console.error('CHECK CAPTCHA');
+var responseFn = (id, deep) => {
+  console.warn('CHECK CAPTCHA');
   var def = deferred();
   var data = {
     id: id,
@@ -54,16 +54,19 @@ var responseFn = (id) => {
   request.get(url, data,  (error, response, body) => {
     if (!error && response.statusCode == 200 && body.indexOf('OK') != -1) {
       var answer = body.substr(3,5);
-      console.warn('SOLVE CAPTCHA:', answer);
+      console.info('SOLVE CAPTCHA:', answer);
       def.resolve(answer);
     } else {
       if (body != 'CAPCHA_NOT_READY'){
         console.error('catch', body);
       }
+      console.warn(body);
 
       sleep(5000).then(() => {
-        responseFn(id).then(() => {
-          def.resolve(body);
+        console.log('inner responseFn', deep + 1);
+        responseFn(id, deep + 1).then((data) => {
+          console.log('inner then', deep + 1, data);
+          def.resolve(data);
         });
       });
     }

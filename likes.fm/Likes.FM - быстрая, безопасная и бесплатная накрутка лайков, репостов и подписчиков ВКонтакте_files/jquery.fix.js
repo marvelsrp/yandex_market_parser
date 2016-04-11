@@ -1,1 +1,0 @@
-var valign_box = true
