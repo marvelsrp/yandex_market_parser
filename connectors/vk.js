@@ -138,27 +138,20 @@ var getMembers = (id, offset) => {
     offset: offset
   };
   var def = deferred();
+  try {
+    vk.request('groups.getMembers', params, (response) => {
 
-  vk.request('groups.getMembers', params, (response) => {
+      if (!response.response) {
+        console.warn('reject vkDef', response);
+        return def.reject();
+      }
 
-    if (!response.response) {
-      console.warn('reject vkDef', response);
-      return def.reject();
-    }
-
-    var ukraineWomans = _.filter(response.response.items, function(people) {
-      return people.sex === 1 && people.country && people.country.title == 'Украина';
+      return def.resolve(response);
     });
-
-    var ukraineWomansId = _.map(ukraineWomans, function(people) {
-      return people.id;
-    });
-
-    console.info(params.group_id + ' +' + ukraineWomansId.length);
-
-    return def.resolve({peoples: ukraineWomansId, count: response.response.count});
-  });
-
+  } catch (e){
+    console.error(e);
+    throw e;
+  }
   return def.promise;
 };
 

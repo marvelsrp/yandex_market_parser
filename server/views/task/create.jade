@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+  div
+    form(method="post")
+      div
+        label(for="name") Name
+        input(name="name" id="name")
+      div
+        label(for="type") Type
+        select(name="type" id="type")
+          option(value="getMembers") getMembers
+          option(value="filterMembers") filterMembers
+      div
+        button(type="submit") Submit

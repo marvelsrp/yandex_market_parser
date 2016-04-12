@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  div
+    ul
+      each val, id in tasks
+        li= id + ': ' + val.name+ ' (' + val.type + ')'

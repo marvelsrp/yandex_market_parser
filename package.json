@@ -8,6 +8,7 @@
     "cheerio": "^0.20.0",
     "colors": "^1.1.2",
     "deferred": "^0.7.5",
+    "express": "^4.13.4",
     "js2xmlparser": "^1.0.0",
     "lodash": "^4.6.1",
     "node-base64-image": "^0.1.2",

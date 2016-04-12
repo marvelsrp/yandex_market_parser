@@ -1,0 +1,12 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js')
+    script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-route.min.js')
+  body(ng-app="app")
+    div
+      a(href="/") Main
+      a(href="/task/create") Create Task
+    block content
