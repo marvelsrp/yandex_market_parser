@@ -1,10 +1,7 @@
 node_modules
 .idea
-connectors/vk.json
-connectors/likesFM.json
-connectors/antigate.json
-parser/dump/filterMembers/*
-parser/dump/getMembers/*
-parser/dump/newMembers/*
-parser/config/*
-price.yml
+dump/filterMembers/*
+dump/getMembers/*
+dump/newMembers/*
+dump/generateYML/*
+config/*
