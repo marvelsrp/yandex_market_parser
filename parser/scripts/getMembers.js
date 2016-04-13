@@ -3,13 +3,8 @@ var _ = require('lodash');
 var colors = require('colors');
 var console = require('better-console');
 var fs = require('fs');
-//var task = require('./task') || '';
+var groups = require('../config/groups');
 var deferred = require('deferred');
-var groups = ['fotoodessa','virbox360','prazdnikvshokolade_kh',
-  'svadba_video_melnichenko', 'discoverwedding', 'rent_decorations','ats.foto', 'romantic_dp', 'nechaeva_dp',
-  'shepankova', 'nesterenko_yuliya','1fineday','vasha_svadba_dnepr', 'euro_svadba', '54518846',
-  'weddings_stuff','wedding.details','stylemepretty','lulusvadba','svadba_kr','detail_wed', 'ssvadba'];
-
 
 var writeAnswer = (name, members) => {
 
