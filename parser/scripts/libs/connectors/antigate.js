@@ -1,9 +1,9 @@
-var authData = require('./antigate.json');
+var authData = require('../../../config/antigate');
 var request = require('request');
 var base64 = require('node-base64-image');
 var deferred = require('deferred');
 var console = require('better-console');
-var sleep = require('./../lib/sleep');
+var sleep = require('../sleep');
 
 var loadFn = (sid, link) => {
   console.info('antigate.load', link);

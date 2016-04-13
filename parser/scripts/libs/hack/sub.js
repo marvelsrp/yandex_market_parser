@@ -1,6 +1,6 @@
 var likesFM = require('../connectors/likesFM');
 var vk = require('../connectors/vk');
-var sleep = require('../lib/sleep');
+var sleep = require('../sleep');
 var subHack = {
   init: (tasks) => {
     console.log('subHack init');

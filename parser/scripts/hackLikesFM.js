@@ -1,10 +1,10 @@
-var likesFM = require('./connectors/likesFM');
+var likesFM = require('./libs/connectors/likesFM');
 
 
-var likeHack = require('./hack/like');
-var repostHack = require('./hack/repost');
-var groupHack = require('./hack/group');
-var subHack = require('./hack/sub');
+var likeHack = require('./libs/hack/like');
+var repostHack = require('./libs/hack/repost');
+var groupHack = require('./libs/hack/group');
+var subHack = require('./libs/hack/sub');
 
 likesFM.getOffers().then((tasks) => {
   likeHack.init(tasks);

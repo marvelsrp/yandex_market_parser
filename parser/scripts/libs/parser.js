@@ -7,17 +7,18 @@ function ucFirst (str) {
 function pad(n) {return n < 10 ? '0' + n : n;}
 
 class Parser {
-  constructor() {
+  constructor(url) {
     this.offers_links = [];
     this.categories_links = [];
     this.offers_names = [];
     this.categories_names = [];
+    this.url = url;
   }
   getLinks() {
     console.log('getLinks');
     return new Promise((resolve, reject) => {
       request({
-        uri: 'http://decorsvadba.com/sitemap.xml'
+        uri: this.url
       }, (error, response, body) => {
         var $ = cheerio.load(body);
         console.log('download sitemap.xml');

@@ -1,6 +1,6 @@
 var likesFM = require('../connectors/likesFM');
 var vk = require('../connectors/vk');
-var sleep = require('../lib/sleep');
+var sleep = require('../sleep');
 var deferred = require('deferred');
 var groupHack = {
   init: (tasks) => {

@@ -1,6 +1,6 @@
 var open = require('open');
 var request = require('request');
-var authData = require('./likesFM.json');
+var authData = require('./../../../config/likesFM');
 
 var getOffers = () => {
   console.log('getOffers');
