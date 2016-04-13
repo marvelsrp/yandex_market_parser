@@ -129,6 +129,19 @@ var addFriend = (id) => {
   return def.promise;
 };
 
+var execute = (code) => {
+  var def = deferred();
+  var params = {
+    code: code
+  };
+
+  vk.request('execute', params, (response) => {
+    def.resolve(response);
+  });
+
+  return def.promise;
+};
+
 var getMembers = (id, offset) => {
   var params = {
     group_id: id,
@@ -140,13 +153,12 @@ var getMembers = (id, offset) => {
   var def = deferred();
   try {
     vk.request('groups.getMembers', params, (response) => {
-
       if (!response.response) {
         console.warn('reject vkDef', response);
         return def.reject();
       }
 
-      return def.resolve(response);
+      return def.resolve(response.response);
     });
   } catch (e){
     console.error(e);
@@ -169,6 +181,7 @@ var getToken = () => {
 module.exports = {
   vk: vk,
   like: like,
+  execute: execute,
   captcha: captcha,
   repost: repost,
   joinGroup: joinGroup,
