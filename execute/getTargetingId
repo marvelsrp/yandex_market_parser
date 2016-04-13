@@ -1,0 +1,20 @@
+var account_id = "%account_id%";
+var group_id = "%group_id%";
+
+var groups = API.ads.getTargetGroups({
+  "account_id": account_id
+});
+
+var i = 0;
+
+while (i < groups.length) {
+  if (groups[i].name == "new_" + group_id) {
+    return parseInt(groups[i].id);
+  }
+  i = i + 1;
+}
+
+return parseInt(API.ads.createTargetGroup({
+  "account_id": account_id,
+  "name": "new_" + group_id
+}).id);
