@@ -7,7 +7,7 @@ var fs = require('fs');
 var deferred = require('deferred');
 
 var groups = require('../config/groups');
-var accountID = 1603284512;
+var accountID = require('../config/account');
 
 var code = fs.readFileSync(__dirname + '/../execute/getTargetingId', 'utf8');
 var targetingIDs = {};

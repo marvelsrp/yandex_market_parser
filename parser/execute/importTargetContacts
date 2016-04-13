@@ -1,0 +1,9 @@
+var account_id = "%account_id%";
+var target_group_id = "%target_group_id%";
+var contacts = "%contacts%";
+
+return API.ads.importTargetContacts({
+  "account_id": account_id,
+  "target_group_id": target_group_id,
+  "contacts": contacts
+});
