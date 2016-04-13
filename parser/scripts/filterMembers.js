@@ -24,8 +24,8 @@ for (var i in dirs) {
     var ukraineWomans = _.filter(members, function(people) {
       return people.sex === 1 && people.country && people.country.title == 'Украина';
     });
-    fs.writeFileSync(writeDatePath + '/' + files[j] + '.json', JSON.stringify(ukraineWomans, null, 2));
-    console.log('     write ' + writeDatePath + '/' + files[j] + '.json', ukraineWomans.length);
+    fs.writeFileSync(writeDatePath + '/' + files[j], JSON.stringify(ukraineWomans, null, 2));
+    console.log('     write ' + writeDatePath + '/' + files[j], ukraineWomans.length);
   }
 }
 //console.log(summary);

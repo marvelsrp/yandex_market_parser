@@ -3,6 +3,8 @@ node_modules
 connectors/vk.json
 connectors/likesFM.json
 connectors/antigate.json
-parser/dump/*
+parser/dump/filterMembers/*
+parser/dump/getMembers/*
+parser/dump/newMembers/*
 parser/config/*
 price.yml
