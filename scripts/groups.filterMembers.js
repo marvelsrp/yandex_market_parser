@@ -1,5 +1,5 @@
 var fs = require('fs');
-var readPath = '../dump/getMembers';
+var readPath = '../dump/groups.getMembers';
 var writePath = '../dump/filterMembers';
 var _ = require('lodash');
 var dirs = fs.readdirSync(readPath);

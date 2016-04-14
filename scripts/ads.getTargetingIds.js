@@ -9,7 +9,7 @@ var deferred = require('deferred');
 var groups = require('../config/groups');
 var accountID = require('../config/account');
 
-var code = fs.readFileSync(__dirname + '/../execute/getTargetingId', 'utf8');
+var code = fs.readFileSync(__dirname + '/../execute/ads.getTargetGroups', 'utf8');
 var targetingIDs = {};
 
 function end() {

@@ -9,7 +9,7 @@ var deferred = require('deferred');
 var writeAnswer = (name, members) => {
   console.log('writeAnswer');
   var dateStr = new Date().toLocaleDateString();
-  var dumpDir = '../dump/getMembers/' + dateStr;
+  var dumpDir = '../dump/groups.getMembers/' + dateStr;
   console.log('mkdirSync');
   try {
     fs.mkdirSync(dumpDir);
@@ -34,7 +34,7 @@ function parseGroup(i) {
   var group_id = groups[i];
   console.log('parseGroup', group_id);
 
-  var code = fs.readFileSync(__dirname + '/../execute/getMembers', 'utf8');
+  var code = fs.readFileSync(__dirname + '/../execute/groups.getMembers', 'utf8');
 
   function end() {
     console.log('end');

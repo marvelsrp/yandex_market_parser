@@ -5,7 +5,7 @@ var _ = require('lodash');
 var groups = require('../config/groups');
 var targetinGroups = require('../config/targeting');
 var accountID = require('../config/account');
-var code = fs.readFileSync(__dirname + '/../execute/importTargetContacts', 'utf8');
+var code = fs.readFileSync(__dirname + '/../execute/ads.importTargetContacts', 'utf8');
 var sleep = require('./libs/sleep');
 
 function end(){
