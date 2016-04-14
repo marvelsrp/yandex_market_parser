@@ -6544,6 +6544,20 @@
     }
   },
   {
+    "id": 67166292,
+    "first_name": "Ирина",
+    "last_name": "Шерстянкина",
+    "sex": 1,
+    "city": {
+      "id": 650,
+      "title": "Днепропетровск"
+    },
+    "country": {
+      "id": 2,
+      "title": "Украина"
+    }
+  },
+  {
     "id": 67206750,
     "first_name": "Ольга",
     "last_name": "Липко",
@@ -9620,6 +9634,20 @@
     }
   },
   {
+    "id": 188119284,
+    "first_name": "Эдем",
+    "last_name": "Бутенко",
+    "sex": 1,
+    "city": {
+      "id": 1581,
+      "title": "Полтава"
+    },
+    "country": {
+      "id": 2,
+      "title": "Украина"
+    }
+  },
+  {
     "id": 189217276,
     "first_name": "Viva",
     "last_name": "Rosa",
@@ -10756,7 +10784,7 @@
   {
     "id": 217128601,
     "first_name": "Katharina",
-    "last_name": "Svitsa",
+    "last_name": "Svitsa-Prykhodchenko",
     "sex": 1,
     "city": {
       "id": 650,
@@ -12336,16 +12364,6 @@
       "id": 314,
       "title": "Киев"
     },
-    "country": {
-      "id": 2,
-      "title": "Украина"
-    }
-  },
-  {
-    "id": 231728740,
-    "first_name": "Яна",
-    "last_name": "Яна",
-    "sex": 1,
     "country": {
       "id": 2,
       "title": "Украина"

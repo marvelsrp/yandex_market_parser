@@ -1252,6 +1252,20 @@
     }
   },
   {
+    "id": 298710382,
+    "first_name": "Илона",
+    "last_name": "Садова",
+    "sex": 1,
+    "city": {
+      "id": 314,
+      "title": "Киев"
+    },
+    "country": {
+      "id": 2,
+      "title": "Украина"
+    }
+  },
+  {
     "id": 302191687,
     "first_name": "Влада",
     "last_name": "Смирнова",
@@ -1689,20 +1703,6 @@
     "city": {
       "id": 916,
       "title": "Кривой Рог"
-    },
-    "country": {
-      "id": 2,
-      "title": "Украина"
-    }
-  },
-  {
-    "id": 346554562,
-    "first_name": "Irisha",
-    "last_name": "Schastlivaya",
-    "sex": 1,
-    "city": {
-      "id": 2201,
-      "title": "Кировоград"
     },
     "country": {
       "id": 2,

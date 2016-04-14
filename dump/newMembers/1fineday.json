@@ -1,22 +1,18 @@
 [
   {
-    "id": 440273,
-    "first_name": "Юля",
-    "last_name": "Чернецкая",
+    "id": 1635908,
+    "first_name": "Светлана",
+    "last_name": "Косолап",
     "sex": 1,
-    "city": {
-      "id": 650,
-      "title": "Днепропетровск"
-    },
     "country": {
       "id": 2,
       "title": "Украина"
     }
   },
   {
-    "id": 1436639,
-    "first_name": "Маша",
-    "last_name": "Петренко",
+    "id": 23301732,
+    "first_name": "Юлия",
+    "last_name": "Довгонюк",
     "sex": 1,
     "city": {
       "id": 650,

@@ -1,4 +1,4 @@
-var VK = require('./../../connectors/vk');
+var VK = require('./libs/connectors/vk');
 var _ = require('lodash');
 var colors = require('colors');
 var console = require('better-console');

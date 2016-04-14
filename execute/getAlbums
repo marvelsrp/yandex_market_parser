@@ -1,0 +1,34 @@
+var owner_id = "%owner_id%";
+var categories = [{name: "test"}, {name: "test2"}];
+
+var albums = API.market.getAlbums({
+  "owner_id": owner_id
+}).items@.title;
+
+var i = 0;
+var j = 0;
+var album, index;
+var found;
+
+var founds = [];
+while (i < categories.length) {
+    found = false;
+    while (j < albums.length) {
+        found = found || (albums[j] == categories[i].name);
+        j = j + 1;
+    }
+    founds.push(found);
+    if (!found) {
+        API.market.addAlbum({
+          "owner_id": owner_id,
+          "title": categories[i].name
+        });
+    }
+    i = i + 1;
+}
+TODO: не правильно находит в списке? нет indexOf =(
+albums = API.market.getAlbums({
+  "owner_id": owner_id
+});
+
+return founds;

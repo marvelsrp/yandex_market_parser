@@ -1,2 +1,2 @@
-var VK = require('./../connectors/vk');
+var VK = require('./libs/connectors/vk');
 VK.getToken();

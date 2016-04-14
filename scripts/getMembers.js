@@ -1,4 +1,4 @@
-var VK = require('./../../connectors/vk');
+var VK = require('./libs/connectors/vk');
 var _ = require('lodash');
 var colors = require('colors');
 var console = require('better-console');
@@ -7,10 +7,10 @@ var groups = require('../config/groups');
 var deferred = require('deferred');
 
 var writeAnswer = (name, members) => {
-
+  console.log('writeAnswer');
   var dateStr = new Date().toLocaleDateString();
   var dumpDir = '../dump/getMembers/' + dateStr;
-
+  console.log('mkdirSync');
   try {
     fs.mkdirSync(dumpDir);
   } catch (e) {
@@ -39,8 +39,8 @@ function parseGroup(i) {
   function end() {
     console.log('end');
     writeAnswer(group_id, members).then(() => {
-      if (parseInt(i) + 1 < groups.length) {
-        parseGroup(parseInt(i) + 1, 0);
+      if (i + 1 < groups.length) {
+        parseGroup(i + 1);
       } else {
         console.info('DONE =)');
       }
@@ -77,4 +77,4 @@ function parseGroup(i) {
 
 
 
-parseGroup(13);
+parseGroup(0);

@@ -1,7 +1,7 @@
 node_modules
 .idea
-dump/filterMembers/*
-dump/getMembers/*
-dump/newMembers/*
-dump/generateYML/*
+dump/filterMembers/**/*
+dump/getMembers/**/*
+dump/newMembers/**/*
+dump/generateYML/**/*
 config/*
