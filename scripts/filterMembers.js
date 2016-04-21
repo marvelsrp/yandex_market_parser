@@ -9,6 +9,7 @@ for (var i in dirs) {
   if (date.indexOf('.json') != -1) {
     continue;
   }
+  //test 2
   var readDatePath = readPath + '/' + date;
   var writeDatePath = writePath + '/' + date;
   try {
