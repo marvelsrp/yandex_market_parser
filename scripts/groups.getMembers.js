@@ -10,13 +10,12 @@ var writeAnswer = (name, members) => {
   console.log('writeAnswer');
   var dateStr = new Date().toLocaleDateString();
   var dumpDir = '../dump/groups.getMembers/' + dateStr;
-  console.log('mkdirSync');
+
   try {
     fs.mkdirSync(dumpDir);
   } catch (e) {
-    if (e.code != 'EEXIST') throw e;
+    if (e.code != 'EEXIST') console.log(e);
   }
-
   return new Promise((resolve, reject) => {
     fs.writeFile(dumpDir + '/' + name + '.json', JSON.stringify(members, null, 2), 'utf8', function(err) {
       if (err) {

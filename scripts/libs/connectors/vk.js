@@ -6,8 +6,10 @@ var sleep = require('../sleep');
 var console = require('better-console');
 var deferred = require('deferred');
 var fs = require('fs');
+var request = require('request');
 var readline = require('readline');
 var antigate = require('./antigate');
+var FormData = require('form-data');
 
 var vk = new VK({
   'appId'     : authData.appId,
@@ -56,16 +58,16 @@ var like = (id, captcha_sid, captcha_key) => {
 
     if (response.error && response.error.error_code === 14) {
       console.warn('CAPTCHA?');
-      var sid = response.error.captcha_sid;
-      var img = response.error.captcha_img;
-      antigate.load(sid, img).then((id) => {
-        antigate.response(id, 0).then(() => {
-          like(id, sid, answer).then(() => {
-            console.info('like with captcha solver =)');
-            def.resolve();
-          });
-        });
-      });
+      //var sid = response.error.captcha_sid;
+      //var img = response.error.captcha_img;
+      //antigate.load(sid, img).then((id) => {
+      //  antigate.response(id, 0).then(() => {
+      //    like(id, sid, answer).then(() => {
+      //      console.info('like with captcha solver =)');
+      //      def.resolve();
+      //    });
+      //  });
+      //});
 
       //return captcha(sid, img).then((key) => {
       //  like(id, sid, key).then(() => {
@@ -160,7 +162,7 @@ var getMembers = (id, offset) => {
 
       return def.resolve(response.response);
     });
-  } catch (e){
+  } catch (e) {
     console.error(e);
     throw e;
   }
@@ -177,6 +179,92 @@ var getToken = () => {
     'v=5.50&';
   open(access_token_url);
 };
+var market = {
+  get: function(owner_id) {
+    var products = [];
+
+    function request(offset) {
+      var def = deferred();
+      var params = {
+        owner_id: owner_id,
+        offset: offset,
+        count: 200
+      };
+
+      vk.request('market.get', params, (response) => {
+        if (!response.response) {
+          console.warn('reject market.get', response);
+          return def.reject();
+        }
+        products.concat(response.items);
+
+        if (response.response.count === 200) {
+          return request(owner_id, offset + 200).then(() => {
+            def.resolve(products);
+          });
+        } else {
+          def.resolve(products);
+        }
+      });
+
+      return def.promise;
+    }
+
+    return request(0);
+  },
+  add: function(params) {
+    var def = deferred();
+    vk.request('market.add', params, (response) => {
+      if (!response.response) {
+        console.warn('reject market.add', response);
+        return def.reject();
+      }
+      def.resolve(response);
+    });
+    return def.promise;
+  },
+
+  /**
+   * adminadmin@ukr.net
+   * adminadmin
+   * adminadmin1Z
+   * @param group_id
+   * @returns {*}
+   */
+  getMarketUploadServer: function(group_id) {
+    var params = {
+      group_id: Math.abs(parseInt(group_id))
+    };
+    var def = deferred();
+    vk.request('photos.getMarketUploadServer', params, (response) => {
+      if (!response.response) {
+        console.warn('reject market.add', response);
+        return def.reject();
+      }
+      def.resolve(response.response.upload_url);
+    });
+    return def.promise;
+  },
+  uploadProductPhoto(endPoint, photoUrl) {
+
+    var file = request(photoUrl).pipe(fs.createWriteStream('file.jpg'));
+
+    try {
+      var form = new FormData();
+      form.append('file', file);
+    } catch (e) {
+      //console.log(Object.keys(e));
+    }
+    var t = form.submit(endPoint, function(err, res) {
+      // res – response object (http.IncomingMessage)  //
+
+      console.log(res.resume());
+
+    });
+    //console.log(t);
+
+  }
+};
 
 module.exports = {
   vk: vk,
@@ -187,5 +275,6 @@ module.exports = {
   joinGroup: joinGroup,
   addFriend: addFriend,
   getMembers:getMembers,
-  getToken: getToken
+  getToken: getToken,
+  market: market
 };

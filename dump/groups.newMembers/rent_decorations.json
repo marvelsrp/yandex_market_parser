@@ -1,0 +1,44 @@
+[
+  {
+    "id": 338242666,
+    "first_name": "Ирина",
+    "last_name": "Макарова",
+    "sex": 1,
+    "city": {
+      "id": 223,
+      "title": "Донецк"
+    },
+    "country": {
+      "id": 2,
+      "title": "Украина"
+    }
+  },
+  {
+    "id": 346554562,
+    "first_name": "Irisha",
+    "last_name": "Schastlivaya",
+    "sex": 1,
+    "city": {
+      "id": 2201,
+      "title": "Кировоград"
+    },
+    "country": {
+      "id": 2,
+      "title": "Украина"
+    }
+  },
+  {
+    "id": 353043937,
+    "first_name": "Алевтина",
+    "last_name": "Владимировна",
+    "sex": 1,
+    "city": {
+      "id": 223,
+      "title": "Донецк"
+    },
+    "country": {
+      "id": 2,
+      "title": "Украина"
+    }
+  }
+]

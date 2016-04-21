@@ -1,0 +1,72 @@
+[
+  {
+    "id": 41168971,
+    "first_name": "Лена",
+    "last_name": "Ведмеденко",
+    "sex": 1,
+    "city": {
+      "id": 314,
+      "title": "Киев"
+    },
+    "country": {
+      "id": 2,
+      "title": "Украина"
+    }
+  },
+  {
+    "id": 50882849,
+    "first_name": "Оксана",
+    "last_name": "Кучер",
+    "sex": 1,
+    "city": {
+      "id": 6275,
+      "title": "Хотин"
+    },
+    "country": {
+      "id": 2,
+      "title": "Украина"
+    }
+  },
+  {
+    "id": 82187335,
+    "first_name": "Мария",
+    "last_name": "Лисовская",
+    "sex": 1,
+    "city": {
+      "id": 5722,
+      "title": "Новоград-Волынский"
+    },
+    "country": {
+      "id": 2,
+      "title": "Украина"
+    }
+  },
+  {
+    "id": 109598256,
+    "first_name": "Лєнка",
+    "last_name": "Кольцунова",
+    "sex": 1,
+    "city": {
+      "id": 2917,
+      "title": "Хмельницкий"
+    },
+    "country": {
+      "id": 2,
+      "title": "Украина"
+    }
+  },
+  {
+    "id": 197912495,
+    "first_name": "Svetlana",
+    "last_name": "Degtyareva",
+    "sex": 1,
+    "city": {
+      "id": 4331,
+      "title": "Саки"
+    },
+    "country": {
+      "id": 2,
+      "title": "Украина"
+    }
+  }
+]

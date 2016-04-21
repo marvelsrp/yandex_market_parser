@@ -1,0 +1,58 @@
+[
+  {
+    "id": 16730925,
+    "first_name": "Олена",
+    "last_name": "Дейніченко",
+    "sex": 1,
+    "city": {
+      "id": 916,
+      "title": "Кривой Рог"
+    },
+    "country": {
+      "id": 2,
+      "title": "Украина"
+    }
+  },
+  {
+    "id": 35732660,
+    "first_name": "Октябрина",
+    "last_name": "Вторникова",
+    "sex": 1,
+    "city": {
+      "id": 916,
+      "title": "Кривой Рог"
+    },
+    "country": {
+      "id": 2,
+      "title": "Украина"
+    }
+  },
+  {
+    "id": 82158121,
+    "first_name": "Ирина",
+    "last_name": "Васина",
+    "sex": 1,
+    "city": {
+      "id": 916,
+      "title": "Кривой Рог"
+    },
+    "country": {
+      "id": 2,
+      "title": "Украина"
+    }
+  },
+  {
+    "id": 324773807,
+    "first_name": "Anna",
+    "last_name": "Sinchevskaya",
+    "sex": 1,
+    "city": {
+      "id": 916,
+      "title": "Кривой Рог"
+    },
+    "country": {
+      "id": 2,
+      "title": "Украина"
+    }
+  }
+]

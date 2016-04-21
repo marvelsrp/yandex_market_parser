@@ -1,0 +1,106 @@
+[
+  {
+    "id": 39779015,
+    "first_name": "Юлия",
+    "last_name": "Иванова",
+    "sex": 1,
+    "city": {
+      "id": 384,
+      "title": "Геническ"
+    },
+    "country": {
+      "id": 2,
+      "title": "Украина"
+    }
+  },
+  {
+    "id": 100593064,
+    "first_name": "Юлия",
+    "last_name": "Нестеренко",
+    "sex": 1,
+    "city": {
+      "id": 280,
+      "title": "Харьков"
+    },
+    "country": {
+      "id": 2,
+      "title": "Украина"
+    }
+  },
+  {
+    "id": 108012640,
+    "first_name": "Аня",
+    "last_name": "Галкина",
+    "sex": 1,
+    "country": {
+      "id": 2,
+      "title": "Украина"
+    }
+  },
+  {
+    "id": 145352904,
+    "first_name": "Katia",
+    "last_name": "Katia",
+    "sex": 1,
+    "country": {
+      "id": 2,
+      "title": "Украина"
+    }
+  },
+  {
+    "id": 161917707,
+    "first_name": "Анна",
+    "last_name": "Чуткова",
+    "sex": 1,
+    "city": {
+      "id": 1507621,
+      "title": "Деревня"
+    },
+    "country": {
+      "id": 2,
+      "title": "Украина"
+    }
+  },
+  {
+    "id": 198567060,
+    "first_name": "Наталия",
+    "last_name": "Рахаева",
+    "sex": 1,
+    "city": {
+      "id": 280,
+      "title": "Харьков"
+    },
+    "country": {
+      "id": 2,
+      "title": "Украина"
+    }
+  },
+  {
+    "id": 298246977,
+    "first_name": "Vera",
+    "last_name": "Oryschenko",
+    "sex": 1,
+    "city": {
+      "id": 377,
+      "title": "Николаев"
+    },
+    "country": {
+      "id": 2,
+      "title": "Украина"
+    }
+  },
+  {
+    "id": 311116588,
+    "first_name": "Катеринка",
+    "last_name": "Бабушкина",
+    "sex": 1,
+    "city": {
+      "id": 280,
+      "title": "Харьков"
+    },
+    "country": {
+      "id": 2,
+      "title": "Украина"
+    }
+  }
+]

@@ -1,9 +1,27 @@
 var account_id = "%account_id%";
-var target_group_id = "%target_group_id%";
 var contacts = "%contacts%";
+
+var groups = API.ads.getTargetGroups({
+  "account_id": account_id
+});
+
+var i = 0;
+var all_group;
+while (i < groups.length) {
+  if (groups[i].name == "all") {
+    all_group = parseInt(groups[i].id);
+  }
+  i = i + 1;
+}
+if (!all_group){
+ all_group = parseInt(API.ads.createTargetGroup({
+      "account_id": account_id,
+      "name": "all"
+    }).id);
+}
 
 return API.ads.importTargetContacts({
   "account_id": account_id,
-  "target_group_id": target_group_id,
+  "target_group_id": all_group,
   "contacts": contacts
 });

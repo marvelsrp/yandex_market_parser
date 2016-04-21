@@ -1,0 +1,86 @@
+[
+  {
+    "id": 11762350,
+    "first_name": "Ксюша",
+    "last_name": "Самсонова",
+    "sex": 1,
+    "city": {
+      "id": 650,
+      "title": "Днепропетровск"
+    },
+    "country": {
+      "id": 2,
+      "title": "Украина"
+    }
+  },
+  {
+    "id": 22559575,
+    "first_name": "Марина",
+    "last_name": "Евтушенко",
+    "sex": 1,
+    "city": {
+      "id": 2642,
+      "title": "Черкассы"
+    },
+    "country": {
+      "id": 2,
+      "title": "Украина"
+    }
+  },
+  {
+    "id": 66766996,
+    "first_name": "Юля",
+    "last_name": "Егоркина",
+    "sex": 1,
+    "city": {
+      "id": 292,
+      "title": "Одесса"
+    },
+    "country": {
+      "id": 2,
+      "title": "Украина"
+    }
+  },
+  {
+    "id": 191407700,
+    "first_name": "Анастасия",
+    "last_name": "Карасева",
+    "sex": 1,
+    "city": {
+      "id": 650,
+      "title": "Днепропетровск"
+    },
+    "country": {
+      "id": 2,
+      "title": "Украина"
+    }
+  },
+  {
+    "id": 298246977,
+    "first_name": "Vera",
+    "last_name": "Oryschenko",
+    "sex": 1,
+    "city": {
+      "id": 377,
+      "title": "Николаев"
+    },
+    "country": {
+      "id": 2,
+      "title": "Украина"
+    }
+  },
+  {
+    "id": 328923996,
+    "first_name": "Алиса",
+    "last_name": "Жемчуженко",
+    "sex": 1,
+    "city": {
+      "id": 650,
+      "title": "Днепропетровск"
+    },
+    "country": {
+      "id": 2,
+      "title": "Украина"
+    }
+  }
+]
