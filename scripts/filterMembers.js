@@ -3,7 +3,7 @@ var readPath = '../dump/getMembers';
 var writePath = '../dump/filterMembers';
 var _ = require('lodash');
 var dirs = fs.readdirSync(readPath);
-
+//test 1
 for (var i in dirs) {
   var date = dirs[i];
   if (date.indexOf('.json') != -1) {
