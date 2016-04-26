@@ -145,7 +145,7 @@ class Parser {
 
           offer.picture = [];
           $('.zoom-outer .sk-img').each((i, element)=> {
-            let src = 'http://decorsvadba.com/' + $(element).attr('src');
+            let src = 'http://decorsvadba.com' + $(element).attr('src');
             if (src.indexOf('large') === -1) {
               offer.picture.push(src);
             }

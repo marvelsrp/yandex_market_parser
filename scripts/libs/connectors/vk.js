@@ -8,7 +8,6 @@ var deferred = require('deferred');
 var fs = require('fs');
 var request = require('request');
 var readline = require('readline');
-var antigate = require('./antigate');
 var FormData = require('form-data');
 
 var vk = new VK({
@@ -58,76 +57,12 @@ var like = (id, captcha_sid, captcha_key) => {
 
     if (response.error && response.error.error_code === 14) {
       console.warn('CAPTCHA?');
-      //var sid = response.error.captcha_sid;
-      //var img = response.error.captcha_img;
-      //antigate.load(sid, img).then((id) => {
-      //  antigate.response(id, 0).then(() => {
-      //    like(id, sid, answer).then(() => {
-      //      console.info('like with captcha solver =)');
-      //      def.resolve();
-      //    });
-      //  });
-      //});
-
-      //return captcha(sid, img).then((key) => {
-      //  like(id, sid, key).then(() => {
-      //    console.error('like with captcha solver =)');
-      //    def.resolve();
-      //  })
-      //}).catch(() => {
-      //  console.error('reject captcha =(');
-      //  def.resolve();
-      //});
-
     } else {
       def.resolve();
     }
 
   });
 
-  return def.promise;
-};
-
-var captcha = (sid, img) => {
-  console.log(sid, img);
-};
-
-var repost = (id) => {
-  var def = deferred();
-  var params = {
-    object: id
-  };
-
-  vk.request('wall.repost', params, (response) => {
-    console.log('wall.repost', response);
-    return (response.hasOwnProperty('success')) ?  def.resolve() : def.reject();
-  });
-  return def.promise;
-};
-
-var joinGroup = (id) => {
-  var def = deferred();
-  var params = {
-    group_id: parseInt(id.replace(/\D/g,''))
-  };
-
-  vk.request('groups.join', params, (response) => {
-    console.log('groups.join', response);
-    return def.resolve();
-  });
-  return def.promise;
-};
-
-var addFriend = (id) => {
-  var def = deferred();
-  var params = {
-    user_id: parseInt(id.replace(/\D/g,''))
-  };
-
-  vk.request('friends.add', params, (response) => {
-    console.log('friends.add', response);
-    return def.resolve();
-  });
   return def.promise;
 };
 
@@ -144,31 +79,6 @@ var execute = (code) => {
   return def.promise;
 };
 
-var getMembers = (id, offset) => {
-  var params = {
-    group_id: id,
-    sort: 'id_desc',
-    count: 1000,
-    fields: 'country, sex, city',
-    offset: offset
-  };
-  var def = deferred();
-  try {
-    vk.request('groups.getMembers', params, (response) => {
-      if (!response.response) {
-        console.warn('reject vkDef', response);
-        return def.reject();
-      }
-
-      return def.resolve(response.response);
-    });
-  } catch (e) {
-    console.error(e);
-    throw e;
-  }
-  return def.promise;
-};
-
 var getToken = () => {
   var access_token_url = 'https://oauth.vk.com/authorize?' +
     'client_id=' + authData.appId + '&' +
@@ -181,12 +91,13 @@ var getToken = () => {
 };
 var market = {
   get: function(owner_id) {
+    console.log('market.get', owner_id);
     var products = [];
 
     function request(offset) {
       var def = deferred();
       var params = {
-        owner_id: owner_id,
+        owner_id: '-' + owner_id,
         offset: offset,
         count: 200
       };
@@ -194,13 +105,15 @@ var market = {
       vk.request('market.get', params, (response) => {
         if (!response.response) {
           console.warn('reject market.get', response);
-          return def.reject();
+          def.reject();
         }
         products.concat(response.items);
 
         if (response.response.count === 200) {
-          return request(owner_id, offset + 200).then(() => {
+          request(owner_id, offset + 200).then(() => {
             def.resolve(products);
+          }).catch(() => {
+            def.reject();
           });
         } else {
           def.resolve(products);
@@ -225,56 +138,111 @@ var market = {
   },
 
   /**
-   * adminadmin@ukr.net
-   * adminadmin
-   * adminadmin1Z
+   * getMarketUploadServer
    * @param group_id
-   * @returns {*}
+   * @param main_photo
+   * @returns {Promise}
    */
-  getMarketUploadServer: function(group_id) {
+  getMarketUploadServer: function(group_id, main_photo) {
+
     var params = {
-      group_id: Math.abs(parseInt(group_id))
+      group_id: group_id,
+      main_photo: main_photo,
+      crop_x: 1,
+      crop_y: 1,
+      crop_width: 500
     };
     var def = deferred();
     vk.request('photos.getMarketUploadServer', params, (response) => {
       if (!response.response) {
-        console.warn('reject market.add', response);
-        return def.reject();
+        console.warn('reject photos.getMarketUploadServer', response);
+        def.reject();
+      } else {
+        console.log('market.getMarketUploadServer', group_id, main_photo, response.response.upload_url);
+        def.resolve(response.response.upload_url);
       }
-      def.resolve(response.response.upload_url);
+
     });
     return def.promise;
   },
-  uploadProductPhoto(endPoint, photoUrl) {
-
-    var file = request(photoUrl).pipe(fs.createWriteStream('file.jpg'));
-
-    try {
-      var form = new FormData();
-      form.append('file', file);
-    } catch (e) {
-      //console.log(Object.keys(e));
-    }
-    var t = form.submit(endPoint, function(err, res) {
-      // res – response object (http.IncomingMessage)  //
-
-      console.log(res.resume());
+  /**
+   * get Album file server
+   * @param group_id
+   * @returns {*}
+   */
+  getAlbumUploadServer: function(group_id) {
+    console.log('market.getAlbumUploadServer', group_id);
+    var params = {
+      group_id: group_id
+    };
+    var def = deferred();
+    vk.request('photos.getMarketAlbumUploadServer', params, (response) => {
+      if (!response.response) {
+        console.warn('reject photos.getMarketAlbumUploadServer', response);
+        def.reject();
+      } else {
+        def.resolve(response.response.upload_url);
+      }
 
     });
-    //console.log(t);
+    return def.promise;
+  },
+  /**
+   * Upload photo
+   * @param endPoint
+   * @param photoUrl
+   */
+  uploadPhoto(endPoint, photoUrl) {
+    request(photoUrl).pipe(fs.createWriteStream(__dirname + '/file.jpg'));
 
+    var def = deferred();
+    var formData = {
+      file: fs.createReadStream(__dirname + '/file.jpg').pipe(request(photoUrl))
+    };
+    request.post({url:endPoint, formData: formData}, function(err, httpResponse, body) {
+      var res = JSON.parse(body);
+      if (err || res.error) {
+        console.error('Upload failed:', res);
+        def.reject();
+      } else {
+        console.log('Upload successful.', photoUrl);
+        def.resolve(res);
+      }
+    });
+    return def.promise;
+  },
+  /**
+   * Save market photo
+   * @param group_id
+   * @param params
+   * @returns {Promise}
+   */
+  saveMarketPhoto(group_id, params) {
+
+    params.group_id = group_id;
+    var def = deferred();
+    console.log('market.saveMarketPhoto', params);
+    vk.request('photos.saveMarketPhoto', params, (response) => {
+      if (!response.response) {
+        console.warn('reject photos.saveMarketPhoto', response);
+        return def.reject();
+      }
+      console.log('market.saveMarketPhoto', response.response[0]);
+      def.resolve(response.response[0].id);
+    });
+    return def.promise;
   }
+  /**
+   *  main_photo_id: 412463608,
+   photo_ids: [ 412463606, 412463610, 412463615, 412463619 ] }
+
+   */
 };
 
 module.exports = {
   vk: vk,
   like: like,
   execute: execute,
-  captcha: captcha,
-  repost: repost,
-  joinGroup: joinGroup,
-  addFriend: addFriend,
-  getMembers:getMembers,
   getToken: getToken,
   market: market
 };
