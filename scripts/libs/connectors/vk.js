@@ -132,7 +132,7 @@ var market = {
         console.warn('reject market.add', response);
         return def.reject();
       }
-      def.resolve(response);
+      def.resolve(response.response);
     });
     return def.promise;
   },
@@ -147,10 +147,10 @@ var market = {
 
     var params = {
       group_id: group_id,
-      main_photo: main_photo,
-      crop_x: 1,
-      crop_y: 1,
-      crop_width: 500
+      main_photo: main_photo
+      //crop_x: 1,
+      //crop_y: 1,
+      //crop_width: 500
     };
     var def = deferred();
     vk.request('photos.getMarketUploadServer', params, (response) => {
@@ -221,13 +221,11 @@ var market = {
 
     params.group_id = group_id;
     var def = deferred();
-    console.log('market.saveMarketPhoto', params);
     vk.request('photos.saveMarketPhoto', params, (response) => {
       if (!response.response) {
         console.warn('reject photos.saveMarketPhoto', response);
         return def.reject();
       }
-      console.log('market.saveMarketPhoto', response.response[0]);
       def.resolve(response.response[0].id);
     });
     return def.promise;
