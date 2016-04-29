@@ -5,7 +5,7 @@ var parser = new PARSER(yml_config.sitemap);
 var js2xmlparser = require('js2xmlparser');
 var fs = require('fs');
 function humanList(data) {
-  for(var i in data) {
+  for (var i in data) {
     console.log(data[i]);
   }
 }
@@ -22,18 +22,17 @@ parser.getLinks().then(function() {
       'delivery-options':'option'
     }
   });
-  fs.writeFile('../dump/generateYML/price.yml', xml, function(err) {
+  fs.writeFile('../dump/market.generateYML/price.yml', xml, function(err) {
     if (err) {
       return console.log(err);
     }
     console.log('YML was generated!');
   });
-  fs.writeFile('../dump/generateYML/price.json', JSON.stringify(data, null, 2), function(err) {
+  fs.writeFile('../dump/market.generateYML/price.json', JSON.stringify(data, null, 2), function(err) {
     if (err) {
       return console.log(err);
     }
     console.log('json was generated!', JSON.stringify(data, null, 2));
   });
-
 
 });

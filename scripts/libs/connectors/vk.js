@@ -8,7 +8,10 @@ var deferred = require('deferred');
 var fs = require('fs');
 var request = require('request');
 var readline = require('readline');
-var FormData = require('form-data');
+var sizeOf = require('image-size');
+var url = require('url');
+var http = require('http');
+var stream = require('stream');
 
 var vk = new VK({
   'appId'     : authData.appId,
@@ -89,12 +92,114 @@ var getToken = () => {
     'v=5.50&';
   open(access_token_url);
 };
+
+var requestProxy = function(action, params) {
+  var def = deferred();
+  //console.log('request', action);
+  vk.request(action, params, (response) => {
+    if (!response.response) {
+      console.error('reject ' + action, response);
+      return def.reject();
+    }
+    //console.log('resolve', action);
+    def.resolve(response.response);
+  });
+  return def.promise;
+};
+var endPointsCache = {};
+
+var getUploadEndpoint = function(type, params) {
+  var result;
+  if (endPointsCache[type]) {
+    result = Promise.resolve(endPointsCache[type]);
+  } else {
+    switch (type) {
+      case 'product_main':
+        result = requestProxy('photos.getMarketUploadServer', Object.assign({}, params, {main_photo: 1})).then((response) => {
+          endPointsCache[type] = response.upload_url;
+          return endPointsCache[type];
+        });
+        break;
+      case 'product_other':
+        result = requestProxy('photos.getMarketUploadServer', Object.assign({}, params)).then((response) => {
+          endPointsCache[type] = response.upload_url;
+          return endPointsCache[type];
+        });
+        break;
+      default:
+        console.error('Undefined Endpoint type', type);
+        break;
+    }
+  }
+  return result;
+};
+
+var upload = function(type, params, photoUrl) {
+  var fileUrl = __dirname + '/file.jpg';
+  try {
+    var resultPromise = new Promise((resolve, reject) => {
+      var wstream = fs.createWriteStream(fileUrl);
+      var stream = request(photoUrl).pipe(wstream);
+      stream.on('error', function(err) {
+        throw new Error('stream error' + err);
+      });
+      //stream.on('response', function(response) {
+      //  if (response.headers['content-type'] === 'image/jpeg') {
+      //
+      //  }
+      //});
+      wstream.on('finish', function() {
+        var dimension = sizeOf(fileUrl);
+        if (parseInt(dimension.height) > 400 && parseInt(dimension.width) > 400) {
+          resolve();
+        } else {
+          console.error('reject by img size' + dimension);
+          reject();
+        }
+      });
+    }).then(() => {
+      return getUploadEndpoint(type, params);
+    }).then((url) => {
+      var formData = {
+        file: fs.createReadStream(fileUrl)
+      };
+      return new Promise((resolve, reject) => {
+
+        request.post({url, formData: formData}, function(err, httpResponse, body) {
+        var res = JSON.parse(body);
+        if (err || res.error) {
+          reject('upload failed: ' + body);
+        } else {
+          resolve(res);
+        }
+      });
+      });
+    });
+  } catch (e) {
+    console.error(e);
+    return Promise.reject();
+  }
+  return resultPromise;
+};
+
+var uploadPhoto = (photoUrl, type, ownerId) => {
+  return upload(type, {group_id: ownerId}, photoUrl).then((responseUpload) => {
+    responseUpload.group_id = ownerId;
+    return requestProxy('photos.saveMarketPhoto', responseUpload).then((responseSavePhoto) => {
+      return responseSavePhoto[0].id;
+    });
+  }, (e) => {
+    console.error('upload catch', e);
+    return Promise.reject(e);
+  });
+};
+
 var market = {
   get: function(owner_id) {
     console.log('market.get', owner_id);
     var products = [];
 
-    function request(offset) {
+    function loop(offset) {
       var def = deferred();
       var params = {
         owner_id: '-' + owner_id,
@@ -102,15 +207,13 @@ var market = {
         count: 200
       };
 
-      vk.request('market.get', params, (response) => {
-        if (!response.response) {
-          console.warn('reject market.get', response);
-          def.reject();
-        }
-        products.concat(response.items);
+      requestProxy('market.get', params).then((response) => {
 
-        if (response.response.count === 200) {
-          request(owner_id, offset + 200).then(() => {
+        _.forEach(response.items, function(item, key) {
+          products.push(item);
+        });
+        if (response.count === 200) {
+          loop(owner_id, offset + 200).then(() => {
             def.resolve(products);
           }).catch(() => {
             def.reject();
@@ -123,7 +226,7 @@ var market = {
       return def.promise;
     }
 
-    return request(0);
+    return loop(0);
   },
   add: function(params) {
     var def = deferred();
@@ -136,92 +239,17 @@ var market = {
     });
     return def.promise;
   },
-
   /**
-   * getMarketUploadServer
-   * @param group_id
-   * @param main_photo
-   * @returns {Promise}
-   */
-  getMarketUploadServer: function(group_id, main_photo) {
-
-    var params = {
-      group_id: group_id,
-      main_photo: main_photo
-      //crop_x: 1,
-      //crop_y: 1,
-      //crop_width: 500
-    };
-    var def = deferred();
-    vk.request('photos.getMarketUploadServer', params, (response) => {
-      if (!response.response) {
-        console.warn('reject photos.getMarketUploadServer', response);
-        def.reject();
-      } else {
-        console.log('market.getMarketUploadServer', group_id, main_photo, response.response.upload_url);
-        def.resolve(response.response.upload_url);
-      }
-
-    });
-    return def.promise;
-  },
-  /**
-   * get Album file server
-   * @param group_id
+   * Add product to album
+   * @param owner_id
+   * @param item_id
+   * @param album_ids
    * @returns {*}
    */
-  getAlbumUploadServer: function(group_id) {
-    console.log('market.getAlbumUploadServer', group_id);
-    var params = {
-      group_id: group_id
-    };
+  addToAlbum(owner_id, item_id, album_ids) {
+    var params = {owner_id, item_id, album_ids};
     var def = deferred();
-    vk.request('photos.getMarketAlbumUploadServer', params, (response) => {
-      if (!response.response) {
-        console.warn('reject photos.getMarketAlbumUploadServer', response);
-        def.reject();
-      } else {
-        def.resolve(response.response.upload_url);
-      }
-
-    });
-    return def.promise;
-  },
-  /**
-   * Upload photo
-   * @param endPoint
-   * @param photoUrl
-   */
-  uploadPhoto(endPoint, photoUrl) {
-    request(photoUrl).pipe(fs.createWriteStream(__dirname + '/file.jpg'));
-
-    var def = deferred();
-    var formData = {
-      file: fs.createReadStream(__dirname + '/file.jpg').pipe(request(photoUrl))
-    };
-    request.post({url:endPoint, formData: formData}, function(err, httpResponse, body) {
-      var res = JSON.parse(body);
-      if (err || res.error) {
-        console.error('Upload failed:', res);
-        def.reject();
-      } else {
-        console.log('Upload successful.', photoUrl);
-        def.resolve(res);
-      }
-    });
-    return def.promise;
-  },
-  /**
-   * Save market photo
-   * @param group_id
-   * @param params
-   * @returns {Promise}
-   */
-  saveMarketPhoto(group_id, params) {
-
-    params.group_id = group_id;
-    var def = deferred();
-    vk.request('photos.saveMarketPhoto', params, (response) => {
+    vk.request('market.addToAlbum', params, (response) => {
       if (!response.response) {
         console.warn('reject photos.saveMarketPhoto', response);
         return def.reject();
@@ -230,6 +258,7 @@ var market = {
     });
     return def.promise;
   }
+
   /**
    *  main_photo_id: 412463608,
    photo_ids: [ 412463606, 412463610, 412463615, 412463619 ] }
@@ -242,5 +271,8 @@ module.exports = {
   like: like,
   execute: execute,
   getToken: getToken,
+  request: requestProxy,
+  upload: upload,
+  uploadPhoto: uploadPhoto,
   market: market
 };

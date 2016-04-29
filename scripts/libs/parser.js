@@ -88,7 +88,7 @@ class Parser {
           );
           offer.cpa = 1;
           offer.country_of_origin = 'Украина';
-          //offer.typePrefix = $('.breadcrumbs a:nth-of-type(2)').text();
+          offer.typePrefix = $('.sku_number').text().replace('Код товара: ','');
           let price = parseFloat($('.prod-price').text().replace('\r\n', '').trim());
           offer.price = (price < 1) ? price : parseInt(price);
           //if(price  > 100) {
@@ -144,11 +144,10 @@ class Parser {
           });
 
           offer.picture = [];
-          $('.zoom-outer .sk-img').each((i, element)=> {
+          $('.zoom-outer .wm-zoom-default-img').each((i, element)=> {
             let src = 'http://decorsvadba.com' + $(element).attr('src');
-            if (src.indexOf('large') === -1) {
-              offer.picture.push(src);
-            }
+            offer.picture.push(src);
+
           });
           this.offers_names.push(offer.name);
           offers.push(offer);
