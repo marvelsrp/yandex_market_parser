@@ -3,7 +3,7 @@ var fs = require('fs');
 
 var VK = require('./libs/connectors/vk');
 var ownerId = require('../config/vk').ownerId;
-var shop = require('../dump/generateYML/price').shop;
+var shop = require('../dump/market.generateYML/price').shop;
 var code = fs.readFileSync(__dirname + '/../execute/market.getAlbums', 'utf8');
 
 var categories = _.map(shop.categories, (category) => {

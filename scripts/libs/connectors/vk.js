@@ -135,6 +135,9 @@ var getUploadEndpoint = function(type, params) {
 };
 
 var upload = function(type, params, photoUrl) {
+  if (!photoUrl) {
+    return Promise.reject('undefined photUrl');
+  }
   var fileUrl = __dirname + '/file.jpg';
   try {
     var resultPromise = new Promise((resolve, reject) => {
@@ -200,6 +203,7 @@ var market = {
     var products = [];
 
     function loop(offset) {
+      console.log('loop', offset);
       var def = deferred();
       var params = {
         owner_id: '-' + owner_id,
@@ -212,8 +216,8 @@ var market = {
         _.forEach(response.items, function(item, key) {
           products.push(item);
         });
-        if (response.count === 200) {
-          loop(owner_id, offset + 200).then(() => {
+        if (response.items.length === 200) {
+          loop(offset + 200).then(() => {
             def.resolve(products);
           }).catch(() => {
             def.reject();

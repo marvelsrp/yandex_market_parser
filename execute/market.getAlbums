@@ -1,4 +1,4 @@
-var owner_id = "%owner_id%";
+var owner_id = "-%owner_id%";
 var categories = %categories%;
 
 var albums = API.market.getAlbums({

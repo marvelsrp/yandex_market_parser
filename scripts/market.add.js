@@ -8,7 +8,7 @@ var ownerId = require('../config/vk').ownerId;
 var shop = require('../dump/market.generateYML/price').shop;
 var marketAlbums = require('../config/marketAlbums');
 var marketCategory = require('../config/marketCategory');
-
+var rejectedProducts = [];
 function findCategoryById(categoryID) {
   var categoryName = _.find(shop.categories, (category) => {
     return category['@'].id == categoryID;
@@ -27,7 +27,7 @@ function checkExistingProduct(products, offer) {
   var name = getProductName(offer);
 
   var product = _.find(products, (product) => {
-    return product.title == name;
+    return product.title.indexOf(offer.typePrefix) != -1;
   });
 
   var result;
@@ -68,11 +68,15 @@ function createProduct(offer) {
     if (offer.picture.length == 0) {
       return Promise.resolve();
     }
+    var pictures = offer.picture.slice(0, 4);
 
-    return eachPromise(offer.picture, (pictureUrl) => {
+    return eachPromise(pictures, (pictureUrl) => {
       console.info('upload Other Photo', pictureUrl);
       return VK.uploadPhoto(pictureUrl, 'product_other', ownerId).then((photoId) => {
         otherPhotoIDs.push(photoId);
+      }, (e) => {
+        console.error('Other Photo catch', e);
+        throw new Error('uploadPhoto');
       });
     });
   }).then(() => {
@@ -169,6 +173,7 @@ try {
                 console.info('product resolve');
                 def.resolve();
               }, () => {
+                rejectedProducts.push(offer.url);
                 console.error('product reject');
                 def.reject();
               });
@@ -178,6 +183,7 @@ try {
                 return createProduct(offer).then(() => {
                   console.info('product resolve');
                 }, () => {
+                  rejectedProducts.push(offer.url);
                   console.error('product reject');
                 });
               }).then(() => {
@@ -193,7 +199,12 @@ try {
       }, () => {
         console.info('EXIST');
       });
-    });
+    }).then(() => {
+      console.info('REJECTED SUMMARY');
+      for(var i in rejectedProducts){
+        console.log(rejectedProducts[i]);
+      }
+    })
 
   });
 } catch (e) {
