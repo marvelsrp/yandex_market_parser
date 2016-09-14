@@ -17,7 +17,8 @@ function eachPromise(arr, callback, i) {
     } else {
       return Promise.resolve();
     }
-  }).catch(() => {
+  }).catch((e) => {
+    console.error('catch', e);
     if (i + 1 < arr.length) {
       return eachPromise(arr, callback, i + 1);
     } else {

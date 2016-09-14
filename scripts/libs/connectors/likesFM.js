@@ -12,6 +12,7 @@ var getOffers = () => {
       uri: url,
       headers: authData.headers
     }, (error, response, body) => {
+      console.log(body);
       resolve(JSON.parse(body));
     });
   });

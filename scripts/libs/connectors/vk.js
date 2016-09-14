@@ -60,6 +60,7 @@ var like = (id, captcha_sid, captcha_key) => {
 
     if (response.error && response.error.error_code === 14) {
       console.warn('CAPTCHA?');
+      def.reject();
     } else {
       def.resolve();
     }
@@ -156,7 +157,7 @@ var upload = function(type, params, photoUrl) {
         if (parseInt(dimension.height) > 400 && parseInt(dimension.width) > 400) {
           resolve();
         } else {
-          console.error('reject by img size' + dimension);
+          console.error('reject by img size', dimension);
           reject();
         }
       });

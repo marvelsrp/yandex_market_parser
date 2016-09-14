@@ -56,7 +56,7 @@ class Parser {
           offer['@'] = {
             id: url.split('/')[5],
             available: true,
-            //type: 'vendor.model',
+            type: 'vendor.model',
             bid: 1
           };
           offer.url = url;
@@ -88,7 +88,8 @@ class Parser {
           );
           offer.cpa = 1;
           offer.country_of_origin = 'Украина';
-          offer.typePrefix = $('.sku_number').text().replace('Код товара: ','');
+          //offer.name = $('.prod-title').text();
+          //offer.typePrefix = (offer.name.replace(/[^А-Я а-я ]/g, '') +  ' "' + sku_number + '"').replace(/\s+/g, ' ');
           let price = parseFloat($('.prod-price').text().replace('\r\n', '').trim());
           offer.price = (price < 1) ? price : parseInt(price);
           //if(price  > 100) {
@@ -96,32 +97,68 @@ class Parser {
           //}
 
           offer.currencyId = 'UAH';
-          offer.name = $('.prod-title').text();
+          offer.vendor = 'Украина';
+          offer.model =  $('.prod-title').text() + ' ' + $('.sku_number').text().replace('Код товара: ','');
           switch (categoryId){
             case 108387:
             case 119292://подарки хендмайд
+              offer.typePrefix = 'Рукоделие';
               offer.market_category = 'Все товары/Досуг и развлечения/Книги/Дом, семья, досуг/Рукоделие';
               break;
             case 108382://наборы
+              offer.typePrefix = 'Свадебные наборы';
+              offer.market_category = 'Все товары/Одежда, обувь и аксессуары/Женская одежда/Свадебная мода/Аксессуары';
+              break;
             case 108368://бокалы
+              offer.typePrefix = 'Свадебные бокалы';
+              offer.market_category = 'Все товары/Одежда, обувь и аксессуары/Женская одежда/Свадебная мода/Аксессуары';
+              break;
             case 108371://казна
+              offer.typePrefix = 'Свадебная казна';
+              offer.market_category = 'Все товары/Одежда, обувь и аксессуары/Женская одежда/Свадебная мода/Аксессуары';
+              break;
             case 108370://букеты
+              offer.typePrefix = 'Свадебные букеты';
+              offer.market_category = 'Все товары/Одежда, обувь и аксессуары/Женская одежда/Свадебная мода/Аксессуары';
+              break;
             case 108375://свечи
+              offer.typePrefix = 'Свадебные свечи';
+              offer.market_category = 'Все товары/Одежда, обувь и аксессуары/Женская одежда/Свадебная мода/Аксессуары';
+              break;
             case 108385://подушечки
+              offer.typePrefix = 'Подушечки для колец';
+              offer.market_category = 'Все товары/Одежда, обувь и аксессуары/Женская одежда/Свадебная мода/Аксессуары';
+              break;
             case 108383://шампанское
+              offer.typePrefix = 'Свадебное шампанское';
+              offer.market_category = 'Все товары/Одежда, обувь и аксессуары/Женская одежда/Свадебная мода/Аксессуары';
+              break;
             case 108376://конкурсы
+              offer.typePrefix = 'Свадебные конкурсы';
               offer.market_category = 'Все товары/Одежда, обувь и аксессуары/Женская одежда/Свадебная мода/Аксессуары';
               break;
             case 108369://бутоньерка
+              offer.typePrefix = 'Свадебные бутоньерки';
+              offer.market_category = 'Все товары/Подарки и цветы/Товары для праздников/Свадебные украшения';
+              break;
             case 108384://украш. на машину
+              offer.typePrefix = 'Украшение свадебного кортежа';
+              offer.market_category = 'Все товары/Подарки и цветы/Товары для праздников/Свадебные украшения';
+              break;
             case 108386://стол
+              offer.typePrefix = 'Украшение на свадебный стол';
+              offer.market_category = 'Все товары/Подарки и цветы/Товары для праздников/Свадебные украшения';
+              break;
             case 108390://прическа
+              offer.typePrefix = 'Свадебная прическа';
               offer.market_category = 'Все товары/Подарки и цветы/Товары для праздников/Свадебные украшения';
               break;
             case 119291://икона
+              offer.typePrefix = 'Свадебные иконы';
               offer.market_category = 'Все товары/Подарки и цветы/Предметы искусства/Иконы';
               break;
             default:
+              offer.typePrefix = 'Свадебные украшения';
               offer.market_category = 'Все товары/Одежда, обувь и аксессуары/Женская одежда/Свадебная мода';
           }
 
@@ -149,8 +186,12 @@ class Parser {
             offer.picture.push(src);
 
           });
-          this.offers_names.push(offer.name);
-          offers.push(offer);
+
+          if (offer.price > 100) {
+            offers.push(offer);
+            this.offers_names.push(offer.name);
+          }
+
           if (nextIndex === links.length) {
             console.log('getOffers resolve');
             resolve(offers);

@@ -1,0 +1,6 @@
+var users_ids = "%users_ids%";
+
+return API.users.get({
+    "user_ids": users_ids,
+    "fields": "photo_50,city"
+});

@@ -10,6 +10,7 @@ var marketAlbums = require('../config/marketAlbums');
 var marketCategory = require('../config/marketCategory');
 var rejectedProducts = [];
 function findCategoryById(categoryID) {
+
   var categoryName = _.find(shop.categories, (category) => {
     return category['@'].id == categoryID;
   })['#'];
@@ -19,26 +20,24 @@ function findCategoryById(categoryID) {
   return VKCategoryId.id;
 }
 function getProductName(offer) {
-  return (offer.name.replace(/[^А-Я а-я ]/g, '') +  ' "' + offer.typePrefix + '"').replace(/\s+/g, ' ');
+  return offer.model;
+  // return (offer.model.replace(/[^А-Я а-я ]/g, '')).replace(/\s+/g, ' ');
 }
 
 function checkExistingProduct(products, offer) {
-
   var name = getProductName(offer);
-
   var product = _.find(products, (product) => {
-    return product.title.indexOf(offer.typePrefix) != -1;
+    return product.title === name;
   });
-
   var result;
   if (product) {
-    var vkProductPrice = parseFloat(product.price.amount) / 100;
-    if (offer.price !== vkProductPrice) {
-      console.error(offer.name, offer.price,  vkProductPrice);
-      result = Promise.resolve({action: 'update', product: product});
-    } else {
-      result = Promise.reject();
-    }
+    // var vkProductPrice = parseFloat(product.price.amount) / 100;
+    // if (offer.price !== vkProductPrice) {
+    //   console.error(offer.name, offer.price,  vkProductPrice);
+    //   result = Promise.resolve({action: 'update', product: product});
+    // } else {
+    result = Promise.reject();
+    // }
   } else {
     result = Promise.resolve({action: 'create'});
   }
@@ -47,7 +46,7 @@ function checkExistingProduct(products, offer) {
 }
 
 function createProduct(offer) {
-  console.info('createProduct', offer.name, offer.url);
+  console.info('createProduct', getProductName(offer));
   var album = findCategoryById(offer.categoryId),
     mainPhotoID,
     otherPhotoIDs = [];
@@ -76,7 +75,6 @@ function createProduct(offer) {
         otherPhotoIDs.push(photoId);
       }, (e) => {
         console.error('Other Photo catch', e);
-        throw new Error('uploadPhoto');
       });
     });
   }).then(() => {
@@ -109,41 +107,6 @@ function createProduct(offer) {
   });
 }
 
-//function updateProduct(product) {
-//  console.log('updateProduct', product.id);
-//  var params = {
-//    item_ids: product.owner_id + '_' + product.id,
-//    extended: 'photos'
-//  };
-//
-//  var photosPromise = VK.request('market.getById', params).then((response) => {
-//    var other = _.map(response.items[0].photos, (photo) => {
-//      return photo.id;
-//    });
-//    var main = other.pop();
-//    return {main, other};
-//  });
-//
-//  return photosPromise.then((photos) => {
-//    var params = {
-//      item_id: product.id,
-//      owner_id: product.owner_id,
-//      name: product.title,
-//      description: product.description,
-//      category_id: product.category.id,
-//      price: parseFloat(product.price.amount) / 100,
-//      main_photo_id: photos.main,
-//      photo_ids: photos.other.join(',')
-//    };
-//    return VK.request('market.edit', params).then((response) => {
-//      console.log('update product', params, response);
-//      //return response.market_item_id;
-//    }).catch(() => {
-//      console.error('update product', params);
-//    });
-//  });
-//}
-
 function deleteProduct(product) {
   console.info('deleteProduct', product.id);
   var params = {
@@ -162,6 +125,7 @@ try {
   VK.market.get(ownerId).then((products) => {
 
     eachPromise(shop.offers, (offer) => {
+
       return checkExistingProduct(products, offer).then((params) => {
         console.log('=============================================');
 

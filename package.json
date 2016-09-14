@@ -10,6 +10,7 @@
     "deferred": "^0.7.5",
     "express": "^4.13.4",
     "form-data": "^1.0.0-rc4",
+    "geocoder": "^0.2.2",
     "http": "0.0.0",
     "image-size": "^0.5.0",
     "js2xmlparser": "^1.0.0",
