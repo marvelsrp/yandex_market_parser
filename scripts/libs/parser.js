@@ -92,9 +92,9 @@ class Parser {
           //offer.typePrefix = (offer.name.replace(/[^А-Я а-я ]/g, '') +  ' "' + sku_number + '"').replace(/\s+/g, ' ');
           let price = parseFloat($('.prod-price').text().replace('\r\n', '').trim());
           offer.price = (price < 1) ? price : parseInt(price);
-          //if(price  > 100) {
-          //  offer.oldprice = parseInt(offer.price * 1.2);
-          //}
+          if(price  > 100) {
+           offer.oldprice = parseInt(offer.price * 1.2);
+          }
 
           offer.currencyId = 'UAH';
           offer.vendor = 'Украина';
@@ -162,11 +162,11 @@ class Parser {
               offer.market_category = 'Все товары/Одежда, обувь и аксессуары/Женская одежда/Свадебная мода';
           }
 
-          //offer.vendor = 'Свадебный декор';
-          //offer.model = $('.prod-title').text();
+          offer.vendor = 'Свадебный декор';
+          offer.model = $('.prod-title').text();
           offer.description = $('.prod-description div').text(); //$('#tabs-1 .editor-data').text().replace("\r\n", "").trim();
           offer.sales_notes = 'Минимальная сумма заказа 100 грн';
-
+          offer.manufacturer_warranty = true;
           offer.categoryId = categoryId;
           offer.param = [];
           $('#tabs-2 .prod-options tr').each((i, element) => {
