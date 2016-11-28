@@ -88,8 +88,6 @@ class Parser {
           );
           offer.cpa = 1;
           offer.country_of_origin = 'Украина';
-          //offer.name = $('.prod-title').text();
-          //offer.typePrefix = (offer.name.replace(/[^А-Я а-я ]/g, '') +  ' "' + sku_number + '"').replace(/\s+/g, ' ');
           let price = parseFloat($('.prod-price').text().replace('\r\n', '').trim());
           offer.price = (price < 1) ? price : parseInt(price);
           if(price  > 100) {
@@ -164,7 +162,11 @@ class Parser {
 
           offer.vendor = 'Свадебный декор';
           offer.model = $('.prod-title').text();
-          offer.description = $('.prod-description div').text(); //$('#tabs-1 .editor-data').text().replace("\r\n", "").trim();
+          offer.description = $('.prod-description div').text();
+          offer.short_description = $('#tabs-1 .editor-data').text().replace("\r\n", "").trim();
+          offer.meta_keywords = $('meta[name=keywords]').attr("content");
+          offer.meta_description = $('meta[name=description]').attr("content");
+          offer.title = $('title').text();
           offer.sales_notes = 'Минимальная сумма заказа 100 грн';
           offer.manufacturer_warranty = true;
           offer.categoryId = categoryId;
@@ -187,7 +189,7 @@ class Parser {
 
           });
 
-          if (offer.price > 100) {
+          if (offer.price > 30 && offer.price < 100) {
             offers.push(offer);
             this.offers_names.push(offer.name);
           }
